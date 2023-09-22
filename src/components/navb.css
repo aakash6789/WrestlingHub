@@ -1,0 +1,63 @@
+navbar {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #111;
+    transition: width 0.3s;
+    color: white;
+  }
+  
+  .toggle-button {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links li {
+    padding: 10px;
+    border-bottom: 1px solid white;
+  }
+  
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+.fadeinout
+{
+  animation: fadeinout 4s infinite;
+}
+
+@keyframes fadeinout
+{
+  0%{
+    opacity:0;
+  }
+  50%
+  {
+    opacity:1;
+  }
+  100%
+  {
+    opacity:0;
+  }
+}
