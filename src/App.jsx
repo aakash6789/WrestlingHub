@@ -3,14 +3,28 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Hero2 from './components/Hero2'
 import Footer from './components/Footer'
+import { RouterProvider,NavLink,Router,createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import Rivalries from './components/Rivalries'
+import SuperStars from './components/SuperStars'
+import Layout from './components/Layout'
+const router=createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<Layout/>}>
+     <Route path='' element={<><Hero/><Hero2/></>}/>
+    <Route path='/rivalries' element={<Rivalries/>}/>
+    <Route path='/superstars' element={<SuperStars/>}/>
+    </Route>
+  )
+)
 const App = () => {
   return (
     <>
     <div >
-      <Navbar/>
+      {/* <Navbar/>
       <Hero/>
       <Hero2/>
-     <Footer/>
+     <Footer/> */}
+     <RouterProvider router={router}/>
     </div>
     </>
   )

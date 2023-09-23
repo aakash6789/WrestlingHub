@@ -9,6 +9,7 @@ import { useState } from 'react';
 import {FcDatabase} from 'react-icons/fc'
 import {IoMdCloseCircleOutline} from 'react-icons/io';
 import './navb.css';
+import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   const isAboveSmallScreens=useMediaQuery("(min-width:768px)");
   const [isMenuToggled,setIsMenuToggled]=useState(false);
@@ -37,7 +38,9 @@ const Navbar = () => {
        
         < div className='flex  pl-[1050px] font-bebasNeue py-[14px] text-lg '>
         <div className='hover:text-yellow-400 transition duration-500 cursor-pointer'>HOME</div>
+        <NavLink to='/superstars'>
         <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>SUPERSTARS</div>
+        </NavLink>
         <div className='hover:text-yellow-400 transition duration-500 ml-[40px] cursor-pointer '>CONTACT</div>
         <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>LOGIN</div>
         </div></nav> : <nav className='h-[50px] bg-black text-white flex '>
