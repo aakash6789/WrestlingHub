@@ -8,25 +8,28 @@ import rivalriesTile from '../assets/rivalries_tile2.jpg';
 import aewbanner from '../assets/aewam.png';
 import aewbanner2 from '../assets/aewbanner.png';
 import { NavLink } from 'react-router-dom';
+import useMediaQuery from '../hooks/useMediaQuery';
 const Hero2 = () => {
+  const isAboveSmallScreens=useMediaQuery("(min-width:768px)");
   return (
     <div className='md:mt-[791px] xs:mt-[339px] bg-black font-bebasNeue' >
       <div className='flex pt-[100px]  text-white md:gap-x-[80px] justify-center xs:gap-x-[10px] ml-[10px] mr-[10px]'>
       <NavLink to='/superstars'>
        <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>
         <img src={superStarTile} className=' h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px]'/>
-       <span className='md:ml-[0px] xs:ml-[8px]'>SUPERSTARS</span></div>
+       <span className='md:ml-[68px] xs:ml-[35px]'>SUPERSTARS</span></div>
        </NavLink>
-       <button>
+       <NavLink to='/gmoat'>
        <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>
         <img src={gmoatTile} className='h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px]'/>
-       <span className='md:ml-[0px] xs:ml-[0px] '> Greatest matches of all time</span></div>
-       </button>
-       <button>
+        {isAboveSmallScreens?<span className='md:ml-[20px] xs:ml-[10px] '> Greatest matches of all time</span>:<span className='md:ml-[20px] xs:ml-[10px] '> Greatest matches of <span className='xs:ml-[38px]'>all time</span></span>}
+        </div>
+       </NavLink>
+       <NavLink to='/rivalries'>
        <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>
         <img src={rivalriesTile} className=' h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px] '/>
-        <span className='md:ml-[0px] ml-[120px] xs:ml-[0px]'>Rivalries</span></div>
-        </button>
+        <span className='md:ml-[75px] ml-[120px] xs:ml-[40px]'>Rivalries</span></div>
+        </NavLink>
       </div>
       <div className='text-white mt-[150px] pt-[7px]'>
         <span className='text-5xl md:ml-[700px] md:mt-[2px] xs:ml-[200px]'>Shows</span>

@@ -7,12 +7,14 @@ import { RouterProvider,NavLink,Router,createBrowserRouter, createRoutesFromElem
 import Rivalries from './components/Rivalries'
 import SuperStars from './components/SuperStars'
 import Layout from './components/Layout'
+import Gmoat from './components/Gmoat'
 const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
      <Route path='' element={<><Hero/><Hero2/></>}/>
     <Route path='/rivalries' element={<Rivalries/>}/>
     <Route path='/superstars' element={<SuperStars/>}/>
+    <Route path='/gmoat' element={<Gmoat/>}/>
     </Route>
   )
 )
