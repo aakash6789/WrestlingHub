@@ -7,15 +7,16 @@ import nxtbanner from '../assets/NXT_BANNER2.jpeg'
 import rivalriesTile from '../assets/rivalries_tile2.jpg';
 import aewbanner from '../assets/aewam.png';
 import aewbanner2 from '../assets/aewbanner.png';
+import { NavLink } from 'react-router-dom';
 const Hero2 = () => {
   return (
     <div className='md:mt-[791px] xs:mt-[339px] bg-black font-bebasNeue' >
       <div className='flex pt-[100px]  text-white md:gap-x-[80px] justify-center xs:gap-x-[10px] ml-[10px] mr-[10px]'>
-        <button>
+      <NavLink to='/superstars'>
        <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>
         <img src={superStarTile} className=' h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px]'/>
-       <span className='md:ml-[0px] xs:ml-[8px]'>Superstars</span></div>
-       </button>
+       <span className='md:ml-[0px] xs:ml-[8px]'>SUPERSTARS</span></div>
+       </NavLink>
        <button>
        <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>
         <img src={gmoatTile} className='h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px]'/>

@@ -37,10 +37,10 @@ const Navbar = () => {
         </div>
        
         < div className='flex  pl-[1050px] font-bebasNeue py-[14px] text-lg '>
-        <div className='hover:text-yellow-400 transition duration-500 cursor-pointer'>HOME</div>
-        <NavLink to='/superstars'>
-        <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>SUPERSTARS</div>
-        </NavLink>
+        <div className='hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/'>HOME</NavLink></div>
+        
+      <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/superstars'>SUPERSTARS</NavLink></div>
+        
         <div className='hover:text-yellow-400 transition duration-500 ml-[40px] cursor-pointer '>CONTACT</div>
         <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>LOGIN</div>
         </div></nav> : <nav className='h-[50px] bg-black text-white flex '>
@@ -57,8 +57,8 @@ const Navbar = () => {
         {/* <button onClick={()=>{setIsMenuToggled(!isMenuToggled)}}><IoMdCloseCircleOutline className='fixed top-0 left-4px h-[50px] w-8'/></button> */}
         {/* </div> */}
         <div  className='ml-[8px] mt-[-50px]'>
-          <div className='py-[8px] hover:cursor-pointer'>Home</div>
-          <div className='py-[8px]hover: cursor-pointer'>SuperStars</div>
+          <div className='py-[8px] hover:cursor-pointer'><NavLink to='/'>HOME</NavLink></div>
+          <div className='py-[8px]hover: cursor-pointer'><NavLink to='/superstars'>SUPERSTARS</NavLink></div>
           <div className='py-[8px] hover:cursor-pointer'>Contact</div>
           <div className='py-[8px] hover:cursor-pointer'>Login</div>
           </div>
