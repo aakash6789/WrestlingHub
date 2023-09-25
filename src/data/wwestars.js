@@ -2,12 +2,15 @@
 import sup1 from '../assets/Roman2.jpg'
 import sethtile from '../assets/sethtile.avif'
 import deantile from '../assets/dean1.jfif'
-import stylestile from '../assets/aj3.jfif'
+import stylestile from '../assets/aj4.jfif'
 import hogantile from '../assets/hogantile.jpg'
 import samitile from '../assets/samitile.webp'
 import cenatile from '../assets/cenatile.avif'
 import stonecoldtile from '../assets/stonecoldtile.jpg'
 import undertakertile from '../assets/undertakertile.jpg'
+import rheatile from '../assets/rheatile.webp'
+import bayleytile from '../assets/bayleytile2.jpg'
+import alexablisstile from '../assets/alexablisstile.jpg'
  const wwestars=[
     {
         name:'Roman Reigns',
@@ -51,6 +54,18 @@ import undertakertile from '../assets/undertakertile.jpg'
     {
         name:'Undertaker',
         imgLink:undertakertile
+    },
+    {
+        name:'Rhea Ripley',
+        imgLink:rheatile
+    },
+    {
+        name:'Bayley',
+        imgLink:bayleytile
+    },
+    {
+        name:'Alexa Bliss',
+        imgLink:alexablisstile
     }
  
 ];
