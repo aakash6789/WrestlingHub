@@ -8,7 +8,7 @@ const SuperStars = () => {
     <div className=' h-[4000px] font-bebasNeue bg-black text-white'>
       <img src={superstarbanner} className='absoloute z-[-4] opacity-[0.8]'/>
       <h1 className='md:text-8xl absolute md:top-[300px] md:left-[1000px] text-yellow-200  xs:text-5xl xs:top-[150px] xs:left-[150px]'>SUPERSTARS</h1>
-      <div className='ml-[700px] mt-[40px] text-3xl mr-[695px]'>WWE ROSTER</div>
+      <div className='md:ml-[700px] md:mt-[40px] md:text-3xl md:mr-[695px] xs:ml-[214px] xs:mt-[34px] xs:mb-[34px] xs:text-2xl'>WWE ROSTER</div>
       <div className='grid grid-rows-3 grid-cols-3 gap-8 md:ml-[180px] md:mt-[70px]'>
       {wwestars.map((wwestar,index)=>{
         return (
@@ -20,7 +20,7 @@ const SuperStars = () => {
       })}
      </div>
        <img src={reignsbanner} className=' md:w-[1530px]md: mt-[120px] filter grayscale opacity-[1]'/>
-       <div className='ml-[750px] mt-[40px] text-3xl '>AEW &nbsp;ROSTER</div>
+       <div className='md:ml-[750px] md:mt-[40px] md:text-3xl xs:ml-[214px] xs:mt-[30px] xs:text-2xl '>AEW &nbsp;ROSTER</div>
     </div>
   )
 }
