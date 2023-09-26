@@ -11,6 +11,12 @@ import undertakertile from '../assets/undertakertile.jpg'
 import rheatile from '../assets/rheatile.webp'
 import bayleytile from '../assets/bayleytile2.jpg'
 import alexablisstile from '../assets/alexablisstile.jpg'
+import kennyomegatile from '../assets/kennyomegatile.jpg'
+import bryantile from '../assets/bryantile.jpg'
+import ibushitile from '../assets/ibushitile.jpeg'
+import moxleytile from '../assets/moxleytile.webp'
+import okadatile from '../assets/okadatile.jpg'
+import ospraytile from '../assets/ospray.jpg' 
  const wwestars=[
     {
         name:'Roman Reigns',
@@ -69,4 +75,38 @@ import alexablisstile from '../assets/alexablisstile.jpg'
     }
  
 ];
-export default wwestars;
+const aewstars=[
+    {
+        name:'Kenny Omega',
+        imgLink:kennyomegatile,
+        alt:'1'
+    },
+    {
+        name:'Kota Ibushi',
+        imgLink:ibushitile,
+        alt:'1'
+    },
+    {
+        name:'Jon Moxley',
+        imgLink:moxleytile,
+        alt:'1'
+    },
+    {
+        name:'Bryan Danielson',
+        imgLink:bryantile,
+        alt:'1'
+    },
+    {
+        name:'Will Oespray',
+        imgLink:ospraytile,
+        alt:'1'
+    },
+    {
+        name:'Okada',
+        imgLink:okadatile,
+        alt:'1'
+    },
+
+
+];
+export {wwestars,aewstars};
