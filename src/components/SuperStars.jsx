@@ -18,7 +18,7 @@ const SuperStars = () => {
         <span className=''>&nbsp;{wwestar.name}</span>
         </div>
       )
-      })}
+      })} 
      </div>
        <img src={rheabanner} className=' md:w-[1530px]md: mt-[120px] filter grayscale opacity-[1]'/>
        <div className='md:ml-[700px] md:mt-[40px] md:text-3xl xs:ml-[214px] xs:mt-[30px] xs:text-2xl xs:mr-[177px] xs:mb-[30px]'>AEW &nbsp;ROSTER</div>
@@ -36,5 +36,5 @@ const SuperStars = () => {
     </div>
   )
 }
-
+//login page and then backend
 export default SuperStars;
