@@ -37,4 +37,5 @@ const SuperStars = () => {
   )
 }
 //login page and then backend
+//server to be on port 3000 frontend on 4000
 export default SuperStars;
