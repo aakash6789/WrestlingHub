@@ -13,7 +13,8 @@ export default {
         opensans:["Open Sans","sans-serif"],
         bodyFont:["Poppins","sans-serif"],
         tittleFont:["Montserrat","sans-erif"],
-        bebasNeue:["Bebas Neue","sans-serif"]
+        bebasNeue:["Bebas Neue","sans-serif"],
+        roboto:["Roboto","sans-serif"]
       },
 
     },
