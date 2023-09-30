@@ -1,9 +1,45 @@
 import React from 'react'
-import loginbg from '../assets/loginbg2.jpeg'
+import loginbg from '../assets/login3.jpeg'
+import {useForm} from 'react-hook-form';
 const Login = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors }
+      } = useForm();
+      const onSubmit = (data) => {
+        console.log(data);
+      }
   return (
-    <div className='bg-black h-[2000px]'>
-      <img src={loginbg} className='ml-[364px] align-middle opacity-[2.6] grayscale rounded-full h-[440px] '/>
+    <div className='bg-black h-[2000px] text-white font-roboto'>
+      <img src={loginbg} className='opacity-[0.8] '/>
+        <h1 className='text-8xl font-bebasNeue mt-[160px] ml-[660px]  absolute top-[90px] right-[280px] text-yellow-200'>SIGN UP/ sign in</h1>
+        {/* <h1 className='text-6xl font-bebasNeue mt-[160px] ml-[660px] mr-[705px]'>SIGN UP</h1> */}
+      <div className=' w-[800px] h-[800px] ml-[350px] pt-[300px]'>
+      <form action="" className='' onSubmit={handleSubmit(onSubmit)}>
+        <div>
+            <label htmlFor="name">Name</label>
+            <input id='name' name='name' type='text' className='ml-[38px] pr-[100px]' {...register("name")}/>
+        </div>
+        <div className='mt-[30px]'>
+            <label htmlFor="email">Email</label>
+            <input id='email' name='email' type='email' className='text-black ml-[38px] pr-[100px] '  {...register("email")}/>
+        </div>
+        <div className='mt-[30px]'>
+            <label htmlFor="password">Password</label>
+            <input id='password' name='password' type='password' className='text-black ml-[10px] pr-[100px]'  {...register("password")}/>
+        </div>
+        <div className='mt-[30px]'>  
+            <label htmlFor="name">Phone no</label>
+            <input id='name' name='phoneno' type='phone-no' className='text-black ml-[10px] pr-[100px]'  {...register("phoneno")}/>
+        </div>
+        <div className='mt-[30px]'>  
+            <label htmlFor="name">Phone no</label>
+            <input id='name' name='phoneno' type='phone-no' className='text-black ml-[10px] pr-[100px]'  {...register("phoneno")}/>
+        </div>
+        <button type="submit" className='bg-white text-black mt-[45px] ml-[140px] p-[0.45rem] rounded-xl'>Login</button>
+      </form>
+      </div>
     </div>
   )
 }
