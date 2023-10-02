@@ -43,7 +43,7 @@ const Login = () => {
         </div>
         <div className='mt-[30px]'>  
             <label htmlFor="name" className='font-roboto ml-[31px] '>Phone no</label>
-            <br/>
+             <br/>
             <input id='name' name='phoneno' type='phone-no' className='ml-[30px] border-[4px] w-[660px] rounded-md h-[48px] mt-[5px] p-2'  {...register("phoneno")}/>
         </div>
         <div className='flex'>
