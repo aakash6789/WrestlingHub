@@ -13,7 +13,7 @@ const Register = () => {
       }
 
   return (
-    <div className='md:h-[1200px] md:pt-[100px] text-white bg-black  xs:h-[1000px]'>
+    <div className='md:h-[1200px] md:pt-[100px] text-white bg-black xs:h-[1000px]'>
       {/* <img src={loginbg} className='opacity-[0.8] absolute z-[-4] '/> */}
         <h1 className='md:text-8xl font-bebasNeue md:ml-[650px] md:mr-[630px] text-yellow-200 xs:ml-[210px] xs:text-4xl xs:mr-[200px] '>SIGN UP</h1>
         {/* <h1 className='text-6xl font-bebasNeue mt-[160px] ml-[660px] mr-[705px]'>SIGN UP</h1> */}
