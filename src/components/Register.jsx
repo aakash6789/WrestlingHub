@@ -51,7 +51,7 @@ const Register = () => {
         <div className='flex'>
         <input type="checkbox" id="consent_checkbox" name="vehicle1" value="Bike" className='md:ml-[30px] h-[20px] mt-[18px] xs:ml-[58px] xs:mt-[5px]'></input>
         <label htmlFor='consent_checkbox'>
-        <p className='md:ml-[10px] md:w-[660px] rounded-md md:h-[96px] md:mt-[15px] xs:w-[363px] xs:h-[134px] xs:ml-[10px] '>
+        <p className='md:ml-[10px] md:w-[660px] rounded-md md:h-[96px] md:mt-[2px] xs:w-[363px] xs:h-[134px] xs:ml-[10px] '>
         I consent to receiving marketing communications from Wrestling World and its affiliates about special offers and other products or services based on my information and interests, including how I use and interact with the services, as described in the <a href='https://www.wwe.com/page/privacy-policy' target='_blank' className='text-blue-400'>Privacy Policy</a> . I can unsubscribe at any time using options available in the <a href='https://www.wwe.com/page/privacy-policy' target='_blank' className='text-blue-400'>Privacy Policy</a>.
         </p>
         </label>
