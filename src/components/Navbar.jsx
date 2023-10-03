@@ -42,7 +42,7 @@ const Navbar = () => {
       <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/superstars'>SUPERSTARS</NavLink></div>
         
         <div className='hover:text-yellow-400 transition duration-500 ml-[40px] cursor-pointer '>CONTACT</div>
-        <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>
+        <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/register'>Login</NavLink></div>
         </div></nav> : <nav className='h-[50px] bg-black text-white flex '>
         <div className=' mx-auto w-[50px] py-[px]'>
         <img src={logoe} className='fadeinout h-[50px] w-[70px]' />
@@ -60,7 +60,7 @@ const Navbar = () => {
           <div className='py-[8px] hover:cursor-pointer'><NavLink to='/'>HOME</NavLink></div>
           <div className='py-[8px]hover: cursor-pointer'><NavLink to='/superstars'>SUPERSTARS</NavLink></div>
           <div className='py-[8px] hover:cursor-pointer'>Contact</div>
-          <div className='py-[8px] hover:cursor-pointer'><NavLink to='/login'>Login</NavLink></div>
+          <div className='py-[8px] hover:cursor-pointer'><NavLink to='/register'>Login</NavLink></div>
           </div>
         </div>) }
           
