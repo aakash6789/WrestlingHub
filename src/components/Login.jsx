@@ -28,7 +28,7 @@ const Login = () => {
               pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/
             })}/>
             {errors.email && errors.email.type === "required" && (
-            <p className="errorMsg text-red-500 md:ml-[30px] xs:mr-[260px]">Email is required.</p>
+            <p className="errorMsg text-red-500 md:ml-[30px] xs:mr-[260px] xs:w-[130px] xs:ml-[70px]">Email is required.</p>
           )}
           {errors.email && errors.email.type === "pattern" && (
             <p className="errorMsg text-red-500 md:ml-[30px] xs:mr-[260px] ">Email is not valid.</p>
@@ -42,7 +42,7 @@ const Login = () => {
               minLength:6
             })}/>
             {errors.password && errors.password.type === "required" && (
-            <p className="errorMsg text-red-500 ml-[30px] xs:mr-[262px]">Password is required.</p>
+            <p className="errorMsg text-red-500 ml-[68px] xs:mr-[262px] xs:w-[160px]">Password is required.</p>
           )}
             {errors.password && errors.password.type === "minLength" && (
             <p className="errorMsg text-red-500 ml-[30px] xs:mr-[120px]">
