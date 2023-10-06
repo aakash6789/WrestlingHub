@@ -15,7 +15,7 @@ const Login = () => {
       }
   return (
     <div className='bg-black md:h-[640px] xs:h-[532px]'>
-             <h1 className='md:text-8xl font-bebasNeue md:ml-[655px] md:mr-[630px] text-yellow-200 xs:ml-[210px] xs:text-4xl xs:mr-[195px] xs:pl-[12px]'>SIGN IN</h1>
+             <h1 className='md:text-8xl font-bebasNeue md:ml-[655px] md:mr-[630px] text-yellow-200 xs:ml-[210px] xs:text-4xl xs:mr-[215px] xs:pl-[12px]'>SIGN IN</h1>
         {/* <h1 className='text-6xl font-bebasNeue mt-[160px] ml-[660px] mr-[705px]'>SIGN UP</h1> */}
       <div className=' bg-white text-black md:w-[720px] md:h-[480px] md:ml-[400px] md:pt-[80px] md:mt-[40px] shadow-md  xs:h-[430px]'>
       <form action="" className='xs:mt-[30px] xs:pt-[30px] md:mt-[0px]' onSubmit={handleSubmit(onSubmit)}>
@@ -51,8 +51,8 @@ const Login = () => {
           )}
         </div>
     
-        <p className='md:ml-[200px] md:pl-[6px] md:mt-[15px] md:mr-[200px] xs:mt-[50px] xs:ml-[110px]'>Don't have an account? <NavLink to='/register' className='text-blue-400' >Register </NavLink> instead</p>
-        <button type="submit" className='bg-black text-white md:mt-[25px] md:w-[660px] md:ml-[30px] p-[0.45rem] font-bebasNeue hover:bg-black hover:text-yellow-200 xs:mt-[20px] xs:ml-[60px] xs:w-[386px] xs:mb-[20px]'>Sign in</button>
+        <p className='md:ml-[200px] md:pl-[6px] md:mt-[15px] md:mr-[200px] xs:mt-[50px] xs:ml-[110px] xs:mr-[135px]'>Don't have an account? <NavLink to='/register' className='text-blue-400' >Register </NavLink> instead</p>
+        <button type="submit" className='bg-black text-white md:mt-[25px] md:w-[660px] md:ml-[30px] p-[0.45rem] font-bebasNeue hover:bg-black hover:text-yellow-200 xs:mt-[20px] xs:ml-[70px] xs:w-[386px] xs:mb-[20px]'>Sign in</button>
       </form>
       </div>
     </div>
