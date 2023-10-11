@@ -17,7 +17,7 @@ const Footer = () => {
        <div className='hover:cursor-pointer'>Privacy Policy</div>
        <div className='hover:cursor-pointer'>Cookie Policy</div>
       </div>
-      <div className='xs:bg-[#1d1d1d] absolute xs:mt-[95px] xs:ml-[0px] md:mt-[175px] md:ml-[540px] xs:h-[20px] xs:w-[518px] xs:pl-[133px]'><span>&#169;</span>COPYRIGHT 2023||ACPRODUCTIONS-ALL RIGHTS RESERVED</div>
+      <div className='xs:bg-[#1d1d1d] absolute xs:mt-[95px] xs:ml-[0px] md:mt-[175px] md:ml-[540px] xs:h-[20px] xs:w-[518px] xs:pl-[143px]'><span>&#169;</span>COPYRIGHT 2023||ACPRODUCTIONS-ALL RIGHTS RESERVED</div>
     </div>
   )
 }
