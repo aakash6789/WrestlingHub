@@ -3,8 +3,17 @@ const mongoose=require('mongoose');
 const express=require('express');
 const app=express();
 const dotenv = require('dotenv');
+const cors=require('cors');
+const morgan=require('morgan');
 dotenv.config();
-app.get('/',(req,res)=>{
+const corsOptions = {                      //
+    origin: 'http://localhost:3000'   ,
+    methods:'GET,POST,PATCH,PUT'       //
+}; 
+app.use(cors(corsOptions));
+app.use(morgan("common"));
+app.use(express.json());
+  app.get('/',(req,res)=>{
     res.send("Great going!");
 })
 //DB CONNECTION
