@@ -67,7 +67,7 @@ const Register = () => {
             <input id='name' name='phoneno' type='phone-no' className='xs:w-[386px] xs:h-[54px] xs:mt-[5px] md:ml-[30px] border-[4px] md:w-[660px] rounded-md md:h-[48px] md:mt-[5px] md:p-2'  {...register("phoneno")}/>
         </div>
         <div className='flex'>
-        <input type="checkbox" id="consent_checkbox" name="vehicle1" value="Bike" className='md:ml-[30px] h-[20px] mt-[18px] xs:ml-[58px] xs:mt-[5px]'></input>
+        <input type="checkbox" id="consent_checkbox" name="vehicle1" value="Bike" className='md:ml-[30px] h-[20px] mt-[18px] xs:ml-[65px] xs:mt-[5px]'></input>
         <label htmlFor='consent_checkbox'>
         <p className='md:ml-[10px] md:w-[660px] rounded-md md:h-[96px] md:mt-[2px] xs:w-[363px] xs:h-[134px] xs:ml-[10px] '>
         I consent to receiving marketing communications from Wrestling World and its affiliates about special offers and other products or services based on my information and interests, including how I use and interact with the services, as described in the <a href='https://www.wwe.com/page/privacy-policy' target='_blank' className='text-blue-400'>Privacy Policy</a> . I can unsubscribe at any time using options available in the <a href='https://www.wwe.com/page/privacy-policy' target='_blank' className='text-blue-400'>Privacy Policy</a>.

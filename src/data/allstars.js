@@ -22,6 +22,7 @@ import ospraytile from '../assets/ospray.jpg'
         name:'Roman Reigns',
         imgLink:sup1,
         alt:'1'
+      
     },
     {
         name:'Seth Rollins',
@@ -108,5 +109,5 @@ const aewstars=[
     },
 
 
-];
+]; 
 export {wwestars,aewstars};
