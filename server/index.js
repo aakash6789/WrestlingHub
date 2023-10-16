@@ -6,8 +6,12 @@ import cors from 'cors';
 import morgan from 'morgan';
 import { wwestars } from './data/index.js';
 import Star from './models/SuperStar.js';
+import starRoutes from './routes/SuperStar.js';
+import getSuperStar from './controllers/SuperStar.js';
+import helmet from 'helmet';
 const app=express();
 dotenv.config();
+app.use(helmet.crossOriginResourcePolicy({policy:"cross-origin"}));
 const corsOptions = {                      //
     origin: 'http://localhost:5173',
     methods:'GET,POST,PATCH,PUT'       //
@@ -15,9 +19,10 @@ const corsOptions = {                      //
 app.use(cors(corsOptions));
 app.use(morgan("tiny"));
 app.use(express.json());
-  app.get('/',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send("Great going!");
 })
+app.use('/superstar',starRoutes);
 //DB CONNECTION
 const port=process.env.PORT;
 mongoose.connect(process.env.MONGO_URL,{

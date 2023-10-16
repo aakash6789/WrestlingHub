@@ -1,7 +1,6 @@
 import  express  from "express";
+import getSuperStar from "../controllers/SuperStar.js";
 const router=express.Router();
-router.get('/:name',function(req,res){
-   
-   
-})
+router.get('/:sname',getSuperStar);
+export default router;
 

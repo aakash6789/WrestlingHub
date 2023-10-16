@@ -1,8 +1,8 @@
-import Star from "../models/SuperStar"
+import Star from "../models/SuperStar.js"
 const getSuperStar=async(req,res)=>{
     try{
         const {sname}=req.params;
-      const SuperStar=await Post.find({name:sname});
+      const SuperStar=await Star.find({name:sname});
       console.log(SuperStar);
       res.status(200).json(SuperStar);
     }
