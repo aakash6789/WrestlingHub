@@ -4,6 +4,7 @@ import superStarTile from '../assets/stonecoldtile.jpg';
 import {wwestars,aewstars} from '../data/allstars';
 import rheabanner from '../assets/rheabanner.jpg'
 import { NavLink } from 'react-router-dom';
+
 const SuperStars = () => {
   
     //  const fetchData=async(name)=>{

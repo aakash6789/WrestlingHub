@@ -2,6 +2,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import { useState,useEffect } from 'react';
+import { wwestars } from '../data/allstars';
 
 const StarProfile = () => {
     const {sname}=useParams();
@@ -48,9 +49,15 @@ const StarProfile = () => {
       <h1>{data.name}</h1>
       <br></br>
       <h1>{data.description}</h1>
-      <p>{data.rank}</p>
+      {/* <p>{data.rank}</p> */}
       <p>{data.height}</p>
-      <p>{data.picturePath[0]}</p>
+      {/* <p>{data.picturePath[0]}</p> */}
+      {data.picturePath.map((element,index)=>{
+        return(
+      <img src={'../assets/'+element} key={index}></img>
+        )
+
+      })}
       
     </div>
   )
