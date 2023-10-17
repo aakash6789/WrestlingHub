@@ -10,12 +10,14 @@ import Layout from './components/Layout'
 import Gmoat from './components/Gmoat'
 import Register from './components/Register'
 import Login from './components/Login'
+import StarProfile from './components/StarProfile'
 const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
      <Route path='' element={<><Hero/><Hero2/></>}/>
     <Route path='/rivalries' element={<Rivalries/>}/>
-    <Route path='/superstars' element={<SuperStars/>}/>
+    <Route path='/superstar' element={<SuperStars/>}/>
+    <Route path='/superstar/:sname' element={<StarProfile/>}/>
     <Route path='/gmoat' element={<Gmoat/>}/>
     <Route path='/register' element={<Register/>}/>
     <Route path='/login' element={<Login/>}/>

@@ -3,24 +3,25 @@ import superstarbanner from '../assets/UNIVERSAL_CHAMPIONSHIP_BANNER.jpg'
 import superStarTile from '../assets/stonecoldtile.jpg';
 import {wwestars,aewstars} from '../data/allstars';
 import rheabanner from '../assets/rheabanner.jpg'
+import { NavLink } from 'react-router-dom';
 const SuperStars = () => {
   
-     const fetchData=async(name)=>{
-        try{
-          const response=await fetch(`http://localhost:3000/superstar/${name}`);
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          const jsonData = await response.json();
-          console.log(jsonData);
-        }
-        catch(err){
-          console.log("Error fetching data ",err);
-        }
-     }
-     const handleClick=(name)=>{
-      fetchData(name);
-     }
+    //  const fetchData=async(name)=>{
+    //     try{
+    //       const response=await fetch(`http://localhost:3000/superstar/${name}`);
+    //       if (!response.ok) {
+    //         throw new Error('Network response was not ok');
+    //       }
+    //       const jsonData = await response.json();
+    //       console.log(jsonData);
+    //     }
+    //     catch(err){
+    //       console.log("Error fetching data ",err);
+    //     }
+    //  }
+    //  const handleClick=(name)=>{
+    //   fetchData(name);
+    //  }
   
   return (
     <div className='  font-bebasNeue bg-black text-white'>
@@ -30,13 +31,15 @@ const SuperStars = () => {
       <div className='grid grid-rows-3 grid-cols-3 gap-8 md:ml-[180px] md:mt-[70px]'>
       {wwestars.map((wwestar,index)=>{
         return (
-          <button key={index} onClick={()=>{handleClick(wwestar.name)}}>
+         
+          <NavLink to={'/superstar/'+wwestar.name} key={index}>
          <div key={index} className=' text-center md:p-[10px] md:mr-[215px] md:ml-[30px] xs:p-[6px] xs:mr-[2px]  bg-white text-black hover:bg-black hover:text-white hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 cursor-pointer '>
          <img src={wwestar.imgLink} className='h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px]'/>
         {/* <span className=' md:ml-[45px] xs:ml-[35px] mx-auto'>&nbsp;{wwestar.name}</span> */}
         <span className=''>&nbsp;{wwestar.name}</span>
         </div>
-        </button>
+        </NavLink>
+       
       )
       })} 
      </div>
