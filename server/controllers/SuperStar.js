@@ -3,7 +3,7 @@ const getSuperStar=async(req,res)=>{
     try{
         const {sname}=req.params;
       const SuperStar=await Star.find({name:sname});
-      console.log(SuperStar);
+    //   console.log(SuperStar);
       res.status(200).json(SuperStar);
     }
     catch(err){

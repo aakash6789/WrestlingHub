@@ -11,15 +11,17 @@ import getSuperStar from './controllers/SuperStar.js';
 import helmet from 'helmet';
 const app=express();
 dotenv.config();
-app.use(helmet.crossOriginResourcePolicy({policy:"cross-origin"}));
-const corsOptions = {                      //
-    origin: 'http://localhost:5173',
-    methods:'GET,POST,PATCH,PUT'       //
-}; 
-app.use(cors(corsOptions));
+// app.use(helmet.crossOriginResourcePolicy({policy:"cross-origin"}));
+// const corsOptions = {                      //
+//     origin: 'http://localhost:5173',
+//     methods:'GET,POST,PATCH,PUT'       //
+    
+// }; 
+app.use(cors());
 app.use(morgan("tiny"));
 app.use(express.json());
 app.get('/',(req,res)=>{
+    // res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
     res.send("Great going!");
 })
 app.use('/superstar',starRoutes);
