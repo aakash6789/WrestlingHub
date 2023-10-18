@@ -64,3 +64,4 @@ const StarProfile = () => {
 }
 
 export default StarProfile;
+//Images fetched properly for carousel
