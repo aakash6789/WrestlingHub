@@ -58,18 +58,12 @@ const StarProfile = () => {
         setCurrIndex(currindex+1);
       }
    }
+   const htmlContent=data.description;
    
   return (
     <div className=' text-black bg-white font-robotoSlab'>
       <div className='bg-black'>
       <div className='bg-black max-w-[1400px] h-[700px] w-full m-auto py-2 px-4 relative group'>
-      {/* {data.picturePath.map((element,index)=>{
-        return(
-          <div className='w-full h-full bg-center bg-cover duration-500'>
-      <img src={'../assets/'+element} key={index} className='ml-[140px]'></img>
-      </div>
-        )
-      })} */}
       <div className=' w-full h-full rounded-2xl duration-500 relative flex justify-center'>
       <img src={'../assets/'+data.picturePath[currindex]} className='max-h-[700px]'> 
       </img>
@@ -83,12 +77,9 @@ const StarProfile = () => {
       </div>
       </div>
       
-       <h1 className='ml-[600px] text-6xl font-bebasNeue mt-[30px]'>{data.name}</h1>
+       <h1 className='ml-[630px] text-6xl font-bebasNeue mt-[30px] mr-[600px] pl-[2px] flex justify-center'>{data.name}</h1>
       <br></br>
-      {/* <div className='bg-black'>
-      <img src={'../assets/'+'da1.jpg'}    className='ml-[140px]'></img>
-      </div> */}
-      <p className='px-8'>{data.description}</p>
+     <div dangerouslySetInnerHTML={{ __html: htmlContent }} className='px-4' />
       {/* <p>{data.rank}</p> */}
       <p>{data.height}</p>
       
