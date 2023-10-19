@@ -2,7 +2,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import { useState,useEffect } from 'react';
-import { wwestars } from '../data/allstars';
+import { wwestars } from '../../server/data';
+import {BsChevronCompactLeft,BsChevronCompactRight} from 'react-icons/bs';
 
 const StarProfile = () => {
     const {sname}=useParams();
@@ -42,22 +43,54 @@ const StarProfile = () => {
          }
         fetchData(sname);
     },[])
-
+   const [currindex,setCurrIndex]=useState(0);
+   const prevInd=()=>{
+      if(currindex==0){
+       setCurrIndex(3);
+      }else{
+        setCurrIndex(currindex-1);
+      }
+   }
+   const nextInd=()=>{
+      if(currindex==3){
+       setCurrIndex(0);
+      }else{
+        setCurrIndex(currindex+1);
+      }
+   }
    
   return (
-    <div className='bg-white text-black h-[800px]'>
-      <h1>{data.name}</h1>
+    <div className=' text-black bg-white font-robotoSlab'>
+      <div className='bg-black'>
+      <div className='bg-black max-w-[1400px] h-[700px] w-full m-auto py-2 px-4 relative group'>
+      {/* {data.picturePath.map((element,index)=>{
+        return(
+          <div className='w-full h-full bg-center bg-cover duration-500'>
+      <img src={'../assets/'+element} key={index} className='ml-[140px]'></img>
+      </div>
+        )
+      })} */}
+      <div className=' w-full h-full rounded-2xl duration-500 relative flex justify-center'>
+      <img src={'../assets/'+data.picturePath[currindex]} className='max-h-[700px]'> 
+      </img>
+      </div>
+      <div>
+    <BsChevronCompactLeft size={50} onClick={prevInd} className=' hidden group-hover:block absoloute top-[50%] -translate-x-0 translate-y-[50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer absolute' />
+      </div>
+      <div>
+        <BsChevronCompactRight size={50} onClick={nextInd} className=' hidden group-hover:block absoloute top-[50%] -translate-x-0 translate-y-[50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer absolute'/>
+      </div>
+      </div>
+      </div>
+      
+       <h1 className='ml-[600px] text-6xl font-bebasNeue mt-[30px]'>{data.name}</h1>
       <br></br>
-      <h1>{data.description}</h1>
+      {/* <div className='bg-black'>
+      <img src={'../assets/'+'da1.jpg'}    className='ml-[140px]'></img>
+      </div> */}
+      <p className='px-8'>{data.description}</p>
       {/* <p>{data.rank}</p> */}
       <p>{data.height}</p>
-      {/* <p>{data.picturePath[0]}</p> */}
-      {data.picturePath.map((element,index)=>{
-        return(
-      <img src={'../assets/'+element} key={index}></img>
-        )
-
-      })}
       
     </div>
   )

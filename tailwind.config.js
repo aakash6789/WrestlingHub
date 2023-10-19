@@ -14,7 +14,8 @@ export default {
         bodyFont:["Poppins","sans-serif"],
         tittleFont:["Montserrat","sans-erif"],
         bebasNeue:["Bebas Neue","sans-serif"],
-        roboto:["Roboto","sans-serif"]
+        roboto:["Roboto","sans-serif"],
+        robotoSlab:["Roboto Slab","sans-serif"]
       },
 
     },
