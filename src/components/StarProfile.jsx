@@ -4,6 +4,9 @@ import { useParams } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import { wwestars } from '../../server/data';
 import {BsChevronCompactLeft,BsChevronCompactRight} from 'react-icons/bs';
+import {RxDotFilled} from 'react-icons/rx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Container} from 'react-bootstrap'
 
 const StarProfile = () => {
     const {sname}=useParams();
@@ -61,7 +64,7 @@ const StarProfile = () => {
    const htmlContent=data.description;
    
   return (
-    <div className=' text-black bg-white font-robotoSlab'>
+    <div className=' text-black font-robotoSlab bg-[white]'>
       <div className='bg-black'>
       <div className='bg-black max-w-[1400px] h-[700px] w-full m-auto py-2 px-4 relative group'>
       <div className=' w-full h-full rounded-2xl duration-500 relative flex justify-center'>
@@ -79,8 +82,14 @@ const StarProfile = () => {
       
        <h1 className='ml-[630px] text-6xl font-bebasNeue mt-[30px] mr-[600px] pl-[2px] flex justify-center'>{data.name}</h1>
       <br></br>
-     <div dangerouslySetInnerHTML={{ __html: htmlContent }} className='px-4' />
+     <div dangerouslySetInnerHTML={{ __html: htmlContent }} className='px-16' />
+     <br></br>
       {/* <p>{data.rank}</p> */}
+      <Container>
+      <div className="ratio ratio-16x9">
+      <iframe width="873" height="491" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="Dean Ambrose vs. Seth Rollins - WWE Championship Match: Raw, July 18, 2016"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+      </div>
+      </Container>
       <p>{data.height}</p>
       
     </div>
