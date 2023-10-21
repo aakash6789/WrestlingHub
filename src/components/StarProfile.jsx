@@ -79,18 +79,35 @@ const StarProfile = () => {
       </div>
       </div>
       </div>
-      
-       <h1 className='ml-[630px] text-6xl font-bebasNeue mt-[30px] mr-[600px] pl-[2px] flex justify-center'>{data.name}</h1>
+      <div className='flex'>
+       <h1 className='md:ml-[630px] md:text-6xl font-bebasNeue md:mt-[30px] md:mr-[300px] md:pl-[2px] md:flex md:justify-center xs:ml-[200px] xs:mt-[40px] xs:text-2xl'>{data.name}</h1>
+       <div className='flex md:mt-[50px] font-bebasNeue md:text-1xl xs:ml-[100px] xs:mt-[45px]'>
+       <span>Ranking:</span><p className='ml-[5px]' >{data.rank}</p>
+       </div>
+       </div>
       <br></br>
-     <div dangerouslySetInnerHTML={{ __html: htmlContent }} className='px-16' />
+     <div dangerouslySetInnerHTML={{ __html: htmlContent }} className='md:px-16 xs:px-8' />
      <br></br>
       {/* <p>{data.rank}</p> */}
+      {/* <div className='font-bebasNeue px-16 pb-10'>
+      <h1 className='text-6xl '>BIO</h1>
+      <div className='flex pb-2'>
+      <span>Height:</span><p className='' >{data.height}</p>
+      </div>
+      <div className='flex pb-2'>
+      <span>Weight:</span><p className='' >{data.weight}</p>
+      </div>
+      <div className='flex pb-2'>
+      <span>Ranking:</span><p className='' >{data.rank}</p>
+      </div>
+     
+      </div> */}
       <Container>
       <div className="ratio ratio-16x9">
       <iframe width="873" height="491" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="Dean Ambrose vs. Seth Rollins - WWE Championship Match: Raw, July 18, 2016"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
       </div>
       </Container>
-      <p>{data.height}</p>
+     
       
     </div>
   )
