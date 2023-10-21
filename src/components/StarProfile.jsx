@@ -81,7 +81,7 @@ const StarProfile = () => {
       </div>
       <div className='flex'>
        <h1 className='md:ml-[630px] md:text-6xl font-bebasNeue md:mt-[30px] md:mr-[300px] md:pl-[2px] md:flex md:justify-center xs:ml-[200px] xs:mt-[40px] xs:text-2xl'>{data.name}</h1>
-       <div className='flex md:mt-[50px] font-bebasNeue md:text-1xl xs:ml-[100px] xs:mt-[45px]'>
+       <div className='flex md:mt-[50px] font-bebasNeue md:text-1rem xs:ml-[100px] xs:mt-[45px]'>
        <span>Ranking:</span><p className='ml-[5px]' >{data.rank}</p>
        </div>
        </div>
