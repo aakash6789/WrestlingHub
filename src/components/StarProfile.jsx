@@ -6,9 +6,12 @@ import { wwestars } from '../../server/data';
 import {BsChevronCompactLeft,BsChevronCompactRight} from 'react-icons/bs';
 import {RxDotFilled} from 'react-icons/rx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container} from 'react-bootstrap'
+import {Container} from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 
 const StarProfile = () => {
+
+
     const {sname}=useParams();
     const [data, setData] = useState({
         name: '',
@@ -27,6 +30,7 @@ const StarProfile = () => {
               }
               const jsonData = await response.json();
             //   console.log(jsonData[0].name);
+            // onYouTubeIframeAPIReady();
               setData(prevData => ({
                 ...prevData,
                 name: jsonData[0].name,
@@ -39,6 +43,54 @@ const StarProfile = () => {
             //   console.log(data);
               console.log(data.name);
             //   console.log(data);
+            const tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            const firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+            // 3. This function creates an <iframe> (and YouTube player)
+            //    after the API code downloads.
+            let player;
+        
+            function onYouTubeIframeAPIReady() {
+              player = new window.YT.Player('player', {
+                height: '390',
+                width: '640',
+                videoId: 'YJZPk6-Vi8I',
+                playerVars: {
+                  'playsinline': 1
+                },
+                events: {
+                  'onReady': onPlayerReady,
+                  'onStateChange': onPlayerStateChange
+                }
+              });
+            }
+        
+            // 4. The API will call this function when the video player is ready.
+            function onPlayerReady(event) {
+              event.target.playVideo();
+            }
+        
+            // 5. The API calls this function when the player's state changes.
+            //    The function indicates that when playing a video (state=1),
+            //    the player should play for six seconds and then stop.
+            let done = false;
+        
+            function onPlayerStateChange(event) {
+              if (event.data === window.YT.PlayerState.PLAYING && !done) {
+                setTimeout(stopVideo, 6000);
+                done = true;
+              }
+            }
+        
+            function stopVideo() {
+              player.stopVideo();
+            }
+        
+            // Ensure the onYouTubeIframeAPIReady function is available globally
+            window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady();
+            
             }
             catch(err){
               console.log("Error fetching data ",err);
@@ -64,9 +116,58 @@ const StarProfile = () => {
    const htmlContent1=data.description.earlyLife;
    const htmlContent2=data.description.carrer;
    const htmlContent3=data.description.family;
+  //  var tag = document.createElement('script');
+
+      // tag.src = "https://www.youtube.com/iframe_api";
+      // var firstScriptTag = document.getElementsByTagName('script')[0];
+      // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      // var player;
+      // function onYouTubeIframeAPIReady() {
+      //   player = new YT.Player('player', {
+      //     height: '390',
+      //     width: '640',
+      //     videoId: 'We2FqPXo64M',
+      //     playerVars: {
+      //       'playsinline': 1
+      //     },
+      //     events: {
+      //       'onReady': onPlayerReady,
+      //       'onStateChange': onPlayerStateChange
+      //     }
+      //   });
+      // }
+
+      // 4. The API will call this function when the video player is ready.
+      // function onPlayerReady(event) {
+      //   event.target.playVideo();
+      // }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+   
+ 
+
    
   return (
     <div className=' text-black font-robotoSlab bg-[white]'>
+      <Helmet>
+        <script src="https://www.youtube.com/iframe_api" />
+        
+      </Helmet>
       <div className='bg-black'>
       <div className='bg-black max-w-[1400px] h-[700px] w-full m-auto py-2 px-4 relative group'>
       <div className=' w-full h-full rounded-2xl duration-500 relative flex justify-center'>
@@ -109,13 +210,17 @@ const StarProfile = () => {
       </div>
      
       </div> */}
-      <Container>
-      <div className="ratio ratio-16x9">
-      <iframe width="873" height="491" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="Dean Ambrose vs. Seth Rollins - WWE Championship Match: Raw, July 18, 2016"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-      </div>
-      </Container>
-     
+      {/* <Container>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/We2FqPXo64M?si=xjbVM6kGXi6vBEF6" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+      </Container> */}
       
+
+      {/* <iframe id="ytplayer" type="text/html" width="640" height="360"
+  src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+  ></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/v=We2FqPXo64M?autoplay=1&origin=http://example.com" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>       */}
+  <div id="player"></div>
+  {/* <iframe id='player' width="560" height="315" src="https://www.youtube.com/embed/We2FqPXo64M?si=l46R340besKXlz0-" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> */}
     </div>
   )
 }
