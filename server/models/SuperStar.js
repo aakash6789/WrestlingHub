@@ -3,9 +3,12 @@ import mongoose from "mongoose";
 const starSchema=mongoose.Schema({
     name:{type:String},
     picturePath:{type:Array},
-    description:{type:String},
-    height:{type:String},
-    weight:{type:String},
+    description:{
+        earlyLife:{type:String},
+        carrer:{type:String},
+        family:{type:String}
+        
+    },
     rank:{type:Number}
 
 })

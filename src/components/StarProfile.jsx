@@ -13,7 +13,7 @@ const StarProfile = () => {
     const [data, setData] = useState({
         name: '',
         picturePath: [],
-        description: '',
+        description: {},
         height: '',
         weight: '',
         rank: 0
@@ -61,7 +61,9 @@ const StarProfile = () => {
         setCurrIndex(currindex+1);
       }
    }
-   const htmlContent=data.description;
+   const htmlContent1=data.description.earlyLife;
+   const htmlContent2=data.description.carrer;
+   const htmlContent3=data.description.family;
    
   return (
     <div className=' text-black font-robotoSlab bg-[white]'>
@@ -86,7 +88,12 @@ const StarProfile = () => {
        </div>
        </div>
       <br></br>
-     <div dangerouslySetInnerHTML={{ __html: htmlContent }} className='md:px-16 xs:px-8' />
+      <h1 className="font-bebasNeue md:px-16 md:text-3xl py-4 mt-[100px] xs:ml-[30px] md:mr-[1250px] md:ml-[3px] xs:mr-[430px]">Early Life</h1>
+     <div dangerouslySetInnerHTML={{ __html: htmlContent1 }} className='md:px-16 xs:px-8' />
+      <h1 className="font-bebasNeue md:px-16 md:text-3xl py-4 xs:ml-[30px] md:mr-[1250px] md:ml-[3px] xs:mr-[430px]">Carrer</h1>
+     <div dangerouslySetInnerHTML={{ __html: htmlContent2 }} className='md:px-16 xs:px-8' />
+      <h1 className="font-bebasNeue md:px-16 md:text-3xl py-4 xs:ml-[30px] md:mr-[1250px] md:ml-[3px] xs:mr-[430px]">Family</h1>
+     <div dangerouslySetInnerHTML={{ __html: htmlContent3 }} className='md:px-16 xs:px-8' />
      <br></br>
       {/* <p>{data.rank}</p> */}
       {/* <div className='font-bebasNeue px-16 pb-10'>

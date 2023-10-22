@@ -35,7 +35,7 @@ import ospraytile from '../assets/ospray.jpg'
         alt:'1'
     },
     {
-        name:'Aj styles',
+        name:'Aj Styles',
         imgLink:stylestile,
         alt:'1'
     },
