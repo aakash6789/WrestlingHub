@@ -9,7 +9,8 @@ const starSchema=mongoose.Schema({
         family:{type:String}
         
     },
-    rank:{type:Number}
+    rank:{type:Number},
+    videoId:{type:String}
 
 })
 const Star=mongoose.model("Star",starSchema);

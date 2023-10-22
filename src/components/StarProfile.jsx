@@ -19,7 +19,8 @@ const StarProfile = () => {
         description: {},
         height: '',
         weight: '',
-        rank: 0
+        rank: 0,
+        videoId:'',
       });
     useEffect(()=>{
         const fetchData=async(sname)=>{
@@ -38,7 +39,9 @@ const StarProfile = () => {
                 description: jsonData[0].description,
                 height: jsonData[0].height,
                 weight: jsonData[0].weight,
-                rank: jsonData[0].rank
+                rank: jsonData[0].rank,
+                videoId:jsonData[0].videoId
+
               }));
             //   console.log(data);
               console.log(data.name);
@@ -56,7 +59,7 @@ const StarProfile = () => {
               player = new window.YT.Player('player', {
                 height: '390',
                 width: '640',
-                videoId: 'YJZPk6-Vi8I',
+                videoId: `${jsonData[0].videoId}`,
                 playerVars: {
                   'playsinline': 1
                 },
@@ -116,48 +119,7 @@ const StarProfile = () => {
    const htmlContent1=data.description.earlyLife;
    const htmlContent2=data.description.carrer;
    const htmlContent3=data.description.family;
-  //  var tag = document.createElement('script');
 
-      // tag.src = "https://www.youtube.com/iframe_api";
-      // var firstScriptTag = document.getElementsByTagName('script')[0];
-      // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      // var player;
-      // function onYouTubeIframeAPIReady() {
-      //   player = new YT.Player('player', {
-      //     height: '390',
-      //     width: '640',
-      //     videoId: 'We2FqPXo64M',
-      //     playerVars: {
-      //       'playsinline': 1
-      //     },
-      //     events: {
-      //       'onReady': onPlayerReady,
-      //       'onStateChange': onPlayerStateChange
-      //     }
-      //   });
-      // }
-
-      // 4. The API will call this function when the video player is ready.
-      // function onPlayerReady(event) {
-      //   event.target.playVideo();
-      // }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
    
  
 
@@ -219,7 +181,8 @@ const StarProfile = () => {
   src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
   ></iframe>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/v=We2FqPXo64M?autoplay=1&origin=http://example.com" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>       */}
-  <div id="player"></div>
+  <h1 className='text-center font-bebasNeue text-4xl'>Best match</h1>
+  <div id="player" className='md:ml-[440px] md:mb-[130px] md:mt-[50px] xs:ml-[0px] '></div>
   {/* <iframe id='player' width="560" height="315" src="https://www.youtube.com/embed/We2FqPXo64M?si=l46R340besKXlz0-" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> */}
     </div>
   )
