@@ -119,11 +119,6 @@ const StarProfile = () => {
    const htmlContent1=data.description.earlyLife;
    const htmlContent2=data.description.carrer;
    const htmlContent3=data.description.family;
-
-   
- 
-
-   
   return (
     <div className=' text-black font-robotoSlab bg-[white]'>
       <Helmet>

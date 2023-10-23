@@ -4,7 +4,7 @@
         name:'Roman Reigns',
      
         
-        picturePath:['rr1.webp','rr2.jpg','rr3.jpg','rr4.jpg'],
+        picturePath:['rr3.jpg','rr2.jpg','rr1.webp','rr4.jpg'],
         description:{
             earlyLife:`<p>Roman Reigns was born in Pensacola, Florida on the 25th of May in 1985 as Leati Joseph Anoai, which is his real name. He was born into the decorated Samoan family who has a storied history in the world of pro wrestling. His father Sika was a professional wrestler and so were the various other members of his family.
             Reigns attended Pensacola Catholic High School and Escambia High School and then went on to Georgia Institute of Technology. Anoa' I has cited Bret 'The Hitman' Hart as his wrestling idol.</p>`,
@@ -47,7 +47,7 @@
     {
         name:'Seth Rollins',
         
-        picturePath:['sr1.jpg','sr2.jpg','sr3.jpg','sr4.jpg'],
+        picturePath:['sr2.jpg','sr1.jpg','sr3.jpg','sr4.jpg'],
         description:{
             earlyLife:`Colby Lopez, known by his ring name Seth Rollins, was born on May 28, 1986, in Davenport, Iowa. Growing up, he was a fan of professional wrestling and dreamed of becoming a wrestler himself one day. As a teenager, he trained under Danny Daniels and competed on the independent wrestling circuit. He is of German, Armenian, and Irish descent. His surname Lopez comes from the surname of his Mexican-American stepfather, whom he considers his real father.`,
             carrer:`<p>
@@ -82,7 +82,7 @@
     {
         name:'Dean Ambrose',
         
-        picturePath:['da1.jpg','da2.jpg','da3.jpg','da4.jpg'],
+        picturePath:['da2.jpg','da1.jpg','da3.jpg','da4.jpg'],
         description:{
             earlyLife:`<p>
             Jonathan David Good was born on 7th December, 1985 in Cincinnati. He had a rough childhood. Growing up, his favourite wrestler was Bret Hart. He starteed studying in Amelia High School, but dropped from it as he wanted to become a wrestler. He then started working in restaurants and industries for minimum wage jobs. He was arrested multiple times for shoplifting.
@@ -133,6 +133,34 @@
         rank:4,
         videoId:'nJBsTH8P_5A'
     },
+    {
+        name:'Sami Zayn',
+        picturePath:['sz1.jpg','sz2.jpg','sz3.jpg','sz4.jpg'],
+        description:{
+             earlyLife:`<p>
+             Sami Zayn was born in 1984 on the 12th of July in Laval, Quebec, Canada. He is Canadian by nationality and both of his parents originally belonged to Syria before moving to Canada in the 1970s.Zayn was trained by Jerry Tuite and Savio Vega. He made his wrestling debut in Quebec as Stevie McFly. He later changed his name to El Generico. It was through independent promotions that Zayn became a household name and gained initial success. Zayn made his name by wrestling on the independent circuits for a decade before signing with WWE.
+             </p>`,
+             carrer:`<p>
+             Zayn wrestled for several promotions between 2002-2013 such as DDT Pro Wrestling, Chikara, EWR, GBG Wrestling, ROH, IWS, Dragon Gate, Evolve, PWG, and WXW. Zayn began the most talked about rivalry with his best friend, Kevin Steen, which crossed several promotions, such as ROH and WWE.Zayn signed with WWE and began working for NXT. Zayn was an immediate baby face and won several matches. Zayn began a rivalry with Cesaro, which he won. After losing several championship matches, Zayn captured the NXT Championship from Neville at TakeOver R Evolution.
+             The show ended when Kevin Owens attacked Zayn and reignited their rivalry. Zayn lost the title in two months due to referee stoppage. Zayn made his RAW debut in Canada to face US Champion John Cena. Before the match, Zayn suffered a shoulder injury. The match ended and Zayn was sidelined for a few months.<br></br>
+             At Royal Rumble, Zayn returned and eliminated Kevin Owens. The two began their rivalry with each superstar gaining victories over each other. At Battleground, Zayn defeated Owens and ended their rivalry. Zayn began his rivalry with Chris Jericho. At Clash of Champions, Zayn lost to Jericho due to interference by Owens.
+             After Royal Rumble 2017, Zayn began his rivalry with Braun Strowman and lost. Zayn faced Samoa Joe at Fastlane and lost. On RAW, Zayn defeated Owens in a no disqualification match to save his job and qualified for Andre The Giant Memorial Battle Royal at WrestleMania 33, which he lost.
+             At Superstar Shake-Up, Zayn was drafted to SmackDown. Zayn took part in the Money in the Bank ladder match and lost. Zayn returned at Hell in A Cell and assisted Kevin Owens against Shane McMahon. At Clash of Champions, Zayn and Owens defeated Nakamura and Orton. At Royal Rumble 2018, they failed to capture WWE Championship from AJ Styles. The same night, Zayn entered the rumble and lost.In March, Zayn and Ownes attacked SmackDown General Manager Daniel Bryan, which started their feud. At WrestleMania 34, Zayn and Owens faced Bryan and McMahon and lost. The two were hired by Stephanie McMahon on RAW.<br></br>
+             In March, Zayn and Ownes attacked SmackDown General Manager Daniel Bryan, which started their feud. At WrestleMania 34, Zayn and Owens faced Bryan and McMahon and lost. The two were hired by Stephanie McMahon on RAW.After Nakamura lost the title to Strowman, the trio faced Strowman for the title at Elimination Chamber in a 3-1 handicap match. Zayn, Nakamura, and Cesaro won, but Zayn was crowned as the new Intercontinental Champion. Zayn defeated Daniel Bryan to retain his title at WrestleMania 36. Zayn took some time off due to the ongoing situation.
+             Zayn made his return in August and attacked Intercontinental Champion Jeff Hardy. At Clash of Champions, Zayn defeated Styles and Hardy to become the Undisputed Intercontinental Champion. Zayn dropped the title to Big E on SmackDown. Zayn spent the year facing The Mysterios. Zayn won a battle royal to challenge for the Universal Championship and lost.After Nakamura lost the title to Strowman, the trio faced Strowman for the title at Elimination Chamber in a 3-1 handicap match. Zayn, Nakamura, and Cesaro won, but Zayn was crowned as the new Intercontinental Champion. Zayn defeated Daniel Bryan to retain his title at WrestleMania 36. Zayn took some time off due to the ongoing situation.
+             Zayn made his return in August and attacked Intercontinental Champion Jeff Hardy. At Clash of Champions, Zayn defeated Styles and Hardy to become the Undisputed Intercontinental Champion. Zayn dropped the title to Big E on SmackDown. Zayn spent the year facing The Mysterios. Zayn won a battle royal to challenge for the Universal Championship and lost.
+             <br></br>
+             At the Raw is XXX episode, The Bloodline held the trial of Sami Zayn to decide whether he is with the Bloodline or against them. Paul Heyman claimed that Zayn was in league with Kevin Owens and would betray the Bloodline. Reigns was convinced by this and asked Solo Sikoa to take him out only for Jey to stop him and play a videotape which showed Zayn's loyalty. Reigns declared Zayn "Not Guilty...... for now." He ordered Sami to not show him his face till Royal Rumble. The Usos then had a match against The Judgement Day for the Raw Tag team championship. Jimmy apparently got hurt during the match following which he was replaced by Sami Zayn. Jey and Zayn hit the 1D for the win.
+             At Royal Rumble 2023, Reigns defeated Owens, and then the after match beatdown started. Reigns ordered Zayn to hit the half conscious Owens with a chair. In a turn of events, Zayn hit Reigns in the back with the chair, betraying the bloodline and earned himself a beatdown by the Bloodline. Jey Uso then walked away in the middle of the beatdown, not opting to hit the unconscious Zayn.The following Raw, Zayn ambushed Reigns and challenged Reigns for a title shot at Elimination Chamber. At the event, Zayn failed to capture the title and was the victim of a beatdown by The Bloodline before Kevin Owens made the save. The duo would reconcile with each other on the March 17th episode of SmackDown and then challenged The Usos for a match at WrestleMania for the Undisputed Tag Team Championship.
+             </p>`,
+             family:`<p>
+             Not much is known about the private life of Sami Zayn as he is a very private person. However, it is known that he is married and also has a son. His wife's name is Khadijah Sebei and she was born in Montreal, Canada.Sami Zayn was born in 1984 on the 12th of July in Laval, Quebec, Canada. He is Canadian by nationality and both of his parents originally belonged to Syria before moving to Canada in the 1970s.
+             </p>`
+        },
+        rank:5,
+        videoId:'6-m9UW4lTNk'
+
+    }
   
  
 ];
