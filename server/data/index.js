@@ -163,7 +163,7 @@
     },
     {
         name:'Hulk Hogan',
-        picturePath:['hh1.jpg','hh2.jpg','hh3.jpg','h4.jpg'],
+        picturePath:['hh1.jpg','hh2.jpg','hh3.jpg','hh4.jpg'],
         description:{
             earlyLife:`<p>
             Hulk Hogan (real name Terry Gene Bollea) is synonymous with professional wrestling as one of the greatest icons of the business. He is considered by many as the first "face of WWE"(succeeded by Stone Cold, The Rock & John Cena) and took the company into a new era, 'The Golden Era' and the wrestling boom period. 
@@ -204,8 +204,9 @@
             Most recently, Hogan expanded his family as he tied the knot with his girlfriend Sky Daily in a small ceremony in Clearwater, Florida, according to TMZ.
             
             Like Hogan, Daily is a parent as well. Hogan told TMZ that Daily has three children of her own and said he immediately got along great with all of them.</p>`,
+        },
+        rank:6,
             videoId:`iPe8GUO8F-Q`
-        }
     }
   
  
