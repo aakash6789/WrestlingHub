@@ -7,6 +7,7 @@ import morgan from 'morgan';
 import { wwestars } from './data/index.js';
 import Star from './models/SuperStar.js';
 import starRoutes from './routes/SuperStar.js';
+import registerRoutes from './routes/RegisterAuth.js'
 import getSuperStar from './controllers/SuperStar.js';
 import helmet from 'helmet';
 import path from 'path';
@@ -30,6 +31,7 @@ app.get('/',(req,res)=>{
     res.send("Great going!");
 })
 app.use('/superstar',starRoutes);
+app.use('/auth',registerRoutes);
 //DB CONNECTION
 const port=process.env.PORT;
 mongoose.connect(process.env.MONGO_URL,{

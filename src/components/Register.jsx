@@ -17,6 +17,7 @@ const Register = () => {
       {/* <img src={loginbg} className='opacity-[0.8] absolute z-[-4] '/> */}
         <h1 className='md:text-8xl font-bebasNeue md:ml-[650px] md:mr-[630px] text-yellow-200 xs:ml-[210px] xs:text-4xl xs:mr-[200px] '>SIGN UP</h1>
         {/* <h1 className='text-6xl font-bebasNeue mt-[160px] ml-[660px] mr-[705px]'>SIGN UP</h1> */}
+       
       <div className=' bg-white text-black md:w-[720px] md:h-[860px] md:ml-[400px] md:pt-[80px] md:mt-[40px] shadow-md md:shadow-white xs:h-[910px]'>
       <form action="" className='xs:mt-[30px] xs:pt-[30px] md:mt-[0px]' onSubmit={handleSubmit(onSubmit)}>
       <div className='md:text-left xs:text-center'>
@@ -75,9 +76,10 @@ const Register = () => {
         </label>
         </div>
         <p className='md:ml-[240px] md:pl-[6px] md:mt-[15px] md:mr-[240px] xs:mt-[50px] xs:ml-[130px]'>Have an account? <NavLink to='/login' className='text-blue-400' >Login </NavLink> instead</p>
-        <button type="submit" className='bg-black text-white md:mt-[25px] md:w-[660px] md:ml-[30px] p-[0.45rem] font-bebasNeue hover:bg-black hover:text-yellow-200 xs:mt-[20px] xs:ml-[60px] xs:w-[386px] xs:mb-[20px]'>Sign up</button>
+        <button type="submit" className='bg-black text-white md:mt-[25px] md:w-[660px] md:ml-[30px] p-[0.45rem] font-bebasNeue md:hover:bg-black md:hover:text-yellow-200 xs:mt-[20px] xs:ml-[60px] xs:w-[386px] xs:mb-[20px]'>Sign up</button>
       </form>
       </div>
+   
     </div>
   )
 }
