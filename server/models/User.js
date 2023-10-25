@@ -26,8 +26,6 @@ const userSchema=new mongoose.Schema({
     },
    phoneNo:{
     type:Number,
-    min:10,
-    max:10
    }
 })
 const User=mongoose.model("User",userSchema);

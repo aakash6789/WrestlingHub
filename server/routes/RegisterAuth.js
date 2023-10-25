@@ -1,5 +1,5 @@
 import express from "express";
 const router=express.Router();
 import { register } from "../controllers/Auth.js";
-router.post("/register");
+router.post("/register",register);
 export default router;
