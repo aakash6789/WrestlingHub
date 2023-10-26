@@ -19,17 +19,18 @@ const Hero2 = () => {
         <img src={superStarTile} className=' h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px]'/>
        <span className='md:ml-[68px] xs:ml-[35px]'>SUPERSTARS</span></div>
        </NavLink>
+       <NavLink to='/rivalries'>
+       <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>
+        <img src={rivalriesTile} className=' h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px] '/>
+        <span className='md:ml-[75px] ml-[120px] xs:ml-[40px]'>Rivalries</span></div>
+        </NavLink>
        <NavLink to='/gmoat'>
        <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>
         <img src={gmoatTile} className='h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px]'/>
         {isAboveSmallScreens?<span className='md:ml-[20px] xs:ml-[10px] '> Greatest matches of all time</span>:<span className='md:ml-[20px] xs:ml-[10px] '> Greatest matches of <span className='xs:ml-[38px]'>all time</span></span>}
         </div>
        </NavLink>
-       <NavLink to='/rivalries'>
-       <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>
-        <img src={rivalriesTile} className=' h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px] '/>
-        <span className='md:ml-[75px] ml-[120px] xs:ml-[40px]'>Rivalries</span></div>
-        </NavLink>
+     
       </div>
       <div className='text-white mt-[150px] pt-[7px]'>
         <span className='text-5xl md:ml-[700px] md:mt-[2px] xs:ml-[200px]'>Shows</span>
