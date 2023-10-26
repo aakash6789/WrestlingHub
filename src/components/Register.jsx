@@ -61,7 +61,7 @@ const formData={
       {flag===1?<Login/>:(
     <div className='md:h-[1200px] md:pt-[100px] text-white bg-black xs:h-[1000px]'>
       {/* <img src={loginbg} className='opacity-[0.8] absolute z-[-4] '/> */}
-        <h1 className='md:text-8xl font-bebasNeue md:ml-[650px] md:mr-[630px] text-yellow-200 xs:ml-[210px] xs:text-4xl xs:mr-[200px] '>SIGN UP</h1>
+        <h1 className='md:text-8xl font-bebasNeue md:ml-[650px] md:mr-[630px] text-yellow-200 xs:ml-[225px] xs:text-4xl xs:mr-[150px] '>SIGN UP</h1>
         {/* <h1 className='text-6xl font-bebasNeue mt-[160px] ml-[660px] mr-[705px]'>SIGN UP</h1> */}
        
       <div className=' bg-white text-black md:w-[720px] md:h-[900px] md:ml-[400px] md:pt-[80px] md:mt-[40px] shadow-md md:shadow-white xs:h-[930px]'>
