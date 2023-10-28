@@ -252,6 +252,58 @@
         },
         rank:7,
         videoId:`u_ykkKM4vDg`
+    },{
+        name:'Undertaker',
+        picturePath:['u1.jpg','u2.jpg','u3.jpg','u4.jpg'],
+        description:{
+            earlyLife:`<p>
+            In 1987, he began training as a professional wrestler. Later, he made his debut at WCCW against Bruiser Brody. In 1989, he joined WCW as Mean Mark. Calaway spent months teaming up with different wrestlers and failed to make an impact which led him to move to WWF.
+            </p>`,
+            carrer:`<p>
+            In October, Calaway signed with WWF and began working on his character. Initially, Calaway was supposed to debut as The Gobbledy Gooker, but they scrapped the plans. At Survivor Series, he made his debut at The Undertaker. Taker spent the initial year winning matches by defeating jobbers and enhancement talent. At WrestleMania VII, he defeated Jimmy Snuka.
+            
+            
+            
+            A year after his debut, The Undertaker won the WWF Championship by defeating Hulk Hogan. However, he lost the title back to Hogan in less than a week. After a few weeks, Taker turned fan favorite when he began feuding with Jake Roberts. At WrestleMania VIII, Taker defeated Roberts. At WrestleMania IX, he defeated Giant Gonzalez.<br></br>
+            <br></br>
+            In 1993, Taker began with Yokozuna, where they exchanged victories over each other. After the feud, Taker took some time off to allow a back injury to heal. In 1994, Ted DiBiase introduced a fake Undertaker at WrestleMania X. Over the coming months, both Taker's feuded and the real Undertaker won. After the feud, Taker spent the year feuding with Yokozuna and The Million Dollar Corporation.
+            
+            
+            
+            At WrestleMania XI, Taker defeated King Kong Bundy. In 1996, Diesel cost Taker the WWF Championship during his match with Bret Hart. At WrestleMania XII, Taker defeated Diesel. After Mania, Taker began feuding with Mankind. At SummerSlam, Mankind defeated Taker in the first-ever boiler room match. After Bearer's betrayal, Taker defeated Mankind at In Your HouseIn 1997, Taker began feuding with Sycho Sid. At WrestleMania XIII, Taker won his second WWF Championship from Sid. At SummerSlam, Taker lost the title to Bret Hart. After losing the title, he began feuding with Bearer. At Bad Blood, Kane made his debut and attacked Taker. The feud went on for months and the two faced each other at WrestleMania. At Fully Loaded, Taker and Austin won the WWF Tag Team Championship.
+            
+            
+            
+            Later, Taker teamed up with Kane and feuded with Austin. By the end of the year, Taker and Bearer formed The Ministry of Darkness. The stable later added Acolytes, The Brood, and Vicesar and joined The Corporation. At Over the Edge, The Undertaker won his third WWF Championship. After losing the title, the alliance between The Corporation and the Ministry of Darkness ended.<br></br>
+            <br></br>
+            By the end of 1999, Taker took some time off to heal his groin injury. In May, Taker changed his appearance and debuted a new character called The American Badass. After returning, Taker feuded with Kane, Triple H, and The Rock. At WrestleMania XVII, Taker defeated Triple H. Later, Kane and Taker won the WWF Tag Team Championship from Edge and Christian. During the Invasion angle, Taker sided with WWF and won.
+            
+            
+            
+            In 2002, Taker feuded with Ric Flair. At WrestleMania XVIII, Taker defeated Flair. At Judgement Day, Taker defeated Hogan to win the WWE Undisputed Championship. After losing the title, Taker began feuding with Brock Lesnar and lost. In 2003, Taker began feuding with Big Show. At WrestleMania XIX, Taker defeated A-Train and Big Show. Over the rest of the year, The Undertaker feuded with John Cena and Kane.During his feud with Kane, Taker was buried alive and took some time off. In 2004, Taker returned at WrestleMania XX and defeated Kane. After his return, Taker spent the year feuding with Booker T, JBL, and Heidenreich. In 2005, he began feuding with Randy Orton. At WrestleMania XXI, Taker defeated Randy Orton. After Mania, Taker feuded with Muhammad Hassan but they dropped the story due to a real-life incident.
+            
+            
+            
+            At SummerSlam, Orton defeated Taker. In December, Taker defeated Orton in a Hell in a Cell match to end their feud. In 2006, after losing to Kurt Angle, Mark Henry challenged Taker. At WrestleMania XXII, Taker defeated Henry in a casket match. Over the year, Taker feuded with Mark Henry, The Great Khali, Mr. Kennedy, and MVP. In 2007, Taker won the Royal Rumble match. At WrestleMania XXIII, Taker defeated Batista to win the World Heavyweight Championship.<br></br>
+            <br></br>
+            After having two matches end in a draw, Taker got cashed in by Edge and lost the World Heavyweight Championship. In September, Taker returned and reignited his feud with Batista. At Survivor Series, Edge returned and cost Taker the match. In 2008, Taker won the Elimination Chamber and became the number one contender.
+            
+            
+            
+            At WrestleMania XXIV, Taker won his second World Heavyweight Championship by defeating Edge. At One Night Stand, Edge defeated Taker in a TLC match. A few months later, Taker returned and faced Edge in a Hell in a Cell match at SummerSlam. Taker spent the rest of the year feuding with Big Show, Jeff Hardy, Vladamir Kozlov, and Triple H.In 2009, Taker entered the Elimination Chamber and lost to Triple H. At WrestleMania XXV, Taker defeated Shawn Michaels. At SummerSlam, Taker returned after CM Punk defeated Jeff Hardy. In October, Taker won his third World Heavyweight Championship by defeating CM Punk. After months of defending the title, Taker lost the title inside Elimination Chamber. During the match, Shawn Michaels interfered and delivered a Sweet Chin Music. After the PPV, Michaels challenged Taker in a Streak vs Career match.In 2009, Taker entered the Elimination Chamber and lost to Triple H. At WrestleMania XXV, Taker defeated Shawn Michaels. At SummerSlam, Taker returned after CM Punk defeated Jeff Hardy. In October, Taker won his third World Heavyweight Championship by defeating CM Punk. After months of defending the title, Taker lost the title inside Elimination Chamber. During the match, Shawn Michaels interfered and delivered a Sweet Chin Music. After the PPV, Michaels challenged Taker in a Streak vs Career match.In 2009, Taker entered the Elimination Chamber and lost to Triple H. At WrestleMania XXV, Taker defeated Shawn Michaels. At SummerSlam, Taker returned after CM Punk defeated Jeff Hardy. In October, Taker won his third World Heavyweight Championship by defeating CM Punk. After months of defending the title, Taker lost the title inside Elimination Chamber. During the match, Shawn Michaels interfered and delivered a Sweet Chin Music. After the PPV, Michaels challenged Taker in a Streak vs Career match.Later, he began feuding with Triple H where he lost at Super Show Down. In October, Brothers of Destruction reunited to face DX. At Crown Jewel, DX defeated the Brothers of Destruction. In 2019, Taker returned at Super Show Down and defeated Goldberg. During the match, Taker was injured due to a botched move. At Extreme Rules, Taker and Roman Reigns teamed up and defeated Drew McIntyre and Shane McMahon.<br></br>
+            <br></br>
+            In 2020, Taker returned at Saudi and began feuding with AJ Styles. At Elimination Chamber, Taker interfered between Styles and Black. At WrestleMania 36, Taker defeated AJ Styles in a Bone Yard match. It was Taker's last match for the company. In November, Taker announced his official retirement at Survivor Series. In 2022, Vince McMahon inducted The Undertaker into the WWE Hall of Fame.
+            
+            Recently WWE has announced a new show in Nashville called 1 deadMAN SHOW. This show will feature Undertaker sharing unheard stories and answer the questions of the audience.
+            </p>`,
+            family:`<p>Mark William Calaway was born on 24th March, 1965 in Houston Texas. He studied in Waltrip High School. He was interested in playing Basketball and Football. After completing school in 1083, Mark attended Angelina College in Lufkin, Texas and enrolled in Texas Wesleyan University.He dropped out of University to pursue his career in sports.
+
+
+
+            Mark has been married to Michelle McCool since 2010. The Undertaker has four children, Vincent, Kaia Faith, Gracie and Chasey.</p>`
+        },
+        rank:8,
+        videoId:`cKDF5M3vpGU`
     }
   
  
