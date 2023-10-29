@@ -10,9 +10,51 @@ const Login = () => {
         formState: { errors }
       } = useForm();
       const { reset } = useForm();
-      const onSubmit = (data) => {
-        console.log(data);
+      const formData={
+        email:"",
+        password:"",  
       }
+      const [text,setText]=useState("");
+      const onError=()=>{
+        console.log("enter again");
+        setText("Some details are missing, please enter all the details");
+      }
+            const onSubmit=(data)=>{
+               setText("");
+             for(let prop in formData){
+              // console.log(prop);
+               formData[prop]=data[prop];
+               }
+              //  console.log(formData);
+               callLog();
+      
+            }
+
+            const callLog=async(req,res)=>{
+              const formDataJson=JSON.stringify(formData);
+               const savedUserResponse=await fetch(
+                "http://localhost:3000/auth/login",{
+                  method:"POST",
+                  headers:{
+                    'Content-Type':'application/json'
+                  },
+                  body:formDataJson
+                }
+               ).then(res=>{
+                if(res.status===200){
+                  setText("Login successfull");
+                }
+                if(res.status===404){
+                  setText("User does not exist");
+                }
+                if(res.status===401){
+                  setText("Invalid credentials.");
+                }
+               })
+               .catch(err=>{
+                 console.log("Error is:",err);
+               })
+            } 
   return (
     <div className='bg-black md:h-[640px] xs:h-[532px]'>
              <h1 className='md:text-8xl font-bebasNeue md:ml-[655px] md:mr-[630px] text-yellow-200 xs:ml-[225px] xs:text-4xl xs:mr-[215px] xs:pl-[12px]'>SIGN IN</h1>
@@ -52,6 +94,7 @@ const Login = () => {
         </div>
     
         <p className='md:ml-[200px] md:pl-[6px] md:mt-[15px] md:mr-[200px] xs:mt-[50px] xs:ml-[110px] xs:mr-[135px]'>Don't have an account? <NavLink to='/register' className='text-blue-400' >Register </NavLink> instead</p>
+        {text && (<p className='text-red-500 text-center pt-[20px]'>{text}</p>)}
         <button type="submit" className='bg-black text-white md:mt-[25px] md:w-[660px] md:ml-[30px] p-[0.45rem] font-bebasNeue hover:bg-black hover:text-yellow-200 xs:mt-[20px] xs:ml-[70px] xs:w-[386px] xs:mb-[20px]'>Sign in</button>
       </form>
       </div>
