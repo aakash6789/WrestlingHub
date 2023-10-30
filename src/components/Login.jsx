@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import loginbg from '../assets/login3.jpeg'
 import {useForm} from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate=useNavigate();
     const {
         register,
         handleSubmit,
@@ -103,3 +105,4 @@ const Login = () => {
 }
 
 export default Login
+//Token creation sucessfull
