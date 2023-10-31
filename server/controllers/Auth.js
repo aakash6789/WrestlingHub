@@ -2,6 +2,7 @@ import User from "../models/User.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from 'dotenv';
+import cookie from 'cookie';
 const register=async(req,res)=>{
     const saltRounds=10;
     try{
@@ -40,9 +41,10 @@ const login=async(req,res)=>{
       console.log('User does not exist');
       return res.status(404).send("User does not exist");
     }
-    const isMatch = bcrypt.compare(password, findUser.password);
-    if (!isMatch) return res.status(401).json({ msg: "Invalid credentials." });
+    const isMatch = await bcrypt.compare(password, findUser.password);
+    if (!isMatch) {return res.status(401).json({ msg: "Invalid credentials." });}
     const token = jwt.sign({ id: findUser._id }, process.env.JWT_SECRET);
+    res.cookie('jwt',token,{httpOnly:'true',maxAge:3*24*60*60*1000});
     findUser.password=undefined;
     res.status(200).json({ token, findUser });
 

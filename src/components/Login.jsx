@@ -43,13 +43,14 @@ const Login = () => {
                   body:formDataJson
                 }
                ).then(res=>{
+                 console.log(res);
                 if(res.status===200){
                   setText("Login successfull");
                 }
-                if(res.status===404){
+                else if(res.status===404){
                   setText("User does not exist");
                 }
-                if(res.status===401){
+                else if(res.status===401){
                   setText("Invalid credentials.");
                 }
                })
