@@ -2,7 +2,8 @@ import User from "../models/User.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from 'dotenv';
-import cookie from 'cookie';
+import cookieParser from 'cookie-parser';
+
 const register=async(req,res)=>{
     const saltRounds=10;
     try{
@@ -43,14 +44,18 @@ const login=async(req,res)=>{
     }
     const isMatch = await bcrypt.compare(password, findUser.password);
     if (!isMatch) {return res.status(401).json({ msg: "Invalid credentials." });}
-    const token = jwt.sign({ id: findUser._id }, process.env.JWT_SECRET);
-    res.cookie('jwt',token,{httpOnly:'true',maxAge:3*24*60*60*1000});
     findUser.password=undefined;
-    res.status(200).json({ token, findUser });
-
+    const token = jwt.sign({ id: findUser._id }, process.env.JWT_SECRET); 
+    // res.cookie('jwt', token, {  
+    //   httpOnly: true,
+    //   maxAge: 3 * 24 * 60 * 60 * 1000,
+    //   domain:'http://localhost:5173',
+    //   path:'/login'
+    // });
+    res.status(200).json(token); 
+    
   }catch(err){
     res.status(404).json({message:err.message});
 }
-
 }
 export {register,login};

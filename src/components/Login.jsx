@@ -4,6 +4,7 @@ import {useForm} from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
+
 const Login = () => {
   const navigate=useNavigate();
     const {
@@ -40,12 +41,18 @@ const Login = () => {
                   headers:{
                     'Content-Type':'application/json'
                   },
+                  credentials:'include',
                   body:formDataJson
                 }
                ).then(res=>{
                  console.log(res);
                 if(res.status===200){
-                  setText("Login successfull");
+                  res.json().then((result) => {
+                      localStorage.setItem('jwt',`${result}`);
+                    console.log('Promise result:', result);
+                  });
+                  // localStorage.setItem('jwt',`${res[0].token}`);
+                  location.assign('/');
                 }
                 else if(res.status===404){
                   setText("User does not exist");
