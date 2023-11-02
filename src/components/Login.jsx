@@ -7,10 +7,7 @@ import useAuth from '../hooks/useAuth';
 
 
 const Login = () => {
-  const {setAuth}=useAuth();
-  const navigate=useNavigate();
-  const location=useLocation();
-  const from=location.state?.from?.pathname || "/";
+  const {user,setUser}=useAuth();
     const {
         register,
         handleSubmit,
@@ -54,6 +51,8 @@ const Login = () => {
                 if(res.status===200){
                   const data = await res.json(); // Parse the JSON response
                   const token = data.token; // Access the token property from the response data
+                 await setUser(data.findUser);
+                 console.log(user);
                   console.log('Token:', token);
                  localStorage.setItem('jwt',`${token}`);
                   setText("Logged In")

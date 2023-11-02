@@ -23,11 +23,9 @@ const Hero2 = () => {
       }
      ).then(res=>{
        console.log(res);
-       if(res.status==200){
-            location.assign('/gmoat');
-            
-       }else{
-        location.assign('/login');
+       if(res.status!=200){
+            // location.assign('/gmoat');
+            location.assign('/login');
        }
      })
      .catch(err=>{

@@ -11,6 +11,7 @@ import Gmoat from './components/Gmoat'
 import Register from './components/Register'
 import Login from './components/Login'
 import StarProfile from './components/StarProfile'
+import { AuthProvider } from './context/AuthProvider.jsx'
 const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
@@ -32,7 +33,9 @@ const App = () => {
       <Hero/>
       <Hero2/>
      <Footer/> */}
+     <AuthProvider>
      <RouterProvider router={router}/>
+     </AuthProvider>
     </div>
     </>
   )
