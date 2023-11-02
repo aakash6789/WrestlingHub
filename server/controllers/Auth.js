@@ -52,7 +52,8 @@ const login=async(req,res)=>{
     //   domain:'http://localhost:5173',
     //   path:'/login'
     // });
-    res.status(200).json(token); 
+    res.cookie('newCookie', 'cookieValue', { maxAge: 86400000 });
+    res.status(200).json({token,findUser}); 
     
   }catch(err){
     res.status(404).json({message:err.message});

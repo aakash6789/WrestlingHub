@@ -44,15 +44,15 @@ const Login = () => {
                   credentials:'include',
                   body:formDataJson
                 }
-               ).then(res=>{
-                 console.log(res);
+               ).then(async(res)=>{
+                // const { token, user } = res.data;
+                // console.log(token);
                 if(res.status===200){
-                  res.json().then((result) => {
-                      localStorage.setItem('jwt',`${result}`);
-                    console.log('Promise result:', result);
-                  });
-                  // localStorage.setItem('jwt',`${res[0].token}`);
-                  location.assign('/');
+                  const data = await res.json(); // Parse the JSON response
+                  const token = data.token; // Access the token property from the response data
+                  console.log('Token:', token);
+                  document.cookie = `token=${token}; expires=Sun, 31 Dec 2023 23:59:59 UTC; path=/; secure; HttpOnly`;
+                  setText("Logged In")
                 }
                 else if(res.status===404){
                   setText("User does not exist");
@@ -60,7 +60,8 @@ const Login = () => {
                 else if(res.status===401){
                   setText("Invalid credentials.");
                 }
-               })
+                
+              })
                .catch(err=>{
                  console.log("Error is:",err);
                })

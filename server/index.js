@@ -13,6 +13,7 @@ import helmet from 'helmet';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import cookieParser from 'cookie-parser';
+import authMiddleWare from './middleware/authMiddleWare.js';
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
 const app=express();
@@ -32,8 +33,12 @@ app.get('/',(req,res)=>{
     // res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
     res.send("Great going!");
 })
+app.use('/gmoat',authMiddleWare);
 app.use('/superstar',starRoutes);
 app.use('/auth',authRoutes);
+app.post('/gmoat',authMiddleWare,(req,res)=>{
+location.assign('/gmoat');
+})
 //DB CONNECTION
 const port=process.env.PORT;
 mongoose.connect(process.env.MONGO_URL,{
