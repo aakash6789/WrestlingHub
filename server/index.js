@@ -36,8 +36,8 @@ app.get('/',(req,res)=>{
 app.use('/gmoat',authMiddleWare);
 app.use('/superstar',starRoutes);
 app.use('/auth',authRoutes);
-app.post('/gmoat',authMiddleWare,(req,res)=>{
-location.assign('/gmoat');
+app.get('/gmoat',authMiddleWare,(req,res)=>{
+ res.status(200).json("Acess granted");
 })
 //DB CONNECTION
 const port=process.env.PORT;

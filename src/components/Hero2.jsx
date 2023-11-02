@@ -7,19 +7,28 @@ import nxtbanner from '../assets/NXT_BANNER2.jpeg'
 import rivalriesTile from '../assets/rivalries_tile2.jpg';
 import aewbanner from '../assets/aewam.png';
 import aewbanner2 from '../assets/aewbanner.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink,useLocation } from 'react-router-dom';
 import useMediaQuery from '../hooks/useMediaQuery';
 const Hero2 = () => {
+  // const location=useLocation();
+  const authToken=localStorage.getItem('jwt');
   const checkAuth=async(req,res)=>{
     const savedUserResponse=await fetch(
       "http://localhost:3000/gmoat",{
         method:"GET",
         headers:{
-          'Content-Type':'application/json'
+          'Content-Type':'application/json',
+          'Authorization': `Bearer ${authToken}`
         }
       }
      ).then(res=>{
        console.log(res);
+       if(res.status==200){
+            location.assign('/gmoat');
+            
+       }else{
+        location.assign('/login');
+       }
      })
      .catch(err=>{
        console.log("Error is:",err);

@@ -18,9 +18,9 @@ const router=createBrowserRouter(
     <Route path='/rivalries' element={<Rivalries/>}/>
     <Route path='/superstar' element={<SuperStars/>}/>
     <Route path='/superstar/:sname' element={<StarProfile/>}/>
-    <Route path='/gmoat' element={<Gmoat/>}/>
     <Route path='/register' element={<Register/>}/>
     <Route path='/login' element={<Login/>}/>
+    <Route path='/gmoat' element={<Gmoat/>}/>
     </Route>
   )
 )

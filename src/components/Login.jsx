@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import loginbg from '../assets/login3.jpeg'
 import {useForm} from 'react-hook-form';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
 
 const Login = () => {
+  const {setAuth}=useAuth();
   const navigate=useNavigate();
+  const location=useLocation();
+  const from=location.state?.from?.pathname || "/";
     const {
         register,
         handleSubmit,
@@ -51,7 +55,7 @@ const Login = () => {
                   const data = await res.json(); // Parse the JSON response
                   const token = data.token; // Access the token property from the response data
                   console.log('Token:', token);
-                  document.cookie = `token=${token}; expires=Sun, 31 Dec 2023 23:59:59 UTC; path=/; secure; HttpOnly`;
+                 localStorage.setItem('jwt',`${token}`);
                   setText("Logged In")
                 }
                 else if(res.status===404){
