@@ -31,7 +31,6 @@ const Login = () => {
                }
               //  console.log(formData);
                callLog();
-      
             }
 
             const callLog=async(req,res)=>{
@@ -118,3 +117,4 @@ const Login = () => {
 
 export default Login
 //Token creation sucessfull
+//USE context started
