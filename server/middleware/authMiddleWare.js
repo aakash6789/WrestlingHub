@@ -22,3 +22,4 @@ const authMiddleWare=(req,res,next)=>{
       }
 }
 export default authMiddleWare;
+//PERFECT dont play with it
