@@ -52,6 +52,7 @@ const Login = () => {
                   const token = data.token; // Access the token property from the response data
                  await setUser(data.findUser);
                  console.log(user);
+                 console.log(user.firstName);
                   console.log('Token:', token);
                  localStorage.setItem('jwt',`${token}`);
                   setText("Logged In")

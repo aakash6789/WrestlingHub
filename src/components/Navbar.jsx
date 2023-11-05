@@ -10,11 +10,13 @@ import {FcDatabase} from 'react-icons/fc'
 import {IoMdCloseCircleOutline} from 'react-icons/io';
 import './navb.css';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 const Navbar = () => {
   const isAboveSmallScreens=useMediaQuery("(min-width:768px)");
   const [isMenuToggled,setIsMenuToggled]=useState(false);
   const [logoe,setLogo]=useState(logo1);
   const [num,setNum]=useState(1);
+  const {user}=useAuth();
   // setLogo(logo2);
   useEffect(()=>{
     const imgState=setInterval(()=>{
@@ -25,6 +27,7 @@ const Navbar = () => {
         setNum(1);
         setLogo(logo);
       }
+      console.log(user.firstName);
 
     },5*1000);
     // return () => clearInterval(imgState);
@@ -42,7 +45,10 @@ const Navbar = () => {
       <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/superstar'>SUPERSTARS</NavLink></div>
         
         <div className='hover:text-yellow-400 transition duration-500 ml-[40px] cursor-pointer '>CONTACT</div>
-        <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>
+        {/* {  (!user)?
+          <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>{user.firstName}</div>} */}
+          <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>
+        
         </div></nav> : <nav className='h-[50px] bg-black text-white flex '>
         <div className=' mx-auto w-[50px] py-[px]'>
         <img src={logoe} className='fadeinout h-[50px] w-[70px]' />
@@ -60,7 +66,8 @@ const Navbar = () => {
           <div className='py-[8px] hover:cursor-pointer'><NavLink to='/'>HOME</NavLink></div>
           <div className='py-[8px]hover: cursor-pointer'><NavLink to='/superstar'>SUPERSTARS</NavLink></div>
           <div className='py-[8px] hover:cursor-pointer'>Contact</div>
-          <div className='py-[8px] hover:cursor-pointer'><NavLink to='/login'>Login</NavLink></div>
+          {  (!user)?
+          <div className='py-[8px] hover:cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='py-[8px] hover:cursor-pointer'>{user.fisrtName}</div>}
           </div>
         </div>) }
           
