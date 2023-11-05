@@ -50,10 +50,13 @@ const Login = () => {
                 if(res.status===200){
                   const data = await res.json(); // Parse the JSON response
                   const token = data.token; // Access the token property from the response data
-                 await setUser(data.findUser);
+                 for(let prop in user){
+                  // console.log(prop);
+                   user[prop]=data.findUser[prop];
+                   }
                  console.log(user);
                  console.log(user.firstName);
-                  console.log('Token:', token);
+                console.log('Token:', token);
                  localStorage.setItem('jwt',`${token}`);
                   setText("Logged In")
                 }

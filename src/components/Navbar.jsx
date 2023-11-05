@@ -27,7 +27,7 @@ const Navbar = () => {
         setNum(1);
         setLogo(logo);
       }
-      console.log(user.firstName);
+      // console.log(user.firstName);
 
     },5*1000);
     // return () => clearInterval(imgState);
@@ -45,9 +45,9 @@ const Navbar = () => {
       <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/superstar'>SUPERSTARS</NavLink></div>
         
         <div className='hover:text-yellow-400 transition duration-500 ml-[40px] cursor-pointer '>CONTACT</div>
-        {/* {  (!user)?
-          <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>{user.firstName}</div>} */}
-          <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>
+        {  (!user)?
+          <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>{user.firstName}</div>}
+          {/* <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div> */}
         
         </div></nav> : <nav className='h-[50px] bg-black text-white flex '>
         <div className=' mx-auto w-[50px] py-[px]'>
@@ -67,7 +67,7 @@ const Navbar = () => {
           <div className='py-[8px]hover: cursor-pointer'><NavLink to='/superstar'>SUPERSTARS</NavLink></div>
           <div className='py-[8px] hover:cursor-pointer'>Contact</div>
           {  (!user)?
-          <div className='py-[8px] hover:cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='py-[8px] hover:cursor-pointer'>{user.fisrtName}</div>}
+          <div className='py-[8px] hover:cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='py-[8px] hover:cursor-pointer'>{user.firstName}</div>}
           </div>
         </div>) }
           
