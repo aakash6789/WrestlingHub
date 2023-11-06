@@ -17,6 +17,7 @@ const Navbar = () => {
   const [logoe,setLogo]=useState(logo1);
   const [num,setNum]=useState(1);
   const {user}=useAuth();
+  let name='';
   // setLogo(logo2);
   useEffect(()=>{
     const imgState=setInterval(()=>{
@@ -28,10 +29,11 @@ const Navbar = () => {
         setLogo(logo);
       }
       // console.log(user.firstName);
+      name=user.firstName;
 
     },5*1000);
     // return () => clearInterval(imgState);
-  },[]);
+  },[user.firstName]);
   return (
    <div className='sticky top-0 z-[2]'>
     {/* DESKTOP NAV  */}
@@ -45,7 +47,7 @@ const Navbar = () => {
       <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/superstar'>SUPERSTARS</NavLink></div>
         
         <div className='hover:text-yellow-400 transition duration-500 ml-[40px] cursor-pointer '>CONTACT</div>
-        {  (!user)?
+        {  (!user.firstName)?
           <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>{user.firstName}</div>}
           {/* <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div> */}
         
@@ -66,7 +68,7 @@ const Navbar = () => {
           <div className='py-[8px] hover:cursor-pointer'><NavLink to='/'>HOME</NavLink></div>
           <div className='py-[8px]hover: cursor-pointer'><NavLink to='/superstar'>SUPERSTARS</NavLink></div>
           <div className='py-[8px] hover:cursor-pointer'>Contact</div>
-          {  (!user)?
+          {  (!user.firstName)?
           <div className='py-[8px] hover:cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='py-[8px] hover:cursor-pointer'>{user.firstName}</div>}
           </div>
         </div>) }

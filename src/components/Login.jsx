@@ -19,6 +19,7 @@ const Login = () => {
         password:"",  
       }
       const [text,setText]=useState("");
+      const navigate=useNavigate();
       const onError=()=>{
         console.log("enter again");
         setText("Some details are missing, please enter all the details");
@@ -44,7 +45,7 @@ const Login = () => {
                   credentials:'include',
                   body:formDataJson
                 }
-               ).then(async(res)=>{
+               ).then(async(res)=>{ 
                 // const { token, user } = res.data;
                 // console.log(token);
                 if(res.status===200){
@@ -52,13 +53,14 @@ const Login = () => {
                   const token = data.token; // Access the token property from the response data
                  for(let prop in user){
                   // console.log(prop);
-                   user[prop]=data.findUser[prop];
+                 user[prop]= await data.findUser[prop];
                    }
                  console.log(user);
                  console.log(user.firstName);
                 console.log('Token:', token);
                  localStorage.setItem('jwt',`${token}`);
-                  setText("Logged In")
+                   setText("Logged In");
+                  navigate(-1);
                 }
                 else if(res.status===404){
                   setText("User does not exist");
