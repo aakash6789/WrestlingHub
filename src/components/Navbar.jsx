@@ -27,10 +27,8 @@ const Navbar = () => {
       }else{
         setNum(1);
         setLogo(logo);
-      }
-      // console.log(user.firstName);
+      } // console.log(user.firstName);
       name=user.firstName;
-
     },5*1000);
     // return () => clearInterval(imgState);
   },[user.firstName]);

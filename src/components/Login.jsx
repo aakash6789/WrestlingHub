@@ -59,7 +59,7 @@ const Login = () => {
                  console.log(user.firstName);
                 console.log('Token:', token);
                  localStorage.setItem('jwt',`${token}`);
-                   setText("Logged In");
+                  //  setText("Logged In");
                   navigate(-1);
                 }
                 else if(res.status===404){
