@@ -16,7 +16,7 @@ const Navbar = () => {
   const [isMenuToggled,setIsMenuToggled]=useState(false);
   const [logoe,setLogo]=useState(logo1);
   const [num,setNum]=useState(1);
-  const {user}=useAuth();
+  const {user,uname}=useAuth();
   let name='';
   // setLogo(logo2);
   useEffect(()=>{
@@ -31,7 +31,7 @@ const Navbar = () => {
       name=user.firstName;
     },5*1000);
     // return () => clearInterval(imgState);
-  },[user.firstName]);
+  },[uname]);
   return (
    <div className='sticky top-0 z-[2]'>
     {/* DESKTOP NAV  */}
@@ -46,7 +46,7 @@ const Navbar = () => {
         
         <div className='hover:text-yellow-400 transition duration-500 ml-[40px] cursor-pointer '>CONTACT</div>
         {  (!user.firstName)?
-          <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>{user.firstName}</div>}
+          <div className='ml-[40px] hover:text-yellow-200 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>{uname}</div>}
           {/* <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div> */}
         
         </div></nav> : <nav className='h-[50px] bg-black text-white flex '>
@@ -67,7 +67,7 @@ const Navbar = () => {
           <div className='py-[8px]hover: cursor-pointer'><NavLink to='/superstar'>SUPERSTARS</NavLink></div>
           <div className='py-[8px] hover:cursor-pointer'>Contact</div>
           {  (!user.firstName)?
-          <div className='py-[8px] hover:cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='py-[8px] hover:cursor-pointer'>{user.firstName}</div>}
+          <div className='py-[8px] hover:cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='py-[8px] hover:cursor-pointer'>{uname}</div>}
           </div>
         </div>) }
           

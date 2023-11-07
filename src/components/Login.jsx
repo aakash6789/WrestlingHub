@@ -7,7 +7,7 @@ import useAuth from '../hooks/useAuth';
 
 
 const Login = () => {
-  const {user,setUser}=useAuth();
+  const {user,setUser,uname,setUname}=useAuth();
     const {
         register,
         handleSubmit,
@@ -57,9 +57,10 @@ const Login = () => {
                    }
                  console.log(user);
                  console.log(user.firstName);
+                 setUname(user.firstName);
                 console.log('Token:', token);
                  localStorage.setItem('jwt',`${token}`);
-                  //  setText("Logged In");
+                   setText("Logged In");
                   navigate(-1);
                 }
                 else if(res.status===404){
