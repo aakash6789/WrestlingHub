@@ -8,11 +8,14 @@ import {RxDotFilled} from 'react-icons/rx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container} from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
+import Comments from './Comments';
+import useAuth from '../hooks/useAuth';
 
 const StarProfile = () => {
 
-
+const {user,setUser,uname,setUname}=useAuth();
     const {sname}=useParams();
+    const [currindex,setCurrIndex]=useState(0);
     const [data, setData] = useState({
         name: '',
         picturePath: [],
@@ -29,6 +32,7 @@ const StarProfile = () => {
               if (!response.ok) {
                 throw new Error('Network response was not ok');
               }
+              console.log(currindex);
               const jsonData = await response.json();
             //   console.log(jsonData[0].name);
             // onYouTubeIframeAPIReady();
@@ -100,8 +104,8 @@ const StarProfile = () => {
             }
          }
         fetchData(sname);
-    },[])
-   const [currindex,setCurrIndex]=useState(0);
+    },[currindex])
+   
    const prevInd=()=>{
       if(currindex==0){
        setCurrIndex(3);
@@ -178,6 +182,7 @@ const StarProfile = () => {
   <iframe width="560" height="315" src="https://www.youtube.com/embed/v=We2FqPXo64M?autoplay=1&origin=http://example.com" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>       */}
   <h1 className='text-center font-bebasNeue text-4xl'>Best match</h1>
   <div id="player" className='md:ml-[440px] md:mb-[130px] md:mt-[50px] xs:ml-[0px] '></div>
+  { (uname)?<Comments/>:<div></div>}
   {/* <iframe id='player' width="560" height="315" src="https://www.youtube.com/embed/We2FqPXo64M?si=l46R340besKXlz0-" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> */}
     </div>
   )
