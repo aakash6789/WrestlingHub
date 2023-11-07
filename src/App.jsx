@@ -12,6 +12,7 @@ import Register from './components/Register'
 import Login from './components/Login'
 import StarProfile from './components/StarProfile'
 import { AuthProvider } from './context/AuthProvider.jsx'
+import Shows from './components/Shows.jsx'
 const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
@@ -23,6 +24,7 @@ const router=createBrowserRouter(
     <Route path='/register' element={<Register/>}/>
     <Route path='/login' element={<Login/>}/>
     <Route path='/gmoat' element={<Gmoat/>}/>
+    <Route path='/shows/:no' element={<Shows/>}/>
    
     </Route>
   )
