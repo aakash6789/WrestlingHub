@@ -15,6 +15,7 @@ import { AuthProvider } from './context/AuthProvider.jsx'
 const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
+      
      <Route path='' element={<><Hero/><Hero2/></>}/>
     <Route path='/rivalries' element={<Rivalries/>}/>
     <Route path='/superstar' element={<SuperStars/>}/>
@@ -22,6 +23,7 @@ const router=createBrowserRouter(
     <Route path='/register' element={<Register/>}/>
     <Route path='/login' element={<Login/>}/>
     <Route path='/gmoat' element={<Gmoat/>}/>
+   
     </Route>
   )
 )

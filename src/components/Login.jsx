@@ -51,12 +51,21 @@ const Login = () => {
                 if(res.status===200){
                   const data = await res.json(); // Parse the JSON response
                   const token = data.token; // Access the token property from the response data
+                  const temp=data.findUser;
                  for(let prop in user){
                   // console.log(prop);
                  user[prop]= await data.findUser[prop];
                    }
+                console.log(temp);
+                console.log(temp.phoneNo);
+                //  await setUser({
+                //   email: "bgjngr",
+                //   firstName: temp.firstName,
+                //   lastName:temp.lastName,
+                //   phoneNo:temp.phoneNo
+                //  });
                  console.log(user);
-                 console.log(user.firstName);
+                //  console.log(user.firstName);
                  setUname(user.firstName);
                 console.log('Token:', token);
                  localStorage.setItem('jwt',`${token}`);

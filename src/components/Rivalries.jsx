@@ -1,9 +1,12 @@
 import React from 'react'
 import { useState } from 'react';
 import {BsChevronCompactLeft,BsChevronCompactRight} from 'react-icons/bs';
+import {GrLinkNext,GrLinkPrevious} from 'react-icons/gr';
 import {RxDotFilled} from 'react-icons/rx';
+import rivalries from '../data/rivalries';
 const Rivalries = () => {
   const [currindex,setCurrIndex]=useState(0);
+  const [rindex,setRIndex]=useState(1);
   const prevInd=()=>{
      if(currindex==0){
       setCurrIndex(3);
@@ -11,12 +14,25 @@ const Rivalries = () => {
        setCurrIndex(currindex-1);
      }
   }
-  const rival=['srr10.jpg','srr11.jpg','srr12.jpg','srr13.jpg'];
+  const decrease=()=>{
+     if(rindex==0){
+      setRIndex(2);
+     }else{
+       setRIndex(rindex-1);
+     }
+  }
   const nextInd=()=>{
      if(currindex==3){
-      setCurrIndex(0);
+      setRIndex(0);
      }else{
        setCurrIndex(currindex+1);
+     }
+  }
+  const increase=()=>{
+     if(rindex==2){
+      setRIndex(0);
+     }else{
+       setRIndex(rindex+1);
      }
   }
   return (
@@ -24,7 +40,7 @@ const Rivalries = () => {
     <div className='bg-black'>
     <div className='bg-black max-w-[1400px] h-[700px] w-full m-auto py-2 px-4 relative group'>
     <div className=' w-full h-full rounded-2xl duration-500 relative flex justify-center'>
-    <img src={'../assets/'+rival[currindex]} className='max-h-[700px]'> 
+    <img src={'../assets/'+rivalries[rindex].picturePath[currindex]} className='max-h-[700px]'> 
     </img>
     </div>
     <div>
@@ -35,10 +51,12 @@ const Rivalries = () => {
     </div>
     </div>
     </div>  
-     <h1 className='text-center md:ml-[360px] md:text-6xl font-bebasNeue md:mt-[30px] md:mr-[300px] md:pl-[2px] md:flex md:justify-center xs:ml-[00px] xs:mt-[40px] xs:text-2xl'>Reigns <span className='text-3xl mt-[20px] px-2'>vs</span> Ambrose  <span className='text-3xl mt-[20px] px-2'>vs</span> Rollins</h1>
-     <h4 className='text-center font-bebasNeue mt-[60px]'>Aakash vs Dhawal vs Vedant</h4>
+     <h1 className='text-center md:ml-[360px] md:text-6xl font-bebasNeue md:mt-[30px] md:mr-[300px] md:pl-[2px] md:flex md:justify-center xs:ml-[00px] xs:mt-[40px] xs:text-2xl'>
+    <div dangerouslySetInnerHTML={{ __html: rivalries[rindex].title}} className='md:px-16 xs:px-8 py-4' />
+     </h1>
+     {/* <h4 className='text-center font-bebasNeue mt-[60px]'>Aakash vs Dhawal vs Vedant</h4> */}
     
-     <div className='md:px-16 xs:px-8 mt-[40px]'>
+     {/* <div className='md:px-16 xs:px-8 mt-[40px]'>
       <p>
         Who would have thought, once brothers who were bonded by love would fight each other for the the most prestigious prize in the buissness? Yes I am talking about the sheild. Three unknown indiviuals who debuted in 2012 in survivor series, who caused mayhem in arena.Later these individuals began taking on the whole locker room and became the most fierce group in the WWE.Later these guys were known as 'The hounds of justice/S.H.EI.L.D'.Reigns, rollins and Ambrose instantly became crowd favorite, Reigns was displayed as the powerhouse, Rollins was the brain and Ambrose was the crazy unstoppable force. Three most distinct personalities, suprisingly came out best as a group.<br></br> 
         The Shield reigned supreme for a brief period during 2012-14 and established itself as one of the most dominant trios in the history of this business. Seth Rollins turned on his brethren in mid-2014 and joined Triple H's Authority. Roman Reigns went on to score a huge win over Randy Orton at SummerSlam 2014.
@@ -69,7 +87,15 @@ This match effectively marked the end of The Shield as a united faction, as all 
     <br></br>
 
    
-   <br></br>
+   <br></br> */}
+   <div dangerouslySetInnerHTML={{ __html: rivalries[rindex].description }} className='md:px-16 xs:px-8 py-4' />
+   {/* <BsChevronCompactLeft size={50} onClick={prevInd} className='block absoloute top-[50%] -translate-x-0 translate-y-[50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-black cursor-pointer absolute' /> */}
+   <div className='flex'>
+   <GrLinkPrevious className='pb-8 pl-10 ml-[20px] cursor-pointer' size={80} onClick={decrease}/>
+   <GrLinkNext className='pb-8  ml-[1270px] cursor-pointer' size={80} onClick={increase}/>
+   </div>
+
+
   </div>
   )
 }
