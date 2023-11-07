@@ -30,7 +30,7 @@ const Comments = () => {
             </div>
            )
         })}
-        <form action='' onSubmit={}>
+        <form action=''>
 
         </form>
         
