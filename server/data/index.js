@@ -342,5 +342,58 @@ const aewstars=[
 
 
 ]; 
-export {wwestars,aewstars};
+
+const comments=[
+    {
+        name:'Roman Reigns',
+     
+        
+        description:[''],
+             
+    },
+    {
+        name:'Seth Rollins',
+        
+        description:[''],
+        
+    },
+    {
+        name:'Dean Ambrose',
+        
+        description:[''],
+        
+    },
+    {
+        name:'Aj Styles',
+        
+        description:[''],
+        
+    },
+    {
+        name:'Sami Zayn',
+        
+        description:[''],
+        
+    },
+    {
+        name:'Hulk Hogan',
+        
+        description:[''],
+        
+    },
+    {
+        name:'John Cena',
+        
+        description:[''],
+        
+    },
+    
+    {
+        name:'Undertaker',
+        description:[''],  
+       
+    }
+    
+]
+export {wwestars,aewstars,comments};
 //YT API, GMOAT link, fav wrestler(liked)

@@ -14,6 +14,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import cookieParser from 'cookie-parser';
 import authMiddleWare from './middleware/authMiddleWare.js';
+import Comment from './models/Comment.js';
+import { comments } from './data/index.js';
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
 const app=express();
@@ -47,6 +49,7 @@ mongoose.connect(process.env.MONGO_URL,{
 }).then(()=>{
 app.listen(port, () => console.log('Server listening on port 3000!'));
 // Star.insertMany(wwestars);
+//   Comment.insertMany((comments));
 }).catch((error)=>console.log(`${error}: DB did not connect`));
 //server on 3000 client on- 
 //60% done just 40 more to go
