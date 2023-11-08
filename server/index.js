@@ -16,6 +16,7 @@ import cookieParser from 'cookie-parser';
 import authMiddleWare from './middleware/authMiddleWare.js';
 import Comment from './models/Comment.js';
 import { comments } from './data/index.js';
+import commentRoute from './routes/CommentRoute.js'
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
 const app=express();
@@ -35,6 +36,7 @@ app.get('/',(req,res)=>{
     // res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
     res.send("Great going!");
 })
+app.use('/comment',commentRoute);
 app.use('/gmoat',authMiddleWare);
 app.use('/superstar',starRoutes);
 app.use('/auth',authRoutes);

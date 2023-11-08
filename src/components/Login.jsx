@@ -56,18 +56,18 @@ const Login = () => {
                   // console.log(prop);
                  user[prop]= await data.findUser[prop];
                    }
-                console.log(temp);
-                console.log(temp.phoneNo);
+                // console.log(temp);
+                // console.log(temp.phoneNo);
                 //  await setUser({
                 //   email: "bgjngr",
                 //   firstName: temp.firstName,
                 //   lastName:temp.lastName,
                 //   phoneNo:temp.phoneNo
                 //  });
-                 console.log(user);
+                //  console.log(user);
                 //  console.log(user.firstName);
                  setUname(user.firstName);
-                console.log('Token:', token);
+                // console.log('Token:', token);
                  localStorage.setItem('jwt',`${token}`);
                    setText("Logged In");
                   navigate(-1);

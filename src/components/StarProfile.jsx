@@ -13,7 +13,7 @@ import useAuth from '../hooks/useAuth';
 
 const StarProfile = () => {
 
-const {user,setUser,uname,setUname}=useAuth();
+const {user,setUser,uname,setUname,comment}=useAuth();
     const {sname}=useParams();
     const [currindex,setCurrIndex]=useState(0);
     const [data, setData] = useState({
@@ -104,7 +104,7 @@ const {user,setUser,uname,setUname}=useAuth();
             }
          }
         fetchData(sname);
-    },[currindex])
+    },[comment])
    
    const prevInd=()=>{
       if(currindex==0){
