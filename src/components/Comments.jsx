@@ -25,7 +25,7 @@ const [arr,setArr]=useState([]);
   useEffect(() => {
     const fetchData = async () => {
         try {
-          console.log("hh");
+        //   console.log("hh");
         const response = await fetch(
           `http://localhost:3000/comment/${sname}`,
           { method: "GET" }
@@ -34,7 +34,7 @@ const [arr,setArr]=useState([]);
           throw new Error("Network response was not ok");
         } else {
           const data = await response.json();
-          console.log(data);
+        //   console.log(data);
           setComments((prevData) => ({
             ...prevData,
             name: uname,
@@ -42,7 +42,7 @@ const [arr,setArr]=useState([]);
           }));
         }
         setArr(comment.description);
-        console.log("GET comm", comment.description);
+        console.log("GET comm", comment);
       } catch (err) {
         console.log("Error is:", err);
       }
@@ -63,12 +63,12 @@ const [arr,setArr]=useState([]);
       .then(async (res) => {
         if (res.status == 200) {
           const data = await res.json();
-          console.log(data);
+        //   console.log(data);
           console.log("Another Comment added sucessfully ");
-          console.log(uname);
-          console.log(data.findStar.description);
+        //   console.log(uname);
+        //   console.log(data.findStar.description);
           setComments((prevData) => ({
-            ...prevData,
+            ...prevData, 
             name: uname,
             description: data.findStar.description,
           }));
@@ -91,14 +91,18 @@ const [arr,setArr]=useState([]);
   return (
     <div className="ml-[700px]">
               
-        {/* {
-            arr.description.map((comm,ind)=>{
-                  <div className='flex' key={ind}>
-                    <div>Comment {ind}</div>
-                    <div>{comm}</div>
-                  </div>
-            })
-        } */}
+              {
+ comment && Array.isArray(comment) ? (
+    comment.map((comm, ind) => (
+      <div className='flex' key={ind}>
+        <div>Comment {comm.name}</div>
+        <div>{comm.description}</div>
+      </div>
+    ))
+  ) : (
+    <p>No comments available</p>
+  )
+}
       <h4 className="mt-[50px] ml-[100px]">Start discussion</h4>
       <div className="text-center mr-[500px] flex-col">
         <form action="" onSubmit={handleSubmit(onSubmit)}>
