@@ -5,7 +5,10 @@ const getComments=async(req,res)=>{
         const findStar=await Comment.findOne({name:sname});
         if(findStar){
           console.log("Comments sent successfully");
+          console.log(findStar);
           res.status(200).json({findStar});
+        }else{
+            console.log("Comment couldn't be sent");
         }
       }
       catch(err){
