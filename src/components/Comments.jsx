@@ -89,7 +89,7 @@ const [arr,setArr]=useState([]);
     callfun();
   };
   return (
-    <div className="ml-[700px]">
+    <div className="ml-[00px]">
               
               {
  comment && Array.isArray(comment) ? (
@@ -100,11 +100,11 @@ const [arr,setArr]=useState([]);
       </div>
     ))
   ) : (
-    <p>No comments available</p>
+    <p className="ml-[720px]">No discussions yet</p>
   )
 }
-      <h4 className="mt-[50px] ml-[100px]">Start discussion</h4>
-      <div className="text-center mr-[500px] flex-col">
+      <div className="text-center w-[300px] mr-[1000px] flex-col ml-[650px]">
+      <h4 className="mt-[50px] ml-[0px]">Start discussion</h4>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
           <input
             id="comment"
