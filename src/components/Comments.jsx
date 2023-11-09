@@ -100,7 +100,7 @@ const [arr,setArr]=useState([]);
       </div>
     ))
   ) : (
-    <p className="ml-[720px]">No discussions yet</p>
+    <p className="ml-[720px] mr-[630px]">No discussions yet</p>
   )
 }
       <div className="text-center w-[300px] mr-[1000px] flex-col ml-[650px]">
