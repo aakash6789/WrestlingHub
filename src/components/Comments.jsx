@@ -17,6 +17,7 @@ const Comments = () => {
   const formData = {
     name: "",
     description: [""],
+    supname:sname
   };
   const onError = () => {
     console.log("Error posting comment");
@@ -83,7 +84,7 @@ const [arr,setArr]=useState([]);
 
   const onSubmit = (data, e) => {
     e.preventDefault(); // Prevent default form submission behavior
-    formData.name = sname;
+    formData.name = uname;
     formData.description = data.comment;
     // console.log(formData);
     callfun();

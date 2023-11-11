@@ -1,14 +1,15 @@
 import Comment from "../models/Comment.js";
 const AddComment=async(req,res)=>{
     try{
-      const {name,description}=req.body;
+      const {name,description,supname}=req.body;
       console.log(name);
       console.log(description);
-      const findStar=await Comment.findOne({name});
+      console.log(supname);
+      const findStar=await Comment.findOne({name:supname});
       if(findStar){
         const updatedArray=findStar.description;
-        updatedArray.push(description)
-        await Comment.updateOne({name:name},{description:updatedArray});
+        updatedArray.push({name,description});
+        await Comment.updateOne({name:supname},{description:updatedArray});
         console.log("Comments added successfully");
         res.status(200).json({findStar});
       }else{

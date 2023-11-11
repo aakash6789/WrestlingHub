@@ -348,49 +348,49 @@ const comments=[
         name:'Roman Reigns',
      
         
-        description:[''],
+        description:[],
              
     },
     {
         name:'Seth Rollins',
         
-        description:[''],
+        description:[],
         
     },
     {
         name:'Dean Ambrose',
         
-        description:[''],
+        description:[],
         
     },
     {
         name:'Aj Styles',
         
-        description:[''],
+        description:[],
         
     },
     {
         name:'Sami Zayn',
         
-        description:[''],
+        description:[],
         
     },
     {
         name:'Hulk Hogan',
         
-        description:[''],
+        description:[],
         
     },
     {
         name:'John Cena',
         
-        description:[''],
+        description:[],
         
     },
     
     {
         name:'Undertaker',
-        description:[''],  
+        description:[],  
        
     }
     
