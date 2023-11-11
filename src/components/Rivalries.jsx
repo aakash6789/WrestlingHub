@@ -20,6 +20,7 @@ const Rivalries = () => {
      }else{
        setRIndex(rindex-1);
      }
+     setCurrIndex(0);
   }
   const nextInd=()=>{
      if(currindex==3){
@@ -34,6 +35,7 @@ const Rivalries = () => {
      }else{
        setRIndex(rindex+1);
      }
+     setCurrIndex(0);
   }
   return (
     <div className=' text-black font-robotoSlab bg-[white]'>

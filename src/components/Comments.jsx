@@ -86,6 +86,7 @@ const [arr,setArr]=useState([]);
     formData.description = data.comment;
     // console.log(formData);
     callfun();
+    reset();
   };
   return (
     <div className="ml-[00px]">
@@ -93,8 +94,8 @@ const [arr,setArr]=useState([]);
               {
  comment && Array.isArray(comment) ? (
     comment.map((comm, ind) => (
-      <div className='flex' key={ind}>
-        <div>Comment {comm.name}</div>
+      <div className='flex ml-[500px]' key={ind}>
+        <div className="font-bold">{comm.name}:</div>
         <div>{comm.description}</div>
       </div>
     ))
@@ -102,7 +103,7 @@ const [arr,setArr]=useState([]);
     <p className="ml-[720px] mr-[630px]">No discussions yet</p>
   )
 }
-      <div className="text-center w-[300px] mr-[1000px] flex-col ml-[650px]">
+      <div className="text-center w-[300px] mr-[1000px] flex-col ml-[650px] mt-[100px]">
       <h4 className="mt-[50px] ml-[0px]">Start discussion</h4>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
           <input
@@ -113,6 +114,7 @@ const [arr,setArr]=useState([]);
             {...register("comment", {
               required: "true",
             })}
+            defaultValue=""
           />
           <button type="submit" className="bg-black text-white mb-[40px] p-2">
             Post
