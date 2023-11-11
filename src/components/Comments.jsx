@@ -35,12 +35,12 @@ const [arr,setArr]=useState([]);
           throw new Error("Network response was not ok");
         } else {
           const data = await response.json();
-        //   console.log(data);
-          setComments((prevData) => ({
-            ...prevData,
-            name: uname,
-            description: data.findStar.description,
-          }));
+          console.log(data.findStar.description);
+          console.log(typeof(data.findStar.description));
+        console.log(data.findStar.description);
+        setComments( 
+          data.findStar.description,
+        );
         }
         setArr(comment.description);
         console.log("GET comm", comment);
@@ -67,12 +67,10 @@ const [arr,setArr]=useState([]);
         //   console.log(data);
           console.log("Another Comment added sucessfully ");
         //   console.log(uname);
-        //   console.log(data.findStar.description);
-          setComments((prevData) => ({
-            ...prevData, 
-            name: uname,
-            description: data.findStar.description,
-          }));
+         console.log( typeof(data.findStar.description));
+          setComments( 
+            data.findStar.description,
+          );
           console.log(comment);
           setArr(comment.description);
         }

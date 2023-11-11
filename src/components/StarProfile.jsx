@@ -48,7 +48,7 @@ const StarProfile = () => {
           videoId: jsonData[0].videoId,
         }));
         //   console.log(data);
-        console.log(data.name);
+        // console.log(data.name);
         //   console.log(data);
         const tag = document.createElement("script");
         tag.src = "https://www.youtube.com/iframe_api";
