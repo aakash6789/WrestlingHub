@@ -110,7 +110,7 @@ const Login = () => {
             <br/>
             <input id='password' name='password' type='password' className='xs:w-[386px] xs:h-[54px] xs:mt-[5px] md:ml-[30px] border-[4px] md:w-[660px] rounded-md md:h-[48px] md:mt-[5px] md:p-2'  {...register("password",{
               required:true,
-              minLength:6
+              minLength:4
             })}/>
             {errors.password && errors.password.type === "required" && (
             <p className="errorMsg text-red-500 ml-[68px] xs:mr-[262px] xs:w-[160px]">Password is required.</p>

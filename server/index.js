@@ -12,25 +12,25 @@ import getSuperStar from './controllers/SuperStar.js';
 import helmet from 'helmet';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { register } from './controllers/Auth.js';
 import cookieParser from 'cookie-parser';
 import authMiddleWare from './middleware/authMiddleWare.js';
 import Comment from './models/Comment.js';
 import { comments } from './data/index.js';
 import commentRoute from './routes/CommentRoute.js'
-import multer from 'multer';
 
+
+import multer from "multer";
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "public/assets");
+      cb(null, "uploads/");
     },
     filename: function (req, file, cb) {
-      cb(null, file.originalname);
+      cb(null, `${Date.now()}-${file.originalname}`);
     },
   });
   const upload = multer({ storage });
-
-
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
 const app=express();
@@ -53,9 +53,14 @@ app.get('/',(req,res)=>{
 app.use('/comment',commentRoute);
 app.use('/gmoat',authMiddleWare);
 app.use('/superstar',starRoutes);
+app.post("/auth/register",upload.single('picture'),register,(req,res)=>{
+    console.log("Image uplaoded");
+    console.log(req.body);
+    console.log(req.file);
+});
 app.use('/auth',authRoutes);
 app.get('/gmoat',authMiddleWare,(req,res)=>{
- res.status(200).json("Acess granted");
+ res.status(200).json("Access granted");
 })
 //DB CONNECTION
 const port=process.env.PORT;

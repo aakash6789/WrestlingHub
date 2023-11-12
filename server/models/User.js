@@ -26,6 +26,9 @@ const userSchema=new mongoose.Schema({
     },
    phoneNo:{
     type:Number,
+   },
+   picture:{
+    type:String
    }
 })
 const User=mongoose.model("User",userSchema);

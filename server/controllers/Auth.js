@@ -8,7 +8,7 @@ const register=async(req,res)=>{
     const saltRounds=10;
     try{
     // const parsedData=JSON.parse(req.body);
-  const {email,firstName,lastName,password,phoneNo}=req.body;
+  const {email,firstName,lastName,password,phoneNo,picture}=req.body;
   const findUser=await User.findOne({email});
   if(findUser){
     res.status(409).send("User already exists");
@@ -20,7 +20,8 @@ const register=async(req,res)=>{
     firstName,
     lastName,
     password:encPassword,
-    phoneNo
+    phoneNo,
+    picture
   }) .then(() => {
     res.status(201).send("User added successfully");
     console.log("User added successfully");

@@ -18,6 +18,7 @@ const formData={
   firstName:"",
   lastName:"",
   password:"",
+  picture:"",
   phoneNo:number
 }
 
@@ -27,6 +28,7 @@ const formData={
         // console.log(prop);
          formData[prop]=data[prop];
          }
+         formData.picture=formData.picture[0].name;
         //  console.log(formData);
          callReg();
 
@@ -37,11 +39,14 @@ const formData={
       }
       const callReg=async(req,res)=>{
         const formDataJson=JSON.stringify(formData);
+        console.log(formData);
+        // console.log(formData.picture[0].name);
+        // console.log(typeof(formData.picture));
          const savedUserResponse=await fetch(
           "http://localhost:3000/auth/register",{
             method:"POST",
             headers:{
-              'Content-Type':'application/json'
+              'Content-Type':'multipart/form-data'
             },
             body:formDataJson
           }
