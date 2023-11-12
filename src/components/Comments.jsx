@@ -12,8 +12,9 @@ const Comments = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
-  const { reset } = useForm();
+ 
   const formData = {
     name: "",
     description: [""],
@@ -22,11 +23,9 @@ const Comments = () => {
   const onError = () => {
     console.log("Error posting comment");
   };
-const [arr,setArr]=useState([]);
   useEffect(() => {
     const fetchData = async () => {
         try {
-        //   console.log("hh");
         const response = await fetch(
           `http://localhost:3000/comment/${sname}`,
           { method: "GET" }
@@ -35,15 +34,14 @@ const [arr,setArr]=useState([]);
           throw new Error("Network response was not ok");
         } else {
           const data = await response.json();
-          console.log(data.findStar.description);
-          console.log(typeof(data.findStar.description));
-        console.log(data.findStar.description);
+        //   console.log(data.findStar.description);
+        //   console.log(typeof(data.findStar.description));
+        // console.log(data.findStar.description);
         setComments( 
           data.findStar.description,
         );
         }
-        setArr(comment.description);
-        console.log("GET comm", comment);
+        // console.log("GET comm", comment);
       } catch (err) {
         console.log("Error is:", err);
       }
@@ -65,14 +63,14 @@ const [arr,setArr]=useState([]);
         if (res.status == 200) {
           const data = await res.json();
         //   console.log(data);
-          console.log("Another Comment added sucessfully ");
+          // console.log("Another Comment added sucessfully ");
         //   console.log(uname);
-         console.log( typeof(data.findStar.description));
+        //  console.log( typeof(data.findStar.description));
           setComments( 
             data.findStar.description,
           );
           console.log(comment);
-          setArr(comment.description);
+          // setArr(comment.description);
         }
       })
       .catch((err) => {
@@ -85,30 +83,32 @@ const [arr,setArr]=useState([]);
     formData.name = uname;
     formData.description = data.comment;
     // console.log(formData);
-    callfun();
     reset();
+    callfun();
   };
   return (
-    <div className="ml-[00px]">
+    <div className="ml-[00px] flex font-mono">
+      <div>
               
               {
  comment && Array.isArray(comment) ? (
     comment.map((comm, ind) => (
-      <div className='flex ml-[500px]' key={ind}>
+      <div className='flex md:ml-[100px] py-4 md:px-4 xs:pl-[10px]' key={ind}>
         <div className="font-bold">{comm.name}:</div>
-        <div>{comm.description}</div>
+        <div className="md:w-[550px] xs:w-[200px] px-2">{comm.description}</div>
       </div>
     ))
   ) : (
     <p className="ml-[720px] mr-[630px]">No discussions yet</p>
   )
 }
-      <div className="text-center w-[300px] mr-[1000px] flex-col ml-[650px] mt-[100px]">
-      <h4 className="mt-[50px] ml-[0px]">Start discussion</h4>
+</div>
+      <div className=" w-[300px]  flex-col ml-[80px] ">
+      <h4 className="mt-[50px] md:ml-[75px] xs:ml-[30px]">Start discussion</h4>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
           <input
             id="comment"
-            className="md:w-[300px] md:h-[100px] border-black"
+            className="md:w-[300px] md:h-[100px] xs:w-[200px] xs:h-[80px] xs:mr-[540px] border-black px-2"
             name="comment"
             type="text"
             {...register("comment", {
@@ -116,7 +116,7 @@ const [arr,setArr]=useState([]);
             })}
             defaultValue=""
           />
-          <button type="submit" className="bg-black text-white mb-[40px] p-2">
+          <button type="submit" className="bg-black text-white md:ml-[125px] p-2 xs:ml-[70px]">
             Post
           </button>
         </form>
