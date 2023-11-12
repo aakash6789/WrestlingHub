@@ -17,6 +17,20 @@ import authMiddleWare from './middleware/authMiddleWare.js';
 import Comment from './models/Comment.js';
 import { comments } from './data/index.js';
 import commentRoute from './routes/CommentRoute.js'
+import multer from 'multer';
+
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, "public/assets");
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname);
+    },
+  });
+  const upload = multer({ storage });
+
+
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
 const app=express();

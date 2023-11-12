@@ -46,7 +46,7 @@ const Navbar = () => {
         
         <div className='hover:text-yellow-400 transition duration-500 ml-[40px] cursor-pointer '>CONTACT</div>
         {  (!user.firstName)?
-          <div className='ml-[40px] hover:text-yellow-200 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>{uname}</div>}
+          <div className='ml-[40px] hover:text-yellow-200 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<button className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>{uname}</button>}
           {/* <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div> */}
         
         </div></nav> : <nav className='h-[50px] bg-black text-white flex '>
@@ -67,7 +67,7 @@ const Navbar = () => {
           <div className='py-[8px]hover: cursor-pointer'><NavLink to='/superstar'>SUPERSTARS</NavLink></div>
           <div className='py-[8px] hover:cursor-pointer'>Contact</div>
           {  (!user.firstName)?
-          <div className='py-[8px] hover:cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<div className='py-[8px] hover:cursor-pointer'>{uname}</div>}
+          <div className='py-[8px] hover:cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<button className='py-[8px] hover:cursor-pointer'>{uname}</button>}
           </div>
         </div>) }
           
