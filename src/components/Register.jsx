@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import loginbg from '../assets/login3.jpeg'
-import {useForm} from 'react-hook-form';
+import {useForm,Controller} from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
 import { number } from 'yup';
 import Login from './Login.jsx';
@@ -10,7 +10,7 @@ const Register = () => {
   const[flag,setFlag]=useState(0);
     const {
         register,
-        handleSubmit,
+        handleSubmit,control,
         formState: { errors }
       } = useForm();
 const formData={
@@ -23,21 +23,24 @@ const formData={
 }
 
       const onSubmit=(data)=>{
+        // const formData = new FormData();
          setText("");
        for(let prop in formData){
         // console.log(prop);
          formData[prop]=data[prop];
          }
+        //  formData.picture=data.picture[0];
          formData.picture=formData.picture[0].name;
-        //  console.log(formData);
-         callReg();
+        //
+         console.log(data);
+         callReg(formData);
 
       }
       const onError=()=>{
         console.log("enter again");
         setText("Some details are missing, please enter all the details");
       }
-      const callReg=async(req,res)=>{
+      const callReg=async(formData)=>{
         const formDataJson=JSON.stringify(formData);
         console.log(formData);
         // console.log(formData.picture[0].name);
@@ -46,7 +49,7 @@ const formData={
           "http://localhost:3000/auth/register",{
             method:"POST",
             headers:{
-              'Content-Type':'multipart/form-data'
+              'Content-Type':'application/json'
             },
             body:formDataJson
           }
@@ -120,18 +123,18 @@ const formData={
              <br/>
             <input id='phoneNo' name='phoneNo' type='phone-no' className='xs:w-[386px] xs:h-[54px] xs:mt-[5px] md:ml-[30px] border-[4px] md:w-[660px] rounded-md md:h-[48px] md:mt-[5px] md:p-2'  {...register("phoneNo")}/>
         </div>
-        {/* <Dropzone
-                    acceptedFiles=".jpg,.jpeg,.png"
-                    multiple={false}
-                   
-                  ></Dropzone> */}
-                  {/* <Dropzone></Dropzone> */}
+
                   <div className='md:text-left xs:text-center mt-[30px] xs:mb-[10px] md:ml-[32px] md:mb-[10px] '>
                   <label htmlFor="picture" className='font-roboto md:mr-[130px] xs:mr-[280px]'>Profile Picture*</label>
                   <br/>
                     <input type='file' name='picture' id='picture' className='xs:mr-[90px] xs:mt-[20px] xs:mb-[20px]' {...register("picture",{
               required:true
             })}></input>
+            {/* <Controller
+          name="picture"
+          control={control}
+          render={({ field }) => <input type="file" {...field} />}
+        /> */}
              {errors.image && errors.image.type === "required" && (
             <p className="errorMsg text-red-500 ml-[30px] xs:mr-[262px]">Picture is required.</p>
           )}

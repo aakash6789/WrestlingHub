@@ -22,15 +22,16 @@ import commentRoute from './routes/CommentRoute.js'
 
 import multer from "multer";
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, "uploads/");
-    },
-    filename: function (req, file, cb) {
-      cb(null, `${Date.now()}-${file.originalname}`);
-    },
-  });
-  const upload = multer({ storage });
+
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, "uploads/");
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, `${Date.now()}-${file.originalname}`);
+//     },
+//   });
+//   const upload = multer({ storage });
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
 const app=express();
@@ -41,6 +42,7 @@ dotenv.config();
 //     methods:'GET,POST,PATCH,PUT'       //
     
 // }; 
+app.use(express.urlencoded({extended:false}));
 app.use(cors({ origin: true, credentials: true })); 
 app.use(morgan("tiny"));
 app.use(express.json());
@@ -53,11 +55,7 @@ app.get('/',(req,res)=>{
 app.use('/comment',commentRoute);
 app.use('/gmoat',authMiddleWare);
 app.use('/superstar',starRoutes);
-app.post("/auth/register",upload.single('picture'),register,(req,res)=>{
-    console.log("Image uplaoded");
-    console.log(req.body);
-    console.log(req.file);
-});
+app.post("/auth/register",register);
 app.use('/auth',authRoutes);
 app.get('/gmoat',authMiddleWare,(req,res)=>{
  res.status(200).json("Access granted");

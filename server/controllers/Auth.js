@@ -3,12 +3,23 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import multer from "multer";
 
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+const upload = multer({ storage });
 const register=async(req,res)=>{
     const saltRounds=10;
     try{
     // const parsedData=JSON.parse(req.body);
   const {email,firstName,lastName,password,phoneNo,picture}=req.body;
+  
   const findUser=await User.findOne({email});
   if(findUser){
     res.status(409).send("User already exists");
@@ -26,11 +37,9 @@ const register=async(req,res)=>{
     res.status(201).send("User added successfully");
     console.log("User added successfully");
   })
-  .catch((err) => {
-    console.log("Error is: " + err);
-  });
-}
-}
+    }
+  }
+
 catch(err){
     res.status(404).json({message:err.message});
 }
