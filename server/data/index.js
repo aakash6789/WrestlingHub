@@ -304,6 +304,37 @@
         },
         rank:8,
         videoId:`cKDF5M3vpGU`
+    },
+    {
+        name:'Stone Cold',
+        picturePath:['sc1.jpg','sc2.jpg','sc3.jpg','sc4.jpg'],
+        description:{
+            earlyLife:`<p>Stone Cold Steve Austin, born Steven James Anderson on December 18, 1964, in Austin, Texas, had a modest beginning in a working-class family. Raised by James and Beverly Anderson, Austin's childhood in Edna, Texas, was marked by a passion for sports. He attended Edna High School, engaging in football and track. After high school, Austin pursued a college football career at Wharton County Junior College, but a series of injuries, notably a significant knee injury, altered his trajectory. During his recovery, Austin discovered a new interest – professional wrestling. He underwent training with Chris Adams in the late 1980s, leading to his debut in World Class Championship Wrestling (WCCW). His journey continued with a move to WCW in 1991, where he wrestled under different personas. However, it was his transition to WWE in 1995 that propelled him to stardom. Adopting the "Stone Cold" persona, characterized by defiance and anti-authority, Austin became a cultural phenomenon in the world of professional wrestling. His famous catchphrase "Austin 3:16" and rebellious attitude made him a fan favorite. Throughout his career, marked by championship victories and WrestleMania headlines, Austin faced injuries, leading to his temporary retirement in 2003. Beyond wrestling, he ventured into acting, hosting, and podcasting, solidifying his status as one of the most iconic figures in the history of professional wrestling.</p>`,
+            carrer:`<p>Proudly raising his middle fingers in the faces of everyone who dared oppose him, "Stone Cold" Steve Austin was the blue-collar warrior for the common man. Clad in jeans and black leather often soaked in beer foam, Austin was defiant, brash and dared anyone to try and tell him what to do. When the signature sound of shattering glass erupted throughout the arena, everyone there knew that it was time to raise hell. And if you happened to be on the receiving end, well, you have our sympathies.
+
+            Trained by "Gentleman" Chris Adams, Steve Austin broke into the wrestling business in Texas in 1990, as part of the USWA. After a year, he moved on to WCW, where he won the WCW Television Championship under the name "Stunning" Steve Austin. An elbow injury led to his firing from WCW, but Austin found a lifeboat in ECW, and, with the freedom afforded him by Paul Heyman, began crafting a voice that would lead to superstardom in WWE.
+            
+            Austin joined WWE in January 1996 as Ted DiBiase's "Million Dollar Champion." Debuting as "The Ringmaster," he defeated Savio Vega in a forgettable WrestleMania contest. Soon after, "Stone Cold" was born.
+            
+            In June 1996, The Texas Rattlesnake became King of the Ring, defeating Jake Roberts in the tournament final. To cap off the victory, "Stone Cold" delivered a riveting promo, pillorying Roberts and his religious beliefs, and heralding the birth of the “Austin 3:16” era. His words gave way to Austin's WWE destiny, ushering in the famed Attitude Era. This violent Superstar would stop at nothing until he reached WWE’s top tier, pummeling anyone who got in his way.
+            
+            The first Superstar to butt heads with the new, meaner Austin was Bret Hart. Their rivalry reached its apex at WrestleMania 13 in a Submission Match. Austin was not the technical wunderkind that Hart was, but matched the mat general strike for strike in front of the Rosemont crowd. But the moment that separated Austin from his peers in the locker room came at the end of the match. "Stone Cold" was nearly broken, trapped in Hart’s Sharpshooter. But he refused to submit, and as seconds ticked into minutes, he still would not tap. Referee Ken Shamrock called the match as Austin passed out from the pain with 18,000 people cheering the defeated Superstar.<br></br>
+            
+            But Austin’s momentum, and WWE career, nearly halted in a freak injury at 1997’s SummerSlam. During a match against Owen Hart, Austin was dropped on his head during a piledriver, fracturing his neck.
+            
+            "Stone Cold" ultimately recovered from the injury and soon began his torrid rise to the top of the WWE heap. Austin took on Superstars such as Bret Hart, Shawn Michaels and The Undertaker, but he’s best remembered for his battles against two men — The Rock, and the WWE Chairman himself, Mr. McMahon.
+            
+            The latter rivalry began in late 1997, when Austin, furious at McMahon for stripping him of the Intercontinental Title, delivered a "Stone Cold" Stunner to his boss in front of the Madison Square Garden crowd. It wouldn’t be the first time Mr. McMahon tasted Austin’s leather boot, as the pair’s hostile feud epitomized the Attitude Era.
+            
+            The Rock and Austin criss-crossed just as often as Austin and Mr. McMahon. To put the rivalry in perspective, "Stone Cold" and The Rock headlined three WrestleMania pay-per-views together from 1999 to 2003, a feat no other Superstar has ever even come close to accomplishing. The two stars couldn’t have been more different, but no two men were ever as popular at the same time as Austin and Rock.
+            
+            Austin retired from in-ring competition at the end of WrestleMania XIX but continued to make memorable WWE appearances, usually at the expense of the McMahons. WWE crowds were never as loud as when that glass shattered and "Stone Cold" made his way to the ring, either in his leather boots, a Zamboni or a beer truck.
+            
+            In the end, his in-ring accomplishments were many: six WWE Championships, two Intercontinental Championships, a record three Royal Rumble victories and Triple Crown Champion credentials. His 2009 induction to the WWE Hall of Fame was a “no-brainer.</p>”`,
+            family:`<p>Stone Cold Steve Austin has been married multiple times. One of his well-known marriages was with Kathryn Burrhus, with whom he has two daughters named Stephanie and Cassidy. Following his divorce from Kathryn, Stone Cold Steve Austin married Debra Marshall in 2000. Unfortunately, this marriage also ended in divorce in 2003.</p>`
+        },
+        rank:9,
+        videoId:`cKDF5M3vpGU`
     }
   
  

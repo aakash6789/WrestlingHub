@@ -67,7 +67,7 @@ mongoose.connect(process.env.MONGO_URL,{
     useUnifiedTopology:true,
 }).then(()=>{
 app.listen(port, () => console.log('Server listening on port 3000!'));
-// Star.insertMany(wwestars);
+Star.insertMany(wwestars);
 //   Comment.insertMany((comments));
 }).catch((error)=>console.log(`${error}: DB did not connect`));
 //server on 3000 client on- 

@@ -46,7 +46,7 @@ const Hero2 = () => {
         <img src={rivalriesTile} className=' h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px] '/>
         <span className='md:ml-[75px] ml-[120px] xs:ml-[40px]'>Rivalries</span></div>
         </NavLink>
-       <NavLink to='/gmoat' onClick={checkAuth}>
+       <NavLink to='/' onClick={checkAuth}>
        <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>
         <img src={gmoatTile} className='h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px]'/>
         {isAboveSmallScreens?<span className='md:ml-[20px] xs:ml-[10px] '> Greatest matches of all time</span>:<span className='md:ml-[20px] xs:ml-[10px] '> Greatest matches of <span className='xs:ml-[38px]'>all time</span></span>}

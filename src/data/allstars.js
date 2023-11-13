@@ -61,18 +61,6 @@ import ospraytile from '../assets/ospray.jpg'
     {
         name:'Undertaker',
         imgLink:undertakertile
-    },
-    {
-        name:'Rhea Ripley',
-        imgLink:rheatile
-    },
-    {
-        name:'Bayley',
-        imgLink:bayleytile
-    },
-    {
-        name:'Alexa Bliss',
-        imgLink:alexablisstile
     }
  
 ];
