@@ -2,7 +2,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { wwestars } from "../../server/data";
+import { wwestars } from "../../../server/data";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import "bootstrap/dist/css/bootstrap.min.css";
