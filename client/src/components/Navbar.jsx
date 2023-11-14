@@ -63,11 +63,15 @@ const Navbar = () => {
         {/* <button onClick={()=>{setIsMenuToggled(!isMenuToggled)}}><IoMdCloseCircleOutline className='fixed top-0 left-4px h-[50px] w-8'/></button> */}
         {/* </div> */}
         <div  className='ml-[8px] mt-[-50px]'>
-          <div className='py-[8px] hover:cursor-pointer'><NavLink to='/'>HOME</NavLink></div>
-          <div className='py-[8px]hover: cursor-pointer'><NavLink to='/superstar'>SUPERSTARS</NavLink></div>
-          <div className='py-[8px] hover:cursor-pointer'>Contact</div>
+          <div className='py-[8px] hover:cursor-pointer' onClick={()=>{setIsMenuToggled(!isMenuToggled)
+        }}><NavLink to='/'>HOME</NavLink></div>
+          <div className='py-[8px]hover: cursor-pointer' onClick={()=>{setIsMenuToggled(!isMenuToggled)
+        }}><NavLink to='/superstar'>SUPERSTARS</NavLink></div>
+          <div className='py-[8px] hover:cursor-pointer' onClick={()=>{setIsMenuToggled(!isMenuToggled)
+        }}>Contact</div>
           {  (!user.firstName)?
-          <div className='py-[8px] hover:cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<button className='py-[8px] hover:cursor-pointer'>{uname}</button>}
+          <div className='py-[8px] hover:cursor-pointer' onClick={()=>{setIsMenuToggled(!isMenuToggled)
+          }}><NavLink to='/login'>Login</NavLink></div>:<button className='py-[8px] hover:cursor-pointer'>{uname}</button>}
           </div>
         </div>) }
           

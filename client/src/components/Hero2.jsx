@@ -55,7 +55,7 @@ const Hero2 = () => {
      
       </div>
       <div className='text-white mt-[150px] pt-[7px]'>
-        <span className='text-5xl md:ml-[700px] md:mt-[2px] xs:ml-[200px]'>Shows</span>
+        <span className='text-5xl md:ml-[700px] md:mt-[2px] xs:ml-[225px]'>Shows</span>
         <button><img src={aewbanner} className='mt-[18px] hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'/>  </button>
         <NavLink to={'/shows/0'}> <img src={wwebanner} className='mt-[0px] hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'/></NavLink>
         <NavLink to={'/shows/2'}> <img src={nxtbanner} className='md:ml-[155px] xs:ml-[0px]hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'/></NavLink>
