@@ -18,20 +18,7 @@ import authMiddleWare from './middleware/authMiddleWare.js';
 import Comment from './models/Comment.js';
 import { comments } from './data/index.js';
 import commentRoute from './routes/CommentRoute.js'
-
-
 import multer from "multer";
-
-
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, "uploads/");
-//     },
-//     filename: function (req, file, cb) {
-//       cb(null, `${Date.now()}-${file.originalname}`);
-//     },
-//   });
-//   const upload = multer({ storage });
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
 const app=express();
@@ -62,14 +49,26 @@ app.get('/gmoat',authMiddleWare,(req,res)=>{
 })
 //DB CONNECTION
 const port=process.env.PORT;
+let serverlessFunction;
 mongoose.connect(process.env.MONGO_URL,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
 }).then(()=>{
 app.listen(port, () => console.log('Server listening on port 3000!'));
-Star.insertMany(wwestars);
+// Star.insertMany(wwestars);
 //   Comment.insertMany((comments));
+ serverlessFunction = async (req, res) => {
+    // Allow CORS for your endpoint
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
+    // Handle requests as you would in your Express app
+    app(req, res);
+  };
+
+  // Export the serverless function
+ 
 }).catch((error)=>console.log(`${error}: DB did not connect`));
+export default serverlessFunction;
 //server on 3000 client on- 
 //60% done just 40 more to go
 //aaksh1456c@ id for mongodb
