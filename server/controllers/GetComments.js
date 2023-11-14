@@ -1,5 +1,5 @@
 import Comment from "../models/Comment.js";
-const getComments=async(req,res)=>{
+const GetComments=async(req,res)=>{
     try{
         const {sname}=req.params;
         const findStar=await Comment.findOne({name:sname});
@@ -15,4 +15,4 @@ const getComments=async(req,res)=>{
           res.status(404).json({message:err.message});
       }
 }
-export default getComments;
+export default GetComments;
