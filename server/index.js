@@ -57,18 +57,18 @@ mongoose.connect(process.env.MONGO_URL,{
 app.listen(port, () => console.log('Server listening on port 3000!'));
 // Star.insertMany(wwestars);
 //   Comment.insertMany((comments));
- serverlessFunction = async (req, res) => {
-    // Allow CORS for your endpoint
-    res.setHeader('Access-Control-Allow-Origin', '*');
+//  serverlessFunction = async (req, res) => {
+//     // Allow CORS for your endpoint
+//     res.setHeader('Access-Control-Allow-Origin', '*');
 
-    // Handle requests as you would in your Express app
-    app(req, res);
-  };
+//     // Handle requests as you would in your Express app
+//     app(req, res);
+//   };
 
   // Export the serverless function
  
 }).catch((error)=>console.log(`${error}: DB did not connect`));
-export default serverlessFunction;
+// export default serverlessFunction;
 //server on 3000 client on- 
 //60% done just 40 more to go
 //aaksh1456c@ id for mongodb
