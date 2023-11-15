@@ -23,6 +23,15 @@ const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
 const app=express();
 dotenv.config();
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads");
+  },
+  filename: function (req, file, cb) {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+const upload = multer({ storage });
 // app.use(helmet.crossOriginResourcePolicy({policy:"cross-origin"}));
 // const corsOptions = {                      //
 //     origin: 'http://localhost:5173',

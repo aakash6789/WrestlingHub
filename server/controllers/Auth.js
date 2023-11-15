@@ -5,15 +5,7 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import multer from "multer";
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/");
-  },
-  filename: function (req, file, cb) {
-    cb(null, `${Date.now()}-${file.originalname}`);
-  },
-});
-const upload = multer({ storage });
+
 const register=async(req,res)=>{
     const saltRounds=10;
     try{
@@ -69,4 +61,5 @@ const login=async(req,res)=>{
     res.status(404).json({message:err.message});
 }
 }
+
 export {register,login};

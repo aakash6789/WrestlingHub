@@ -22,17 +22,21 @@ const formData={
   phoneNo:number
 }
 
-      const onSubmit=(data)=>{
+      const onSubmit=async(data)=>{
         // const formData = new FormData();
          setText("");
        for(let prop in formData){
         // console.log(prop);
          formData[prop]=data[prop];
          }
-        //  formData.picture=data.picture[0];
-         formData.picture=formData.picture[0].name;
-        //
-         console.log(data);
+    // await formData.append('email', data.email);
+    // await formData.append('firstName', data.firstName);
+    // await formData.append('lastName', data.lastName);
+    // await formData.append('password', data.password);
+    // await formData.append('phoneNo', data.phoneNo);
+    // formData.append('picture', data.picture[0]);
+         formData.picture=data.picture[0];  
+        console.log(formData);
          callReg(formData);
 
       }
@@ -41,8 +45,8 @@ const formData={
         setText("Some details are missing, please enter all the details");
       }
       const callReg=async(formData)=>{
+        // console.log(formData);
         const formDataJson=JSON.stringify(formData);
-        console.log(formData);
         // console.log(formData.picture[0].name);
         // console.log(typeof(formData.picture));
          const savedUserResponse=await fetch(
@@ -127,14 +131,14 @@ const formData={
                   <div className='md:text-left xs:text-center mt-[30px] xs:mb-[10px] md:ml-[32px] md:mb-[10px] '>
                   <label htmlFor="picture" className='font-roboto md:mr-[130px] xs:mr-[280px]'>Profile Picture*</label>
                   <br/>
-                    <input type='file' name='picture' id='picture' className='xs:mr-[90px] xs:mt-[20px] xs:mb-[20px]' {...register("picture",{
+                    {/* <input type='file' name='picture' id='picture' className='xs:mr-[90px] xs:mt-[20px] xs:mb-[20px]' {...register("picture",{
               required:true
-            })}></input>
-            {/* <Controller
+            })}></input> */}
+            <Controller
           name="picture"
           control={control}
           render={({ field }) => <input type="file" {...field} />}
-        /> */}
+        />
              {errors.image && errors.image.type === "required" && (
             <p className="errorMsg text-red-500 ml-[30px] xs:mr-[262px]">Picture is required.</p>
           )}
