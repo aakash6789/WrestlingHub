@@ -51,7 +51,7 @@ const Comments = () => {
 
   const callfun = async (req, res) => {
     const formDataJson = JSON.stringify(formData);
-    const savedUserResponse = await fetch("${import.meta.env.VITE_API_SERVER_BASE_URL}/comment", {
+    const savedUserResponse = await fetch(`${import.meta.env.VITE_API_SERVER_BASE_URL}/comment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
