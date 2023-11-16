@@ -51,6 +51,11 @@ app.get('/',(req,res)=>{
 app.use('/comment',commentRoute);
 app.use('/gmoat',authMiddleWare);
 app.use('/superstar',starRoutes);
+// app.post("/auth/register",upload.single('picture'), (req, res) => {
+//   // Access the file through req.file
+//   console.log(req.file);
+//   // console.log(formData);
+// });
 app.post("/auth/register",register);
 app.use('/auth',authRoutes);
 app.get('/gmoat',authMiddleWare,(req,res)=>{
