@@ -27,7 +27,7 @@ const Comments = () => {
     const fetchData = async () => {
         try {
         const response = await fetch(
-          `http://localhost:3000/comment/${sname}`,
+          `${import.meta.env.VITE_API_SERVER_BASE_URL}/comment/${sname}`,
           { method: "GET" }
         );
         if (!response) {
@@ -51,7 +51,7 @@ const Comments = () => {
 
   const callfun = async (req, res) => {
     const formDataJson = JSON.stringify(formData);
-    const savedUserResponse = await fetch("http://localhost:3000/comment", {
+    const savedUserResponse = await fetch("${import.meta.env.VITE_API_SERVER_BASE_URL}/comment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

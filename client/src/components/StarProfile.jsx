@@ -28,7 +28,7 @@ const StarProfile = () => {
     const fetchData = async (sname) => {
       try {
         const response = await fetch(
-          `http://localhost:3000/superstar/${sname}`
+          `${import.meta.env.VITE_API_SERVER_BASE_URL}/superstar/${sname}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

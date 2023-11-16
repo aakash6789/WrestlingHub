@@ -37,7 +37,7 @@ const Login = () => {
             const callLog=async(req,res)=>{
               const formDataJson=JSON.stringify(formData);
                const savedUserResponse=await fetch(
-                "http://localhost:3000/auth/login",{
+                `${import.meta.env.VITE_API_SERVER_BASE_URL}/auth/login`,{
                   method:"POST",
                   headers:{
                     'Content-Type':'application/json'

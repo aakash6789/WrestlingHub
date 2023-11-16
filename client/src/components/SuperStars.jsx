@@ -9,7 +9,7 @@ const SuperStars = () => {
   
     //  const fetchData=async(name)=>{
     //     try{
-    //       const response=await fetch(`http://localhost:3000/superstar/${name}`);
+    //       const response=await fetch(`${import.meta.env.VITE_API_SERVER_BASE_URL}/superstar/${name}`);
     //       if (!response.ok) {
     //         throw new Error('Network response was not ok');
     //       }

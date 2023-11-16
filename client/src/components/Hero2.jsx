@@ -14,7 +14,7 @@ const Hero2 = () => {
   const authToken=localStorage.getItem('jwt');
   const checkAuth=async(req,res)=>{
     const savedUserResponse=await fetch(
-      "http://localhost:3000/gmoat",{
+      `${import.meta.env.VITE_API_SERVER_BASE_URL}/gmoat`,{
         method:"GET",
         headers:{
           'Content-Type':'application/json',

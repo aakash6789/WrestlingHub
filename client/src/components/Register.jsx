@@ -50,7 +50,7 @@ const formData={
         // console.log(formData.picture[0].name);
         // console.log(typeof(formData.picture));
          const savedUserResponse=await fetch(
-          "http://localhost:3000/auth/register",{
+          `${import.meta.env.VITE_API_SERVER_BASE_URL}/auth/register`,{
             method:"POST",
             headers:{
               'Content-Type':'application/json'
