@@ -1,6 +1,6 @@
 import React from 'react'
-import Banner from '../assets/wrestlemania2.jpg'
-import Banner1 from '../assets/wrestlemania.jpg'
+import Banner from '../assets/wrestleMania2.jpg'
+import Banner1 from '../assets/wrestleMania.jpg'
 import useMediaQuery from '../hooks/useMediaQuery'
 import { useTypewriter,Cursor } from 'react-simple-typewriter'
 const Hero = () => {
