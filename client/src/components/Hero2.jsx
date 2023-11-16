@@ -1,5 +1,5 @@
 import React from 'react'
-import superStarTile from '../assets/SuperStar_tile3.png';
+import superStarTile from '../assets/Superstar_tile3.png';
 import gmoatTile from '../assets/gmoat_tile3.jpg';
 import wwebanner from '../assets/WWE_BANNER.jpg'
 import smackdownbanner from '../assets/SMACK_DOWN_BANNER.jpg'
