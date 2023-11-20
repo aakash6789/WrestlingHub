@@ -39,7 +39,7 @@ const Hero2 = () => {
       <NavLink to='/superstar'>
        <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>
         <img src={superStarTile} className=' h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px]'/>
-       <span className='md:ml-[68px] xs:ml-[35px]'>SUPERSTARS</span></div>
+       <span className='md:ml-[68px] xs:ml-[5px]'>SUPERSTARS</span></div>
        </NavLink>
        <NavLink to='/rivalries'>
        <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>

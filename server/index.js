@@ -56,7 +56,7 @@ app.use('/superstar',starRoutes);
 //   console.log(req.file);
 //   // console.log(formData);
 // });
-app.post("/auth/register",register);
+app.post("/auth/register",upload.single('picture'),register);
 app.use('/auth',authRoutes);
 app.get('/gmoat',authMiddleWare,(req,res)=>{
  res.status(200).json("Access granted");
