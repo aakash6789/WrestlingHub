@@ -1,34 +1,11 @@
 import React, { useState } from 'react'
-import loginbg from '../assets/login3.jpeg'
+
 import {useForm,Controller} from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
 import { number } from 'yup';
 import Login from './Login.jsx';
-import Dropzone from 'react-dropzone';
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import {
-  Box,
-  Button,
-  TextField,
-  useMediaQuery,
-  Typography,
-  useTheme,
-} from "@mui/material";
+
 const Register = () => {
-  const convertBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-
-      fileReader.onload = () => {
-        resolve(fileReader.result);
-      };
-
-      fileReader.onerror = (error) => {
-        reject(error);
-      };
-    });
-};
   const [text,setText]=useState("");
   const[flag,setFlag]=useState(0);
     const {
@@ -47,32 +24,17 @@ const Register = () => {
 
       const onSubmit=async(data,e)=>{
         e.preventDefault();
+        const uniqueSuffix = Date.now() + '-';
         const formData = new FormData();
          setText("");
          data.file = e.target.file.files
     console.log(data);
-    // console.log(typeof(data.file));
-    // console.log(data.file[0]);
     await formData.append('email',data.email);
     await formData.append('firstName',data.firstName);
     await formData.append('lastName',data.lastName);
     await formData.append('password',data.password);
     await formData.append('file', data.file[0]);
-    await formData.append('picture', data.file[0].name);
-      //  for(let prop in formData){
-      //   // console.log(prop);
-      //    formData[prop]=data[prop];
-      //    }
-        //  formData.picture=data.file[0];
-    // await formData.append('email', data.email);
-    // await formData.append('firstName', data.firstName);
-    // await formData.append('lastName', data.lastName);
-    // await formData.append('password', data.password);
-    // await formData.append('phoneNo', data.phoneNo);
-    // formData.append('picture', data.picture[0]);
-        //  formData.picture=data.picture[0];  
-        // console.log(data);
-        // console.log(data);
+    await formData.append('picture',uniqueSuffix+ data.file[0].name);
         
     for (var key of formData.entries()) {
       console.log(key[0] + ', ' + key[1]);
@@ -179,7 +141,7 @@ const Register = () => {
           control={control}
           render={({ field }) => <input type="file" {...field} />}
         /> */}
-        {/* <Controller
+        <Controller
                 name="file"
                 control={control}
                 render={({ field }) => (
@@ -188,8 +150,8 @@ const Register = () => {
               />
              {errors.image && errors.image.type === "required" && (
             <p className="errorMsg text-red-500 ml-[30px] xs:mr-[262px]">Picture is required.</p>
-          )} */}
-          <input type="file" name="file"></input>
+          )}
+          {/* <input type="file" name="file"></input> */}
                      </div>
         <div className='flex'>
         <input type="checkbox" id="consent_checkbox" name="consent_checkbox"  className='md:ml-[30px] h-[20px] mt-[18px] xs:ml-[65px] xs:mt-[5px]' 
