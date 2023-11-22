@@ -19,18 +19,23 @@ import Comment from './models/Comment.js';
 import { comments } from './data/index.js';
 import commentRoute from './routes/CommentRoute.js'
 import multer from "multer";
+import bodyParser from 'body-parser';
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
 const app=express();
 dotenv.config();
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "uploads");
+    cb(null, 'uploads')
   },
+  // filename: function (req, file, cb) {
+  //   const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+  //   cb(null, uniqueSuffix + '-' +path.extname(file.originalname))
+  // }
   filename: function (req, file, cb) {
-    cb(null, `${Date.now()}-${file.originalname}`);
-  },
-});
+    cb(null, file.originalname);
+  }
+})
 const upload = multer({ storage });
 // app.use(helmet.crossOriginResourcePolicy({policy:"cross-origin"}));
 // const corsOptions = {                      //
@@ -56,7 +61,10 @@ app.use('/superstar',starRoutes);
 //   console.log(req.file);
 //   // console.log(formData);
 // });
-app.post("/auth/register",upload.single('picture'),register);
+app.post("/auth/register",upload.single('file'),register,(req,res)=>{
+  console.log(req.file);
+  console.log("file uploaded");
+});
 app.use('/auth',authRoutes);
 app.get('/gmoat',authMiddleWare,(req,res)=>{
  res.status(200).json("Access granted");

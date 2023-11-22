@@ -5,7 +5,30 @@ import { NavLink } from 'react-router-dom';
 import { number } from 'yup';
 import Login from './Login.jsx';
 import Dropzone from 'react-dropzone';
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import {
+  Box,
+  Button,
+  TextField,
+  useMediaQuery,
+  Typography,
+  useTheme,
+} from "@mui/material";
 const Register = () => {
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+};
   const [text,setText]=useState("");
   const[flag,setFlag]=useState(0);
     const {
@@ -13,22 +36,34 @@ const Register = () => {
         handleSubmit,control,
         formState: { errors }
       } = useForm();
-const formData={
-  email:"",
-  firstName:"",
-  lastName:"",
-  password:"",
-  picture:"",
-  phoneNo:number
-}
+// const formData={
+//   email:"",
+//   firstName:"",
+//   lastName:"",
+//   password:"",
+//  file:{},
+//   phoneNo:number
+// }
 
-      const onSubmit=async(data)=>{
-        // const formData = new FormData();
+      const onSubmit=async(data,e)=>{
+        e.preventDefault();
+        const formData = new FormData();
          setText("");
-       for(let prop in formData){
-        // console.log(prop);
-         formData[prop]=data[prop];
-         }
+         data.file = e.target.file.files
+    console.log(data);
+    // console.log(typeof(data.file));
+    // console.log(data.file[0]);
+    await formData.append('email',data.email);
+    await formData.append('firstName',data.firstName);
+    await formData.append('lastName',data.lastName);
+    await formData.append('password',data.password);
+    await formData.append('file', data.file[0]);
+    await formData.append('picture', data.file[0].name);
+      //  for(let prop in formData){
+      //   // console.log(prop);
+      //    formData[prop]=data[prop];
+      //    }
+        //  formData.picture=data.file[0];
     // await formData.append('email', data.email);
     // await formData.append('firstName', data.firstName);
     // await formData.append('lastName', data.lastName);
@@ -36,7 +71,13 @@ const formData={
     // await formData.append('phoneNo', data.phoneNo);
     // formData.append('picture', data.picture[0]);
         //  formData.picture=data.picture[0];  
-        console.log(formData);
+        // console.log(data);
+        // console.log(data);
+        
+    for (var key of formData.entries()) {
+      console.log(key[0] + ', ' + key[1]);
+  }
+        // console.log(formData);
          callReg(formData);
 
       }
@@ -52,10 +93,10 @@ const formData={
          const savedUserResponse=await fetch(
           `${import.meta.env.VITE_API_SERVER_BASE_URL}/auth/register`,{
             method:"POST",
-            headers:{
-              'Content-Type':'application/json'
-            },
-            body:formDataJson
+            // headers:{
+            //   'Content-Type':' multipart/form-data; boundary=MyBoundary'
+            // },
+            body:formData
           }
          ).then(res=>{
           if(res.status===201){
@@ -74,9 +115,8 @@ const formData={
     <div>
       {flag===1?<Login/>:(
     <div className='md:h-[1300px] md:pt-[100px] text-white bg-black xs:h-[1200px]'>
-      {/* <img src={loginbg} className='opacity-[0.8] absolute z-[-4] '/> */}
         <h1 className='md:text-8xl font-bebasNeue md:ml-[650px] md:mr-[630px] text-yellow-200 xs:ml-[225px] xs:text-4xl xs:mr-[150px] '>SIGN UP</h1>
-        {/* <h1 className='text-6xl font-bebasNeue mt-[160px] ml-[660px] mr-[705px]'>SIGN UP</h1> */}
+      
        
       <div className=' bg-white text-black md:w-[720px] md:h-[990px] md:ml-[400px] md:pt-[80px] md:mt-[40px] shadow-md md:shadow-white xs:h-[990px]'>
       <form action="" className='xs:mt-[30px] xs:pt-[30px] md:mt-[0px]' onSubmit={handleSubmit(onSubmit,onError)} encType='multipart/formData' >
@@ -99,7 +139,7 @@ const formData={
             <label htmlFor="name" className='xs:text-left font-roboto md:ml-[31px] xs:mr-[315px]'>First name</label>
             <br/>
             <input id='name' name='firstName' type='text' className='xs:w-[386px] xs:h-[54px] xs:mt-[5px] md:ml-[30px] border-[4px] md:w-[660px] rounded-md md:h-[48px] md:mt-[5px] md:p-2' {...register("firstName")}/>
-        </div>
+        </div> 
         <div className='md:text-left xs:text-center mt-[30px]'>
             <label htmlFor="name" className='xs:text-left font-roboto md:ml-[31px] xs:mr-[315px]'>Last name</label>
             <br/>
@@ -134,14 +174,22 @@ const formData={
                     {/* <input type='file' name='picture' id='picture' className='xs:mr-[90px] xs:mt-[20px] xs:mb-[20px]' {...register("picture",{
               required:true
             })}></input> */}
-            <Controller
+            {/* <Controller
           name="picture"
           control={control}
           render={({ field }) => <input type="file" {...field} />}
-        />
+        /> */}
+        {/* <Controller
+                name="file"
+                control={control}
+                render={({ field }) => (
+                  <input {...field} type="file" id="file" />
+                )}
+              />
              {errors.image && errors.image.type === "required" && (
             <p className="errorMsg text-red-500 ml-[30px] xs:mr-[262px]">Picture is required.</p>
-          )}
+          )} */}
+          <input type="file" name="file"></input>
                      </div>
         <div className='flex'>
         <input type="checkbox" id="consent_checkbox" name="consent_checkbox"  className='md:ml-[30px] h-[20px] mt-[18px] xs:ml-[65px] xs:mt-[5px]' 

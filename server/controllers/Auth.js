@@ -10,7 +10,10 @@ const register=async(req,res)=>{
     const saltRounds=10;
     try{
     // const parsedData=JSON.parse(req.body);
+    // console.log(req.body);
   const {email,firstName,lastName,password,phoneNo,picture}=req.body;
+  // console.log(firstName);
+  // console.log(file);
   
   const findUser=await User.findOne({email});
   if(findUser){
