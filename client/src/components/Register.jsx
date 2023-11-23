@@ -13,15 +13,6 @@ const Register = () => {
         handleSubmit,control,
         formState: { errors }
       } = useForm();
-// const formData={
-//   email:"",
-//   firstName:"",
-//   lastName:"",
-//   password:"",
-//  file:{},
-//   phoneNo:number
-// }
-
       const onSubmit=async(data,e)=>{
         e.preventDefault();
         const uniqueSuffix = Date.now() + '-';

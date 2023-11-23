@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useLayoutEffect } from 'react'
 // import {img1} from "";
 import logo from "../assets/njpw3.jpg"
 import logo1 from "../assets/images.jfif"
@@ -18,7 +18,14 @@ const Navbar = () => {
   const [num,setNum]=useState(1);
   const {user,uname,setUname,setUser}=useAuth();
   // setLogo(logo2);
+  const storedUserJSONString = localStorage.getItem('user');
+  const storedUser = JSON.parse(storedUserJSONString);
   useEffect(()=>{
+    for(let prop in user){
+      // console.log(prop);
+     user[prop]=  storedUser[prop];
+       }
+    
     const imgState=setInterval(()=>{
       if(num==1){
         setNum(2);
@@ -30,7 +37,13 @@ const Navbar = () => {
       // name=user.firstName;
     },5*1000);
     // return () => clearInterval(imgState);
+    console.log("storedUser",storedUser);
+    console.log("user",user);
   },[]);
+  // useEffect(()=>{},[user]);
+  useEffect(()=>{
+    // setUser(storedUser);
+  },[storedUser])
   return (
    <div className='sticky top-0 z-[2]'>
     {/* DESKTOP NAV  */}
@@ -45,7 +58,7 @@ const Navbar = () => {
         
         <div className='hover:text-yellow-400 transition duration-500 ml-[40px] cursor-pointer '>CONTACT</div>
         {  (!user.firstName)?
-          <div className='ml-[40px] hover:text-yellow-200 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<button className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>{uname}</button>}
+          <div className='ml-[40px] hover:text-yellow-200 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<button className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>{user.firstName}</button>}
           {/* <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div> */}
         
         </div></nav> : <nav className='h-[50px] bg-black text-white flex '>
