@@ -16,8 +16,7 @@ const Navbar = () => {
   const [isMenuToggled,setIsMenuToggled]=useState(false);
   const [logoe,setLogo]=useState(logo1);
   const [num,setNum]=useState(1);
-  const {user,uname}=useAuth();
-  let name='';
+  const {user,uname,setUname,setUser}=useAuth();
   // setLogo(logo2);
   useEffect(()=>{
     const imgState=setInterval(()=>{
@@ -28,10 +27,10 @@ const Navbar = () => {
         setNum(1);
         setLogo(logo);
       } // console.log(user.firstName);
-      name=user.firstName;
+      // name=user.firstName;
     },5*1000);
     // return () => clearInterval(imgState);
-  },[uname]);
+  },[]);
   return (
    <div className='sticky top-0 z-[2]'>
     {/* DESKTOP NAV  */}

@@ -56,6 +56,7 @@ const Login = () => {
                   // console.log(prop);
                  user[prop]= await data.findUser[prop];
                    }
+                   console.log(user);
                 // console.log(temp);
                 // console.log(temp.phoneNo);
                 //  await setUser({
@@ -68,7 +69,9 @@ const Login = () => {
                 //  console.log(user.firstName);
                  setUname(user.firstName);
                 // console.log('Token:', token);
+                const userJSONString = JSON.stringify(user);
                  localStorage.setItem('jwt',`${token}`);
+                 localStorage.setItem('user',`${userJSONString}`);
                    setText("Logged In");
                   navigate(-1);
                 }
