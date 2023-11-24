@@ -34,7 +34,7 @@ const storage = multer.diskStorage({
   //   cb(null, uniqueSuffix + '-' +path.extname(file.originalname))
   // }
   filename: function (req, file, cb) {
-    cb(null, uniqueSuffix+file.originalname);
+    cb(null, file.originalname);
   }
 })
 const upload = multer({ storage });
@@ -49,7 +49,8 @@ app.use(cors({ origin: true, credentials: true }));
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(cookieParser());
-app.use("/assets",express.static(path.join(__dirname,'public/assets')));
+// app.use("/assets",express.static(path.join(__dirname,'public/assets')));
+app.use('/uploads', express.static('uploads'));
 app.get('/',(req,res)=>{
     // res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
     res.send("Great going!");

@@ -25,7 +25,7 @@ const Register = () => {
     await formData.append('lastName',data.lastName);
     await formData.append('password',data.password);
     await formData.append('file', data.file[0]);
-    await formData.append('picture',uniqueSuffix+ data.file[0].name);
+    await formData.append('picture',data.file[0].name);
         
     for (var key of formData.entries()) {
       console.log(key[0] + ', ' + key[1]);

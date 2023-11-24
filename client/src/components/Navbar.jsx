@@ -11,6 +11,7 @@ import {IoMdCloseCircleOutline} from 'react-icons/io';
 import './navb.css';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
+import UserImage from './Userimage';
 const Navbar = () => {
   const isAboveSmallScreens=useMediaQuery("(min-width:768px)");
   const [isMenuToggled,setIsMenuToggled]=useState(false);
@@ -21,10 +22,12 @@ const Navbar = () => {
   const storedUserJSONString = localStorage.getItem('user');
   const storedUser = JSON.parse(storedUserJSONString);
   useEffect(()=>{
+    if(storedUser){
     for(let prop in user){
       // console.log(prop);
      user[prop]=  storedUser[prop];
        }
+      }
     
     const imgState=setInterval(()=>{
       if(num==1){
@@ -56,9 +59,9 @@ const Navbar = () => {
         
       <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/superstar'>SUPERSTARS</NavLink></div>
         
-        <div className='hover:text-yellow-400 transition duration-500 ml-[40px] cursor-pointer '>CONTACT</div>
+        <div className='hover:text-yellow-400 transition duration-500 ml-[40px] cursor-pointer mr-[30px] '>CONTACT</div>
         {  (!user.firstName)?
-          <div className='ml-[40px] hover:text-yellow-200 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<button className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'>{user.firstName}</button>}
+          <div className='ml-[40px] hover:text-yellow-200 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div>:<UserImage image={user.picture}/>}
           {/* <div className='ml-[40px] hover:text-yellow-400 transition duration-500 cursor-pointer'><NavLink to='/login'>Login</NavLink></div> */}
         
         </div></nav> : <nav className='h-[50px] bg-black text-white flex '>
