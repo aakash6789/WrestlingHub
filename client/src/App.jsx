@@ -22,6 +22,7 @@ import { AuthProvider } from "./context/AuthProvider.jsx";
 import Shows from "./components/Shows.jsx";
 import Comments from "./components/Comments.jsx";
 import useAuth from "./hooks/useAuth.js";
+import Test from "./components/Test.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
@@ -42,6 +43,7 @@ const router = createBrowserRouter(
       <Route path="/login" element={<Login />} />
       <Route path="/gmoat" element={<Gmoat />} />
       <Route path="/shows/:no" element={<Shows />} />
+      <Route path="/test" element={<Test />} />
     </Route>
   )
 );

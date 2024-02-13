@@ -13,13 +13,13 @@
 //   export default UserImage;
 import  {Box} from "@mui/material";
 
-const UserImage = ({ image, size = "60px" }) => {
+const UserImage = ({ image, size = "50px" }) => {
     return (
-      <Box width={size} height={size}>
+      <Box width={"40px"} height={"80px"} className='ml-[50px]'>
         <img
-          style={{ objectFit: "cover", borderRadius: "50%" }}
-          width={size}
-          height={size}
+          style={{ objectFit: "cover", borderRadius: "100%" }}
+          width={"40px"}
+          height={"80px"}
           alt="user"
           src={`http://localhost:3000/uploads/${image}`}
         />

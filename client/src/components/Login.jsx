@@ -56,7 +56,7 @@ const Login = () => {
                   // console.log(prop);
                  user[prop]= await data.findUser[prop];
                    }
-                   console.log(user);
+                  //  console.log(user);
                 // console.log(temp);
                 // console.log(temp.phoneNo);
                 //  await setUser({
@@ -67,13 +67,13 @@ const Login = () => {
                 //  });
                 //  console.log(user);
                 //  console.log(user.firstName);
-                 setUname(user.firstName);
+                //  setUname(user.firstName);
                 // console.log('Token:', token);
                 const userJSONString = JSON.stringify(user);
                  localStorage.setItem('jwt',`${token}`);
                  localStorage.setItem('user',`${userJSONString}`);
                    setText("Logged In");
-                  navigate(-1);
+                   history.push('/meet');
                 }
                 else if(res.status===404){
                   setText("User does not exist");
@@ -134,6 +134,6 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;
 //Token creation sucessfull
 //USE context started

@@ -34,17 +34,17 @@ const Hero2 = () => {
   }
   const isAboveSmallScreens=useMediaQuery("(min-width:768px)");
   return (
-    <div className='md:mt-[791px] xs:mt-[339px] bg-black font-bebasNeue' >
+    <div className='  bg-black font-bebasNeue' >
       <div className='flex pt-[100px]  text-white md:gap-x-[80px] justify-center xs:gap-x-[10px] ml-[10px] mr-[10px]'>
       <NavLink to='/superstar'>
        <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>
         <img src={superStarTile} className=' h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px]'/>
-       <span className='md:ml-[68px] xs:ml-[5px]'>SUPERSTARS</span></div>
+       <span className='flex justify-center items-center'>SUPERSTARS</span></div>
        </NavLink>
        <NavLink to='/rivalries'>
        <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>
         <img src={rivalriesTile} className=' h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px] '/>
-        <span className=' text-center md:ml-[75px] xs:ml-[40px]'>Rivalries</span></div>
+        <span className='flex justify-center items-center'>Rivalries</span></div>
         </NavLink>
        <NavLink to='/' onClick={checkAuth}>
        <div className='p-[10px] hover:bg-yellow-300 hover:text-black transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'>
@@ -55,7 +55,7 @@ const Hero2 = () => {
      
       </div>
       <div className='text-white mt-[150px] pt-[7px]'>
-        <span className='text-5xl md:ml-[700px] md:mt-[2px] xs:ml-[195px]'>Shows</span>
+        <span className='text-5xl ml-[46vw] md:mt-[2px] ]'>Shows</span>
         <button><img src={aewbanner} className='mt-[18px] hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'/>  </button>
         <NavLink to={'/shows/0'}> <img src={wwebanner} className='mt-[0px] hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'/></NavLink>
         <NavLink to={'/shows/2'}> <img src={nxtbanner} className='md:ml-[155px] xs:ml-[0px]hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'/></NavLink>

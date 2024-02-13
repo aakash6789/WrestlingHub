@@ -1,7 +1,7 @@
 // import react from react;
-import React from "react";
+import React, { useCallback } from "react";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useMemo } from "react";
 import { wwestars } from "../../../server/data";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
@@ -24,19 +24,58 @@ const StarProfile = () => {
     rank: 0,
     videoId: "",
   });
+ 
+  const tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  const firstScriptTag = document.getElementsByTagName("script")[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  
+  let player;
+  const onYouTubeIframeAPIReady=useCallback((videoId) =>{
+    player = new window.YT.Player("player", {
+      height: "390",
+      width: "640",
+      videoId: `${videoId}`,
+      playerVars: {
+        playsinline: 1,
+      },
+      events: {
+        onReady: onPlayerReady,
+        onStateChange: onPlayerStateChange,
+      },
+    });
+  },[]);
+  const onPlayerReady=useCallback((event) =>{
+    event.target.playVideo();
+  },[]);
+
+
+  const onPlayerStateChange=useCallback((event)=> {
+    let done = false;
+    if (event.data === window.YT.PlayerState.PLAYING && !done) {
+      setTimeout(stopVideo, 6000);
+      done = true;
+    }
+    function stopVideo() {
+      player.stopVideo();
+    }
+  },[player]);
+
+  
   useEffect(() => {
+    const controller=new AbortController();
+      const signal=controller.signal; 
     const fetchData = async (sname) => {
       try {
+        
         const response = await fetch(
-          `${import.meta.env.VITE_API_SERVER_BASE_URL}/superstar/${sname}`
+          `${import.meta.env.VITE_API_SERVER_BASE_URL}/superstar/${sname}`,{signal:signal}
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         console.log(currindex);
         const jsonData = await response.json();
-        //   console.log(jsonData[0].name);
-        // onYouTubeIframeAPIReady();
         setData((prevData) => ({
           ...prevData,
           name: jsonData[0].name,
@@ -47,62 +86,16 @@ const StarProfile = () => {
           rank: jsonData[0].rank,
           videoId: jsonData[0].videoId,
         }));
-        //   console.log(data);
-        // console.log(data.name);
-        //   console.log(data);
-        const tag = document.createElement("script");
-        tag.src = "https://www.youtube.com/iframe_api";
-        const firstScriptTag = document.getElementsByTagName("script")[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        // 3. This function creates an <iframe> (and YouTube player)
-        //    after the API code downloads.
-        let player;
-
-        function onYouTubeIframeAPIReady() {
-          player = new window.YT.Player("player", {
-            height: "390",
-            width: "640",
-            videoId: `${jsonData[0].videoId}`,
-            playerVars: {
-              playsinline: 1,
-            },
-            events: {
-              onReady: onPlayerReady,
-              onStateChange: onPlayerStateChange,
-            },
-          });
-        }
-
-        // 4. The API will call this function when the video player is ready.
-        function onPlayerReady(event) {
-          event.target.playVideo();
-        }
-
-        // 5. The API calls this function when the player's state changes.
-        //    The function indicates that when playing a video (state=1),
-        //    the player should play for six seconds and then stop.
-        let done = false;
-
-        function onPlayerStateChange(event) {
-          if (event.data === window.YT.PlayerState.PLAYING && !done) {
-            setTimeout(stopVideo, 6000);
-            done = true;
-          }
-        }
-
-        function stopVideo() {
-          player.stopVideo();
-        }
-
-        // Ensure the onYouTubeIframeAPIReady function is available globally
-        window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady();
+        window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady(jsonData[0].videoId);
       } catch (err) {
         console.log("Error fetching data ", err);
       }
     };
     fetchData(sname);
-  }, [comment]);
+    return ()=>{
+      controller.abort();
+    }
+  }, []);
 
   const prevInd = () => {
     if (currindex == 0) {
