@@ -25,10 +25,12 @@ const SuperStars = () => {
     //  }
   
   return (
-    <div className='  font-bebasNeue bg-black text-white'>
+    <div className='font-bebasNeue bg-black text-white'>
+      <div className='relative'>
       <img src={superstarbanner} className='absoloute z-[-4] opacity-[0.8]'/>
-      <h1 className='md:text-8xl absolute md:top-[300px] md:left-[1000px] text-yellow-200  xs:text-5xl xs:top-[150px] xs:left-[150px]'>SUPERSTARS</h1>
-      <div className='md:ml-[700px] md:mt-[40px] md:text-3xl md:mr-[695px] xs:ml-[214px] xs:mt-[34px] xs:mb-[34px] xs:text-2xl xs:mr-[177px]'>WWE ROSTER</div>
+      <h1 className=' text-yellow-200  right-[6vw] bottom-[33%] absolute text-[4rem] md:text-[4xl]'>SUPERSTARS</h1>
+      </div>
+      <div className=' md:mt-[40px] md:text-3xl  xs:mt-[34px] xs:mb-[34px] xs:text-2xl flex justify-center items-center  '>WWE ROSTER</div>
       <div className='grid grid-rows-3 grid-cols-3 gap-8 md:ml-[180px] md:mt-[70px]'>
       {wwestars.map((wwestar,index)=>{
         return (
@@ -45,7 +47,7 @@ const SuperStars = () => {
       })} 
      </div>
        <img src={rheabanner} className=' md:w-[1530px]md: mt-[120px] filter grayscale opacity-[1]'/>
-       <div className='md:ml-[700px] md:mt-[40px] md:text-3xl xs:ml-[214px] xs:mt-[30px] xs:text-2xl xs:mr-[177px] xs:mb-[30px]'>AEW &nbsp;ROSTER</div>
+       <div className='md:mt-[40px] md:text-3xl  xs:mt-[34px] xs:mb-[34px] xs:text-2xl flex justify-center items-center '>AEW &nbsp;ROSTER</div>
        <div className='grid grid-rows-3 grid-cols-3 gap-8 md:ml-[180px] md:mt-[70px]'>
       {aewstars.map((aewstar,index)=>{
         return (

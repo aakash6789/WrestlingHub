@@ -1,7 +1,7 @@
 // import react from react;
 import React, { useCallback } from "react";
 import { useParams } from "react-router-dom";
-import { useState, useEffect,useMemo } from "react";
+import { useState, useEffect,useMemo, useRef } from "react";
 import { wwestars } from "../../../server/data";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
@@ -31,6 +31,7 @@ const StarProfile = () => {
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   
   let player;
+ 
   const onYouTubeIframeAPIReady=useCallback((videoId) =>{
     player = new window.YT.Player("player", {
       height: "390",
@@ -48,6 +49,7 @@ const StarProfile = () => {
   const onPlayerReady=useCallback((event) =>{
     event.target.playVideo();
   },[]);
+ 
 
 
   const onPlayerStateChange=useCallback((event)=> {
@@ -143,17 +145,19 @@ const StarProfile = () => {
           </div>
         </div>
       </div>
-      <div className="flex">
-        <h1 className="md:ml-[630px] md:text-6xl font-bebasNeue md:mt-[30px] md:mr-[300px] md:pl-[2px] md:flex md:justify-center xs:ml-[200px] xs:mt-[40px] xs:text-2xl">
+      <div className="relative">
+        <div className="flex justify-center items-center">
+        <h1 className="font-bebasNeue md:text-5xl xs:text-3xl mt-[5%]">
           {data.name}
         </h1>
-        <div className="flex md:mt-[50px] font-bebasNeue md:text-1rem xs:ml-[100px] xs:mt-[45px]">
-          <span>Ranking:</span>
-          <p className="ml-[5px]">{data.rank}</p>
+          </div>
+        <div className=" absolute  font-bebasNeue md:text-2rem  right-[8%] bottom-[0%]">
+          <span>Ranking: {data.rank}</span>
+          {/* <p className="ml-[5px]">{data.rank}</p> */}
         </div>
       </div>
       <br></br>
-      <h1 className="font-bebasNeue md:px-16 md:text-3xl py-4 mt-[100px] xs:ml-[30px] md:mr-[1250px] md:ml-[3px] xs:mr-[430px]">
+      <h1 className="font-bebasNeue md:ml-[3%] md:pl-[1.5vw] md:text-3xl py-4 mt-[100px] xs:ml-[30px] md:mr-[800px] md:ml-[3px] xs:mr-[350px]">
         Early Life
       </h1>
       <div
@@ -189,18 +193,14 @@ const StarProfile = () => {
       </div>
      
       </div> */}
-      {/* <Container>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/We2FqPXo64M?si=xjbVM6kGXi6vBEF6" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-      </Container> */}
 
-      {/* <iframe id="ytplayer" type="text/html" width="640" height="360"
-  src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-  ></iframe>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/v=We2FqPXo64M?autoplay=1&origin=http://example.com" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>       */}
+
+ 
       <h1 className="text-center font-bebasNeue text-4xl">Best match</h1>
+     
       <div
         id="player"
-        className="md:ml-[440px] md:mb-[130px] md:mt-[50px] xs:ml-[0px] "
+        className="md:ml-[24%] md:mb-[130px] md:mt-[50px] xs:ml-[0px] md:w-[50%] md:h-[70vh] xs:w-full xs:px-2"
       ></div>
       {(uname)?<Comments/>:<div></div>}
       {/* <iframe id='player' width="560" height="315" src="https://www.youtube.com/embed/We2FqPXo64M?si=l46R340besKXlz0-" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> */}
