@@ -36,7 +36,7 @@ const SuperStars = () => {
         return (
          
           <NavLink to={'/superstar/'+wwestar.name} key={index} className='hover:bg-black'>
-         <div key={index} className=' hover:bg-white text-center md:p-[10px] md:mr-[215px] md:ml-[30px] xs:p-[6px] xs:mr-[2px]   text-black hover:text-white  transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 cursor-pointer '>
+     <div key={index} className=' hover:bg-white text-center md:p-[10px] md:mr-[215px] md:ml-[30px] xs:p-[6px] xs:mr-[2px]   text-black hover:text-white  transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 cursor-pointer '>
          <img src={wwestar.imgLink} className='h-[300px] w-[200px] rounded-[8px] xs:h-[200px] w-[200px]'/>
         {/* <span className=' md:ml-[45px] xs:ml-[35px] mx-auto'>&nbsp;{wwestar.name}</span> */}
         <span className=''>&nbsp;{wwestar.name}</span>
