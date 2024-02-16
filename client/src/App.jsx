@@ -43,7 +43,6 @@ const router = createBrowserRouter(
       <Route path="/login" element={<Login />} />
       <Route path="/gmoat" element={<Gmoat />} />
       <Route path="/shows/:no" element={<Shows />} />
-      <Route path="/test" element={<Test />} />
     </Route>
   )
 );
