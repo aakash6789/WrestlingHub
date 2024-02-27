@@ -48,7 +48,7 @@ const authToken=localStorage.getItem('jwt');
         {/* <div className='absolute z-[-4] bg-black bg-blend-multiply bottom-0 '> */}
           {isAboveSmallScreens?<div className='absolute z-[-4] bg-black bg-blend-multiply bottom-0 top-0 '> <img src={Banner} className='opacity-20 w-[full]'/> </div>:
           <div className='absolute z-[-4] bg-black bg-blend-multiply '>
-          <img src={Banner1}  className=' opacity-20 w-[full] h-full'/>
+          <img src={Banner1}  className=' opacity-20 w-[full] h-[100%]'/>
           </div>
           }
      
@@ -94,7 +94,7 @@ const authToken=localStorage.getItem('jwt');
        </NavLink>
      
       </div>
-      <div className='text-white mt-[150px] pt-[7px] relative'>
+      <div className='text-white mt-[50px] pt-[7px] relative'>
         <span className=' absolute text-5xl left-[50%] -translate-x-[50%] '>Shows</span>
         <button><img src={aewbanner} className='mt-[18px] hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 mt-[8vh] hover:scale-110'/>  </button>
         <NavLink to={'/shows/0'}> <img src={wwebanner} className='mt-[0px] hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'/></NavLink>
