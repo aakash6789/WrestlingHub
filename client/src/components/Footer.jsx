@@ -26,3 +26,8 @@ const Footer = () => {
 }
 
 export default Footer;
+<div id='parent'>
+  <div id='child'>
+
+  </div>
+</div>
