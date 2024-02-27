@@ -157,7 +157,7 @@ const StarProfile = () => {
         </div>
       </div>
       <br></br>
-      <h1 className="font-bebasNeue md:ml-[3%] md:pl-[1.5vw] md:text-3xl py-4 mt-[100px] xs:ml-[30px] md:mr-[800px] md:ml-[3px] xs:mr-[350px]">
+      <h1 className="font-bebasNeue md:ml-[3%] md:pl-[1.5vw] md:text-3xl py-4 mt-[100px] xs:ml-[30px] md:mr-[800px]  xs:mr-[350px]">
         Early Life
       </h1>
       <div
