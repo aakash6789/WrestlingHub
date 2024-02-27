@@ -4,7 +4,7 @@ import footerlogo1 from '../assets/njpw2.webp'
 import footerlogo2 from '../assets/njpw1.png'
 const Footer = () => {
   return (
-    <div className='bg-[#1d1d1d]   text-white font-bebasNeue xs:text-[0.01em] md:text-[1rem]'>
+    <div className='bg-[#1d1d1d]   text-white font-bebasNeue xs:text-[6px] md:text-[1rem]'>
       <div className='flex relative'>
       <img src={footerlogo} className='md:pt-[55px] md:pb-[70px] md:pl-[30px] md:ml-[10px] xs:pl-[20px]  xs:mt-[30px]  '/>
       <img src={footerlogo1} className='w-[60px] h-[60px] md:ml-[50px] md:mt-[80px] xs:ml-[30px] xs:mt-[34px]'/>
