@@ -97,10 +97,10 @@ const authToken=localStorage.getItem('jwt');
       <div className='text-white mt-[150px] pt-[7px] relative'>
         <span className=' absolute text-5xl left-[50%] -translate-x-[50%] '>Shows</span>
         <button><img src={aewbanner} className='mt-[18px] hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 mt-[8vh] hover:scale-110'/>  </button>
-        {/* <NavLink to={'/shows/0'}> <img src={wwebanner} className='mt-[0px] hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'/></NavLink>
+        <NavLink to={'/shows/0'}> <img src={wwebanner} className='mt-[0px] hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'/></NavLink>
         <NavLink to={'/shows/2'}> <img src={nxtbanner} className='md:ml-[155px] xs:ml-[0px]hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'/></NavLink>
         <button> <img src={aewbanner2} className='md:ml-[400px] xs:ml-[0px] hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 '/></button>
-        <NavLink to={'/shows/1'}>  <img src={smackdownbanner} className='hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'/></NavLink> */}
+        <NavLink to={'/shows/1'}>  <img src={smackdownbanner} className='hover:transition duration-0 hover:duration-300 ease-in-out hover:-translate-y-1 hover:scale-110'/></NavLink>
       </div>
     </div>
       </div>
