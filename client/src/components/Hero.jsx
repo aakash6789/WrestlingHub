@@ -48,7 +48,7 @@ const authToken=localStorage.getItem('jwt');
         {/* <div className='absolute z-[-4] bg-black bg-blend-multiply bottom-0 '> */}
           {isAboveSmallScreens?<div className='absolute z-[-4] bg-black bg-blend-multiply bottom-0 top-0 '> <img src={Banner} className='opacity-20 w-[full]'/> </div>:
           <div className='absolute z-[-4] bg-black bg-blend-multiply '>
-          <img src={Banner1}  className=' opacity-20 w-[full] h-[100%]'/>
+          <img src={Banner1}  className=' opacity-20 w-[full] h-[102vh]'/>
           </div>
           }
      
