@@ -21,12 +21,38 @@ const Navbar = () => {
   // setLogo(logo2);
   const storedUserJSONString = localStorage.getItem("user"); 
   const storedUser = JSON.parse(storedUserJSONString);
+  // useEffect(() => {
+  //   if (storedUser) {
+  //     // for(let prop in user){
+  //     //   // console.log(prop);
+  //     //  user[prop]=  storedUser[prop];
+  //     //    }
+  //     setUser({
+  //       firstName: storedUser.firstName,
+  //       email: storedUser.email,
+  //       picture: storedUser.picture,
+  //       phoneNo: storedUser.phoneNo,
+  //     });
+     
+  //   }
+
+  //   const imgState = setInterval(() => {
+  //     if (num == 1) {
+  //       setNum(2);
+  //       setLogo(logo1);
+  //     } else {
+  //       setNum(1);
+  //       setLogo(logo);
+  //     } // console.log(user.firstName);
+  //     // name=user.firstName;
+  //   }, 5 * 1000);
+  //   // return () => clearInterval(imgState);
+  //   // console.log("user", user);
+  //   console.log("storedUser", storedUser);
+  //   // setUname(storedUser.firstName);
+  // }, []);
   useEffect(() => {
     if (storedUser) {
-      // for(let prop in user){
-      //   // console.log(prop);
-      //  user[prop]=  storedUser[prop];
-      //    }
       setUser({
         firstName: storedUser.firstName,
         email: storedUser.email,
@@ -34,21 +60,21 @@ const Navbar = () => {
         phoneNo: storedUser.phoneNo,
       });
     }
-
+  
     const imgState = setInterval(() => {
-      if (num == 1) {
+      if (num === 1) {
         setNum(2);
         setLogo(logo1);
       } else {
         setNum(1);
         setLogo(logo);
-      } // console.log(user.firstName);
-      // name=user.firstName;
+      }
     }, 5 * 1000);
-    // return () => clearInterval(imgState);
-    // console.log("user", user);
-    console.log("storedUser", storedUser);
+  
+    // Cleanup function to clear the interval
+    return () => clearInterval(imgState);
   }, []);
+  
 
   useEffect(() => {
     console.log("user", user);
@@ -56,7 +82,7 @@ const Navbar = () => {
 
   // useEffect(() => {}, [user]);
   return (
-    <div className="sticky top-0 z-[2]">
+    <div className="sticky top-0 w-[100%] mr-0 z-[2]">
       {/* DESKTOP NAV  */}
       {isAboveSmallScreens ? (
         <nav className="h-[8vh] bg-black text-white flex relative ">

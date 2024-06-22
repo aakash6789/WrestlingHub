@@ -45,7 +45,7 @@ const upload = multer({ storage });
     
 // }; 
 app.use(express.urlencoded({extended:false}));
-app.use(cors({ origin: true, credentials: true })); 
+app.use(cors({ origin: 'http://localhost:5173', credentials: true })); 
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(cookieParser());
@@ -78,8 +78,8 @@ mongoose.connect(process.env.MONGO_URL,{
     useUnifiedTopology:true,
 }).then(()=>{
 app.listen(port, () => console.log(`Server listening on port ${port} !`));
-// Star.insertMany(wwestars);
-//   Comment.insertMany((comments));
+Star.insertMany(wwestars);
+  Comment.insertMany((comments));
 }).catch((error)=>console.log(`${error}: DB did not connect`));
 // export default serverlessFunction;
 //server on 3000 client on- 

@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../hooks/useAuth";
 import { useParams } from "react-router-dom";
 
-const Comments = () => {
+const   Comments = React.memo(() => {
   const { user, setUser, uname, setUname, comment, setComments } = useAuth();
   // const [comments,setComments]=useState(['Very good','Very good2','Very good3','Very good4']);
   const { sname } = useParams();
@@ -48,6 +48,9 @@ const Comments = () => {
     };
     fetchData();
   }, []);
+  // useEffect(()=>{
+
+  // },[])
 
   const callfun = async (req, res) => {
     const formDataJson = JSON.stringify(formData);
@@ -56,7 +59,6 @@ const Comments = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      credentials: "include",
       body: formDataJson,
     })
       .then(async (res) => {
@@ -87,13 +89,12 @@ const Comments = () => {
     callfun();
   };
   return (
-    <div className="ml-[00px] flex font-mono">
+    <div className=" w-[98%] flex font-mono">
       <div>
-              
-              {
+                 {
  comment && Array.isArray(comment) ? (
     comment.map((comm, ind) => (
-      <div className='flex md:ml-[100px] py-4 md:px-4 xs:pl-[10px]' key={ind}>
+      <div className='flex ml-[5%] py-4  xs:pl-[10px]' key={comm+ind}>
         <div className="font-bold">{comm.name}:</div>
         <div className="md:w-[550px] xs:w-[200px] px-2">{comm.description}</div>
       </div>
@@ -103,8 +104,8 @@ const Comments = () => {
   )
 }
 </div>
-      <div className=" w-[300px]  flex-col ml-[80px] ">
-      <h4 className="mt-[50px] md:ml-[75px] xs:ml-[30px]">Start discussion</h4>
+      <div className=" w-1/4  flex-col ml-[5%] mr-0 ">
+      <h4 className="mt-[50px] ml-[22%]">Start discussion</h4>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
           <input
             id="comment"
@@ -113,7 +114,7 @@ const Comments = () => {
             type="text"
             {...register("comment", {
               required: "true",
-            })}
+            })} 
             defaultValue=""
           />
           <button type="submit" className="bg-black text-white md:ml-[125px] p-2 xs:ml-[70px]">
@@ -123,7 +124,7 @@ const Comments = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Comments;
 //Comments nesting required

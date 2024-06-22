@@ -15,6 +15,7 @@ const StarProfile = () => {
   const { user, setUser, uname, setUname, comment } = useAuth();
   const { sname } = useParams();
   const [currindex, setCurrIndex] = useState(0);
+  const [player, setPlayer] = useState(null);
   const [data, setData] = useState({
     name: "",
     picturePath: [],
@@ -24,18 +25,103 @@ const StarProfile = () => {
     rank: 0,
     videoId: "",
   });
- 
-  const tag = document.createElement("script");
-  tag.src = "https://www.youtube.com/iframe_api";
-  const firstScriptTag = document.getElementsByTagName("script")[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  const storedUserJSONString = localStorage.getItem("user"); 
+  const storedUser = JSON.parse(storedUserJSONString);
+  // const tag = document.createElement("script");
+  // tag.src = "https://www.youtube.com/iframe_api";
+  // const firstScriptTag = document.getElementsByTagName("script")[0];
+  // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   
-  let player;
+  // let player;
  
-  const onYouTubeIframeAPIReady=useCallback((videoId) =>{
-    player = new window.YT.Player("player", {
-      height: "390",
-      width: "640",
+  // const onYouTubeIframeAPIReady=useCallback((videoId) =>{
+  //   player = new window.YT.Player("player", {
+  //     height: "390",
+  //     width: "640",
+  //     videoId: `${videoId}`,
+  //     playerVars: {
+  //       playsinline: 1,
+  //     },
+  //     events: {
+  //       onReady: onPlayerReady,
+  //       onStateChange: onPlayerStateChange,
+  //     },
+  //   });
+  // },[]);
+  // const onPlayerReady=useCallback((event) =>{
+  //   event.target.playVideo();
+  // },[]);
+ 
+
+
+  // const onPlayerStateChange=useCallback((event)=> {
+  //   let done = false;
+  //   if (event.data === window.YT.PlayerState.PLAYING && !done) {
+  //     setTimeout(stopVideo, 6000);
+  //     done = true;
+  //   }
+  //   function stopVideo() {
+  //     player.stopVideo();
+  //   }
+  // },[player]);
+
+  
+  // useEffect(() => {
+  //   const controller=new AbortController();
+  //     const signal=controller.signal; 
+  //   const fetchData = async (sname) => {
+  //     try {
+        
+  //       const response = await fetch(
+  //         `${import.meta.env.VITE_API_SERVER_BASE_URL}/superstar/${sname}`,{signal:signal}
+  //       );
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       console.log(currindex);
+  //       const jsonData = await response.json();
+  //       setData((prevData) => ({
+  //         ...prevData,
+  //         name: jsonData[0].name,
+  //         picturePath: jsonData[0].picturePath,
+  //         description: jsonData[0].description,
+  //         height: jsonData[0].height,
+  //         weight: jsonData[0].weight,
+  //         rank: jsonData[0].rank,
+  //         videoId: jsonData[0].videoId,
+  //       }));
+  //       window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady(jsonData[0].videoId);
+  //       console.log(uname);
+  //     } catch (err) {
+  //       console.log("Error fetching data ", err);
+  //     }
+
+  //   };
+  //   fetchData(sname);
+  //   return ()=>{
+  //     // controller.abort();
+  //   }
+  // }, []);
+
+  const onPlayerReady = useCallback((event) => {
+    event.target.playVideo();
+  }, []);
+
+  const onPlayerStateChange = useCallback((event) => {
+    let done = false;
+    if (event.data === window.YT.PlayerState.PLAYING && !done) {
+      setTimeout(stopVideo, 6000);
+      done = true;
+    }
+    function stopVideo() {
+      player.stopVideo();
+    }
+  }, [player]);
+
+  const onYouTubeIframeAPIReady = useCallback((videoId) => {
+    const newPlayer = new window.YT.Player('player', {
+      height: '390',
+      width: '640',
       videoId: `${videoId}`,
       playerVars: {
         playsinline: 1,
@@ -45,38 +131,22 @@ const StarProfile = () => {
         onStateChange: onPlayerStateChange,
       },
     });
-  },[]);
-  const onPlayerReady=useCallback((event) =>{
-    event.target.playVideo();
-  },[]);
- 
+    setPlayer(newPlayer);
+  }, [onPlayerReady, onPlayerStateChange]);
 
-
-  const onPlayerStateChange=useCallback((event)=> {
-    let done = false;
-    if (event.data === window.YT.PlayerState.PLAYING && !done) {
-      setTimeout(stopVideo, 6000);
-      done = true;
-    }
-    function stopVideo() {
-      player.stopVideo();
-    }
-  },[player]);
-
-  
   useEffect(() => {
-    const controller=new AbortController();
-      const signal=controller.signal; 
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const fetchData = async (sname) => {
       try {
-        
         const response = await fetch(
-          `${import.meta.env.VITE_API_SERVER_BASE_URL}/superstar/${sname}`,{signal:signal}
+          `${import.meta.env.VITE_API_SERVER_BASE_URL}/superstar/${sname}`,
+          { signal: signal }
         );
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error('Network response was not ok');
         }
-        console.log(currindex);
         const jsonData = await response.json();
         setData((prevData) => ({
           ...prevData,
@@ -88,16 +158,39 @@ const StarProfile = () => {
           rank: jsonData[0].rank,
           videoId: jsonData[0].videoId,
         }));
-        window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady(jsonData[0].videoId);
+
+        // Wait for the YouTube API to be ready before creating the player
+        if (window.YT && window.YT.Player) {
+          onYouTubeIframeAPIReady(jsonData[0].videoId);
+        } else {
+          window.onYouTubeIframeAPIReady = () => {
+            onYouTubeIframeAPIReady(jsonData[0].videoId);
+          };
+        }
       } catch (err) {
-        console.log("Error fetching data ", err);
+        console.log('Error fetching data', err);
       }
     };
+
+    // Load the YouTube Iframe API script
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
     fetchData(sname);
-    return ()=>{
-      controller.abort();
-    }
-  }, []);
+
+    // return () => {
+    //   controller.abort();
+    //   if (player) {
+    //     player.destroy();
+    //   }
+    // };
+  }, [sname, onYouTubeIframeAPIReady, player]);
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
 
   const prevInd = () => {
     if (currindex == 0) {
@@ -117,12 +210,12 @@ const StarProfile = () => {
   const htmlContent2 = data.description.carrer;
   const htmlContent3 = data.description.family;
   return (
-    <div className=" text-black font-robotoSlab bg-[white]">
+    <div className=" w-[100%] mr-0 text-black font-robotoSlab bg-[white]">
       <Helmet>
         <script src="https://www.youtube.com/iframe_api" />
       </Helmet>
       <div className="bg-black">
-        <div className="bg-black max-w-[1400px] h-[700px] w-full m-auto py-2 px-4 relative group">
+        <div className="bg-black h-[700px] w-full m-auto py-2 px-4 relative group">
           <div className=" w-full h-full rounded-2xl duration-500 relative flex justify-center">
             <img
               src={"../assets/" + data.picturePath[currindex]}
@@ -153,7 +246,6 @@ const StarProfile = () => {
           </div>
         <div className=" absolute  font-bebasNeue md:text-2rem  right-[8%] bottom-[0%]">
           <span>Ranking: {data.rank}</span>
-          {/* <p className="ml-[5px]">{data.rank}</p> */}
         </div>
       </div>
       <br></br>
@@ -179,7 +271,7 @@ const StarProfile = () => {
         className="md:px-16 xs:px-8"
       />
       <br></br>
-      {/* <p>{data.rank}</p> */}
+      <p>{data.rank}</p>
       {/* <div className='font-bebasNeue px-16 pb-10'>
       <h1 className='text-6xl '>BIO</h1>
       <div className='flex pb-2'>
@@ -202,7 +294,7 @@ const StarProfile = () => {
         id="player"
         className="md:ml-[24%] md:mb-[130px] md:mt-[50px] xs:ml-[0px] md:w-[50%] md:h-[70vh] xs:w-full xs:px-2"
       ></div>
-      {(uname)?<Comments/>:<div></div>}
+      {(storedUser)?<Comments/>:<div className="text-5xl text-[red]"></div>}
       {/* <iframe id='player' width="560" height="315" src="https://www.youtube.com/embed/We2FqPXo64M?si=l46R340besKXlz0-" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> */}
     </div>
   );

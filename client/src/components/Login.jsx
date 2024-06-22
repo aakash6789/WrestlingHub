@@ -42,7 +42,6 @@ const Login = () => {
                   headers:{
                     'Content-Type':'application/json'
                   },
-                  credentials:'include',
                   body:formDataJson
                 }
                ).then(async(res)=>{ 
@@ -67,13 +66,13 @@ const Login = () => {
                 //  });
                 //  console.log(user);
                 //  console.log(user.firstName);
-                //  setUname(user.firstName);
+                 setUname(user.firstName);
                 // console.log('Token:', token);
                 const userJSONString = JSON.stringify(user);
                  localStorage.setItem('jwt',`${token}`);
                  localStorage.setItem('user',`${userJSONString}`);
                    setText("Logged In");
-                   history.push('/meet');
+                  //  history.push('/meet');
                 }
                 else if(res.status===404){
                   setText("User does not exist");
